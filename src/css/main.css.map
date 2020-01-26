@@ -5,7 +5,10 @@
         "../sass/main.scss",
         "../sass/abstracts/_variables.scss",
         "../sass/abstracts/_mixins.scss",
-        "../sass/_config.scss"
+        "../sass/_config.scss",
+        "../sass/pages/_home.scss",
+        "../sass/pages/_signin.scss",
+        "../sass/pages/_signup.scss"
     ],
     "names": [],
     "file": "main.css"
