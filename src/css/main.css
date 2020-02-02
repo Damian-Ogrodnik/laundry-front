@@ -1,9 +1,20 @@
+label {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+input {
+  margin: 0.5rem 0.5rem 1rem 0.5rem;
+  font-size: 1.25rem;
+}
+
 .navigation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #c14953;
-  height: 3rem;
+  background-color: #848fa5;
+  height: 7vh;
   border-bottom: 3px solid #4c4c47;
 }
 
@@ -40,6 +51,90 @@
 
 .navigation__links li {
   list-style-type: none;
+}
+
+button {
+  outline: 0;
+  width: 7.5rem;
+  padding: 0.5rem 0.75rem;
+  font-weight: 900;
+  border: 0.2rem solid #4c4c47;
+  background-color: #e5dcc5;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+button:hover {
+  background-color: #c14953;
+}
+
+button:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  border: 0.2rem solid #4c4c47;
+  background-color: #c14953;
+}
+
+.signup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 93vh;
+  width: 100%;
+}
+
+.form__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5rem;
+  border: 0.25rem solid #4c4c47;
+  background-color: #848fa5;
+}
+
+.form__input {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 5rem;
+}
+
+.form__error {
+  position: absolute;
+  color: darkred;
+  font-size: 0.75rem;
+  bottom: 0;
+}
+
+.form__button {
+  margin-top: 1rem;
 }
 
 * {

@@ -1,0 +1,33 @@
+.signup {
+  @include flex-center;
+  height: 93vh;
+  width: 100%;
+}
+
+.form {
+  &__wrapper {
+    @include flex-center;
+    flex-direction: column;
+    padding: 5rem;
+    border: 0.25rem solid $primary-color;
+    background-color: $secondary-color;
+  }
+
+  &__input {
+    position: relative;
+    @include flex-center;
+    flex-direction: column;
+    height: 5rem;
+  }
+
+  &__error {
+    position: absolute;
+    color: $error-font-color;
+    font-size: 0.75rem;
+    bottom: 0;
+  }
+
+  &__button {
+    margin-top: 1rem;
+  }
+}
