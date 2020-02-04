@@ -7,8 +7,7 @@ export const SignUp = () => {
   return (
     <Formik
       initialValues={{
-        firstName: "",
-        lastName: "",
+        nickName: "",
         email: "",
         password: "",
         repassword: ""
@@ -24,16 +23,9 @@ export const SignUp = () => {
       <Form className="signup">
         <div className="form__wrapper">
           <div className="form__input">
-            <label htmlFor="firstName">First Name</label>
-            <Field name="firstName" type="text" />
-            <ErrorMessage name="firstName">
-              {msg => <div className="form__error">{msg}</div>}
-            </ErrorMessage>
-          </div>
-          <div className="form__input">
-            <label htmlFor="lastName">Last Name</label>
-            <Field name="lastName" type="text" />
-            <ErrorMessage name="lastName">
+            <label htmlFor="nickName">Nickname Name</label>
+            <Field name="nickName" type="text" />
+            <ErrorMessage name="nickName">
               {msg => <div className="form__error">{msg}</div>}
             </ErrorMessage>
           </div>
