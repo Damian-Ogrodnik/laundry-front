@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 
-import { registrationSchema } from "../../common/validation";
+import { loginSchema } from "../../common/validation";
 import { login } from "../../data/login";
 
 export const SignIn = () => {
+  const [logged, setLogin] = useState(false);
+
   const handleClick = () => {
     login.login();
-    //setLogin(true);
+    setLogin(true);
   };
 
   const renderButton = () => {
@@ -18,7 +20,7 @@ export const SignIn = () => {
           nickName: "",
           password: ""
         }}
-        validationSchema={registrationSchema}
+        validationSchema={loginSchema}
         onSubmit={() => {
           console.log(1);
           handleClick();
@@ -49,7 +51,7 @@ export const SignIn = () => {
     );
   };
 
-  return login.authorization ? <Redirect to="/booking" /> : renderButton();
+  return logged ? <Redirect to="/booking" /> : renderButton();
 };
 
 export default SignIn;

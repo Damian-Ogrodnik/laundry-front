@@ -23,7 +23,7 @@ export const SignUp = () => {
       <Form className="signup">
         <div className="form__wrapper">
           <div className="form__input">
-            <label htmlFor="nickName">Nickname Name</label>
+            <label htmlFor="nickName">Nickname</label>
             <Field name="nickName" type="text" />
             <ErrorMessage name="nickName">
               {msg => <div className="form__error">{msg}</div>}
