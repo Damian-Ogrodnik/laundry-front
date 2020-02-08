@@ -1,5 +1,9 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+
+import { login } from "../../data/login";
+import { UserBoard } from "../../components/UserBoard";
 
 export const Booking = () => {
-  return <div>Booking</div>;
+  return login.authorization ? <UserBoard /> : <Redirect to="/sign-in" />;
 };

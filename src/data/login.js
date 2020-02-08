@@ -4,5 +4,7 @@ export const login = {
     this.authorization = true;
     console.log("Looged");
   },
-  logout: () => (this.authorization = false)
+  logout: function() {
+    this.authorization = false;
+  }
 };
