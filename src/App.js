@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Provider } from "react-redux";
 import "./css/main.css";
+
+import store from "./redux/store";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
@@ -12,17 +15,19 @@ import { SignUp } from "./pages/SignUp";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <NavBar />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/sign-in" component={SignIn} />
-          <Route path="/sign-up" component={SignUp} />
-          <ProtectedRoute path="/booking" component={Booking} />
-        </Switch>
-      </div>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/sign-in" component={SignIn} />
+            <Route path="/sign-up" component={SignUp} />
+            <ProtectedRoute path="/booking" component={Booking} />
+          </Switch>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 
