@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 
+import { useDispatch } from "react-redux";
+import { logUser } from "../../redux/user/userUtils";
+
 import { loginSchema } from "../../common/validation";
 import { login } from "../../data/login";
 
 export const SignIn = () => {
   const [logged, setLogin] = useState(false);
+  const dispatch = useDispatch();
 
-  const handleClick = () => {
-    login.login();
-    setLogin(true);
+  const handleClick = async state => {
+    const { nickName, password } = state;
+    dispatch(logUser(nickName, password));
   };
 
   const renderButton = () => {
@@ -21,9 +25,8 @@ export const SignIn = () => {
           password: ""
         }}
         validationSchema={loginSchema}
-        onSubmit={() => {
-          console.log(1);
-          handleClick();
+        onSubmit={state => {
+          handleClick(state);
         }}
       >
         <Form className="signup">

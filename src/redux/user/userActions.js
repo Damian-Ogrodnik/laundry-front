@@ -8,14 +8,14 @@ export const login = () => {
 
 export const loginSuccess = user => {
   return {
-    type: types.LOGIN,
+    type: types.LOGIN_SUCCESS,
     payload: { user }
   };
 };
 
 export const loginFailure = error => {
   return {
-    type: types.LOGIN,
+    type: types.LOGIN_FAILURE,
     payload: { error }
   };
 };
