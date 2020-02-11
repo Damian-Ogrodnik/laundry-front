@@ -1,7 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+
+import { logout } from "../../redux/user/userActions";
 
 export const UserBoard = () => {
-  const logOut = async () => {};
+  const dispatch = useDispatch();
+
+  const logOut = () => {
+    dispatch(logout());
+  };
 
   return (
     <div>

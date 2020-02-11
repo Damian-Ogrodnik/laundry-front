@@ -19,3 +19,9 @@ export const loginFailure = error => {
     payload: { error }
   };
 };
+
+export const logout = () => {
+  return {
+    type: types.LOGOUT
+  };
+};
