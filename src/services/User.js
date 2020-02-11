@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const signIn = async (name, password) => {
-  const response = await axios
-    .post(
+const signIn = async (name, password) => {
+  try {
+    const respone = await axios.post(
       "http://localhost:7000/user/login",
       {
         name,
@@ -13,12 +13,11 @@ export const signIn = async (name, password) => {
           "content-type": "application/json"
         }
       }
-    )
-    .then(res => {
-      console.log(res);
-      return res;
-    })
-    .catch(err => console.log(err));
-
-  return response;
+    );
+    return respone.data;
+  } catch (err) {
+    return err;
+  }
 };
+
+export default signIn;
