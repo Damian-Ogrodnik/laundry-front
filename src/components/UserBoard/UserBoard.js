@@ -1,12 +1,7 @@
 import React from "react";
 
-import { login } from "../../data/login";
-
 export const UserBoard = () => {
-  const logOut = async () => {
-    login.logout();
-    console.log(login.authorization);
-  };
+  const logOut = async () => {};
 
   return (
     <div>

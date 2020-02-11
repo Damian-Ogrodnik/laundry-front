@@ -2,8 +2,6 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { login } from "../../data/login";
-
 export const ProtectedRoute = ({
   component: Component,
   type,
