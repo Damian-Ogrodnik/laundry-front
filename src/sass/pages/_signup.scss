@@ -7,6 +7,7 @@
 .form {
   &__wrapper {
     @include flex-center;
+    position: relative;
     flex-direction: column;
     padding: 5rem;
     border: 0.25rem solid $primary-color;

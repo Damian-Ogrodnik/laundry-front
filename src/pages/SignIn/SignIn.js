@@ -1,12 +1,15 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import { Error } from "../../components/Error";
 
 import { logUser } from "../../redux/user/userUtils";
 import { loginSchema } from "../../common/validation";
 
 export const SignIn = () => {
   const dispatch = useDispatch();
+  const error = useSelector(state => state.user.error);
 
   const handleClick = async state => {
     const { nickName, password } = state;
@@ -26,6 +29,7 @@ export const SignIn = () => {
     >
       <Form className="signup">
         <div className="form__wrapper">
+          {error && <Error errorMsg={"Invalid Credentials"} />}
           <div className="form__input">
             <label htmlFor="nickName">Nickname</label>
             <Field name="nickName" type="text" />
