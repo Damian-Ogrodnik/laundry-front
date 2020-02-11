@@ -20,10 +20,14 @@ function App() {
         <div className="App">
           <NavBar />
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/sign-in" component={SignIn} />
-            <Route path="/sign-up" component={SignUp} />
-            <ProtectedRoute path="/booking" component={Booking} />
+            <ProtectedRoute path="/" exact component={Home} />
+            <ProtectedRoute path="/sign-in" type="sign-in" component={SignIn} />
+            <ProtectedRoute path="/sign-up" type="sign-up" component={SignUp} />
+            <ProtectedRoute
+              path="/booking"
+              secured={true}
+              component={Booking}
+            />
           </Switch>
         </div>
       </Router>
