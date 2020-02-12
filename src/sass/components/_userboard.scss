@@ -1,0 +1,7 @@
+.userboard {
+  &__wrapper {
+    @include flex-center;
+    flex-direction: column;
+    height: 93vh;
+  }
+}

@@ -11,8 +11,9 @@ export const UserBoard = () => {
   };
 
   return (
-    <div>
-      User Board <button onClick={() => logOut()}>Log out</button>
+    <div className="userboard__wrapper">
+      <div className="userboard">User Board</div>
+      <button onClick={() => logOut()}>Log out</button>
     </div>
   );
 };
