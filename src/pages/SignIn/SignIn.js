@@ -29,7 +29,7 @@ export const SignIn = () => {
     >
       <Form className="signup">
         <div className="form__wrapper">
-          {error && <Error errorMsg={"Invalid Credentials"} />}
+          {error && <Error errorMsg={error} />}
           <div className="form__input">
             <label htmlFor="nickName">Nickname</label>
             <Field name="nickName" type="text" />
