@@ -1,9 +1,16 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import { useDispatch, useSelector } from "react-redux";
 
+import { Error } from "../../components/Error";
+
+import { registerUser } from "../../redux/user/userUtils";
 import { registrationSchema } from "../../common/validation";
 
 export const SignUp = () => {
+  const dispatch = useDispatch();
+  const error = useSelector(state => state.user.error);
+
   return (
     <Formik
       initialValues={{
@@ -14,14 +21,13 @@ export const SignUp = () => {
       }}
       validationSchema={registrationSchema}
       onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+        dispatch(registerUser(values));
+        setSubmitting(false);
       }}
     >
       <Form className="signup">
         <div className="form__wrapper">
+          {error && <Error errorMsg={error} />}
           <div className="form__input">
             <label htmlFor="nickName">Nickname</label>
             <Field name="nickName" type="text" />
