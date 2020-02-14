@@ -69,11 +69,23 @@ input {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   height: 93vh;
+}
+
+.userboard__datepicker {
+  position: absolute;
+  top: 1rem;
+}
+
+.userboard__logout {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
 }
 
 button {

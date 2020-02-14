@@ -16,12 +16,13 @@ export const Datepicker = () => {
   });
 
   return (
-    <DatePicker
-      className="scoreboard__datepicker"
-      minDate={new Date()}
-      maxDate={addDays(new Date(), 7)}
-      selected={startDate}
-      onChange={date => setStartDate(date)}
-    />
+    <div className="userboard__datepicker">
+      <DatePicker
+        minDate={new Date()}
+        maxDate={addDays(new Date(), 7)}
+        selected={startDate}
+        onChange={date => setStartDate(date)}
+      />
+    </div>
   );
 };
