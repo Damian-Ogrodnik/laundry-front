@@ -25,3 +25,9 @@ export const logout = () => {
     type: types.LOGOUT
   };
 };
+
+export const clearErrors = () => {
+  return {
+    type: types.CLEAR_ERRORS
+  };
+};

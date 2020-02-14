@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+import { clearErrors } from "../../redux/user/userActions";
 
 export const ProtectedRoute = ({
   component: Component,
@@ -9,7 +11,9 @@ export const ProtectedRoute = ({
   ...rest
 }) => {
   const logged = useSelector(state => state.user.logged);
+  const dispatch = useDispatch();
 
+  dispatch(clearErrors());
   if (logged && type === "sign-in") return <Redirect to="/booking" />;
   if (logged && type === "sign-up") return <Redirect to="/booking" />;
   if (!logged && secured) return <Redirect to="/sign-in" />;

@@ -25,9 +25,8 @@ export const registerUser = ({
   try {
     dispatch(actions.login());
     const response = await signUp(nickName, password, email).catch(err => {
-      console.log(err.response.status);
       if (err.response.status === 500) {
-        throw new Error("Name or email has been taken");
+        throw new Error("Name or email has already been taken");
       }
       throw new Error("Internal Server Error");
     });

@@ -24,6 +24,11 @@ const userReducer = (state = initialState, action) => {
         logged: false,
         loading: false
       };
+    case types.CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null
+      };
     default:
       return state;
   }
