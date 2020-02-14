@@ -1,17 +1,19 @@
 .navigation {
   display: flex;
+  justify-content: space-between;
   background-color: $secondary-color;
   height: 7vh;
   border-bottom: 3px solid $primary-color;
 
   &__logo {
     width: 3rem;
+    padding-left: 2rem;
     @include flex-center;
   }
 
   &__links {
     height: 100%;
-    width: 100%;
+    width: 30%;
     align-items: center;
     display: flex;
     justify-content: space-around;
