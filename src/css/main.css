@@ -28,8 +28,6 @@ input {
 }
 
 .navigation__logo {
-  width: 3rem;
-  padding-left: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -39,6 +37,13 @@ input {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-left: 2rem;
+}
+
+.navigation__logo--icon {
+  color: #4c4c47;
+  height: 2rem;
+  width: 2rem;
 }
 
 .navigation__links {
