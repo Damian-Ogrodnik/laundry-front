@@ -16,7 +16,6 @@ export const signIn = async (name, password) => {
 };
 
 export const signUp = async (name, password, email) => {
-  console.log(name, email, password);
   return axios.post(
     "http://localhost:7000/user/create",
     {

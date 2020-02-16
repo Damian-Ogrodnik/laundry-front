@@ -20,7 +20,7 @@ function App() {
         <div className="App">
           <NavBar />
           <Switch>
-            <ProtectedRoute path="/" exact component={Home} />
+            <ProtectedRoute path="/" exact component={Booking} />
             <ProtectedRoute path="/sign-in" type="sign-in" component={SignIn} />
             <ProtectedRoute path="/sign-up" type="sign-up" component={SignUp} />
             <ProtectedRoute
