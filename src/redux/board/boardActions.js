@@ -6,3 +6,17 @@ export const setDate = date => {
     payload: { date }
   };
 };
+
+export const setError = error => {
+  return {
+    type: types.SET_ERROR,
+    payload: { error }
+  };
+};
+
+export const setBookings = bookings => {
+  return {
+    type: types.SET_BOOKINGS,
+    payload: { bookings }
+  };
+};

@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import { addDays } from "date-fns";
 import { useDispatch } from "react-redux";
 
-import { setDate } from "../../redux/board/boardActions";
+import { fetchDate } from "../../redux/board/boardUtils";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -12,7 +12,7 @@ export const Datepicker = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setDate(startDate));
+    dispatch(fetchDate(startDate));
   });
 
   return (

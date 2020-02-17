@@ -1,10 +1,15 @@
 import axios from "axios";
 
-export const getDate = async date => {
+export const fetchBookings = async date => {
   const token = await localStorage.token;
-  console.log(token);
   axios.defaults.headers.common["Authorization"] = token;
-  return axios.get("http://localhost:7000/booking", {
-    date
-  });
+  return axios.get(`http://localhost:7000/booking/${date}`);
+};
+
+export const standarizeDate = async date => {
+  const year = await date.getUTCFullYear();
+  const month = (await date.getUTCMonth()) + 1;
+  const day = await date.getUTCDate();
+
+  return `${day}-${month}-${year}`;
 };

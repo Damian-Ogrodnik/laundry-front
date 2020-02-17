@@ -1,7 +1,9 @@
 import * as types from "./boardTypes";
 
 const initialState = {
-  date: null
+  date: null,
+  error: null,
+  bookings: null
 };
 
 const boardReducer = (state = initialState, action) => {
@@ -12,6 +14,16 @@ const boardReducer = (state = initialState, action) => {
       return {
         ...state,
         date: payload.date
+      };
+    case types.SET_ERROR:
+      return {
+        ...state,
+        error: payload.error
+      };
+    case types.SET_BOOKINGS:
+      return {
+        ...state,
+        bookings: payload.bookings
       };
     default:
       return state;
