@@ -20,3 +20,9 @@ export const setBookings = bookings => {
     payload: { bookings }
   };
 };
+
+export const resetBookings = () => {
+  return {
+    type: types.RESET_BOOKINGS
+  };
+};

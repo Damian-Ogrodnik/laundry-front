@@ -4,6 +4,7 @@ import { addDays } from "date-fns";
 import { useDispatch } from "react-redux";
 
 import { fetchDate } from "../../redux/board/boardUtils";
+import { resetBookings } from "../../redux/board/boardActions";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -12,6 +13,7 @@ export const Datepicker = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(resetBookings());
     dispatch(fetchDate(startDate));
   });
 

@@ -18,12 +18,20 @@ const boardReducer = (state = initialState, action) => {
     case types.SET_ERROR:
       return {
         ...state,
-        error: payload.error
+        error: payload.error,
+        bookings: null
       };
     case types.SET_BOOKINGS:
       return {
         ...state,
+        error: null,
         bookings: payload.bookings
+      };
+    case types.RESET_BOOKINGS:
+      return {
+        ...state,
+        error: null,
+        bookings: null
       };
     default:
       return state;
