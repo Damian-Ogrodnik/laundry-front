@@ -17,5 +17,5 @@ export const Booking = () => {
     });
   };
 
-  return <div>{renderSlots()}</div>;
+  return <div className="booking">{renderSlots()}</div>;
 };

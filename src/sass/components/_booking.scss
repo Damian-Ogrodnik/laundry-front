@@ -1,0 +1,22 @@
+.booking {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+
+  &__slot {
+    @include flex-center;
+    flex-direction: column;
+    border: 3px solid $primary-color;
+    padding: 1rem;
+    margin: 1rem;
+    width: 100%;
+
+    &--taken {
+      background-color: $secondary-color;
+    }
+
+    &--available {
+    }
+  }
+}
