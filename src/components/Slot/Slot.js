@@ -1,20 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 
-export const Slot = ({ hours, number }) => {
-  const [taken, setTaken] = useState(false);
-  const takenSlots = useSelector(state => state.board.bookings);
-
-  useEffect(() => {
-    if (takenSlots) {
-      takenSlots.forEach(takenSlot => {
-        if (takenSlot.number === number && takenSlot.taken) {
-          setTaken(true);
-        }
-      });
-    }
-  }, [takenSlots, number]);
-
+export const Slot = ({ hours, number, taken }) => {
   return (
     <div>
       {number}.Slot {hours}
