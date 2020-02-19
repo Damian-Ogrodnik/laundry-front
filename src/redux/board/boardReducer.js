@@ -3,7 +3,8 @@ import * as types from "./boardTypes";
 const initialState = {
   date: null,
   error: null,
-  bookings: null
+  bookings: null,
+  selectedSlot: null
 };
 
 const boardReducer = (state = initialState, action) => {
@@ -27,11 +28,17 @@ const boardReducer = (state = initialState, action) => {
         error: null,
         bookings: payload.bookings
       };
+    case types.SELECT_SLOT:
+      return {
+        ...state,
+        selectedSlot: payload.slotNumber
+      };
     case types.RESET_BOOKINGS:
       return {
         ...state,
         error: null,
-        bookings: null
+        bookings: null,
+        selectedSlot: null
       };
     default:
       return state;

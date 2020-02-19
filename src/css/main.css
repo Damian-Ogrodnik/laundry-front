@@ -26,24 +26,37 @@ input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 3px solid #4c4c47;
-  padding: 1rem;
-  margin: 1rem;
   width: 100%;
+  margin: 1rem;
+  height: 10rem;
+  border: 3px solid #4c4c47;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 
 .booking__slot--taken {
+  background-color: #4c4c47;
+}
+
+.booking__slot--available {
   background-color: #848fa5;
+}
+
+.booking__slot--available--selected {
+  background-color: #c14953;
+}
+
+.booking__slot--available--selected button {
+  background-color: #c14953;
 }
 
 .error {

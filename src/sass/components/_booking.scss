@@ -5,18 +5,30 @@
   width: 100%;
 
   &__slot {
-    @include flex-center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     flex-direction: column;
-    border: 3px solid $primary-color;
-    padding: 1rem;
-    margin: 1rem;
     width: 100%;
+    margin: 1rem;
+    height: 10rem;
+    border: 3px solid $primary-color;
+    transition: background-color 0.5s ease;
 
     &--taken {
-      background-color: $secondary-color;
+      background-color: $primary-color;
     }
 
     &--available {
+      background-color: $secondary-color;
+
+      &--selected {
+        background-color: $tertiary-color;
+
+        button {
+          background-color: $tertiary-color;
+        }
+      }
     }
   }
 }

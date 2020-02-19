@@ -26,3 +26,10 @@ export const resetBookings = () => {
     type: types.RESET_BOOKINGS
   };
 };
+
+export const selectSlot = slotNumber => {
+  return {
+    type: types.SELECT_SLOT,
+    payload: { slotNumber }
+  };
+};
