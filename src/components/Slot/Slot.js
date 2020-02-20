@@ -5,7 +5,6 @@ import { selectSlot } from "../../redux/board/boardActions";
 
 export const Slot = ({ hours, number, taken, selected }) => {
   const dispatch = useDispatch();
-  console.log(selected);
 
   const checkStatus = () => {
     return taken
@@ -15,17 +14,13 @@ export const Slot = ({ hours, number, taken, selected }) => {
       : "--available";
   };
 
-  const renderButton = () => {
-    dispatch(selectSlot(number));
-    console.log(selected);
-    return;
-  };
-
   return (
     <div className={`booking__slot booking__slot${checkStatus()}`}>
       <h2>{hours}</h2>
       {taken && <h2>Booked</h2>}
-      {!taken && <button onClick={() => renderButton()}>Select</button>}
+      {!taken && (
+        <button onClick={() => dispatch(selectSlot(number))}>Select</button>
+      )}
     </div>
   );
 };

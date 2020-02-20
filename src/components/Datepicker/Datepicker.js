@@ -15,7 +15,8 @@ export const Datepicker = () => {
   useEffect(() => {
     dispatch(resetBookings());
     dispatch(fetchDate(startDate));
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [startDate]);
 
   return (
     <div className="userboard__datepicker">
