@@ -7,16 +7,16 @@ export const setDate = date => {
   };
 };
 
-export const setError = error => {
+export const getSlotsFailure = error => {
   return {
-    type: types.SET_ERROR,
+    type: types.GET_SLOTS_FAILURE,
     payload: { error }
   };
 };
 
-export const getTakenSlots = takenSlots => {
+export const getSlotsSuccess = takenSlots => {
   return {
-    type: types.SET_TAKEN_SLOTS,
+    type: types.GET_SLOTS_SUCCESS,
     payload: { takenSlots }
   };
 };

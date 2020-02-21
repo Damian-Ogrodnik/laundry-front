@@ -9,8 +9,8 @@ export const fetchDate = date => async dispatch => {
     const response = await fetchBookings(standardDate).catch(err => {
       throw new Error("Internal Server Error");
     });
-    dispatch(actions.setTakenSlots(response.data.booking.slots));
+    dispatch(actions.getSlotsSuccess(response.data.booking.slots));
   } catch (error) {
-    dispatch(actions.setError(error.message));
+    dispatch(actions.getSlotsFailure(error.message));
   }
 };

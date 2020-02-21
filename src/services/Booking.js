@@ -13,3 +13,12 @@ export const standarizeDate = async date => {
 
   return `${day}-${month}-${year}`;
 };
+
+export const bookSlot = async (date, selectedSlot) => {
+  const token = await localStorage.token;
+  axios.defaults.headers.common["Authorization"] = token;
+  return axios.post("http://localhost:7000/booking/", {
+    date: date,
+    number: selectedSlot
+  });
+};

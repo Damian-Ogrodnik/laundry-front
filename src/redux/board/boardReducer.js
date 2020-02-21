@@ -16,13 +16,13 @@ const boardReducer = (state = initialState, action) => {
         ...state,
         date: payload.date
       };
-    case types.SET_ERROR:
+    case types.GET_SLOTS_FAILURE:
       return {
         ...state,
         error: payload.error,
         takenSlots: null
       };
-    case types.SET_TAKEN_SLOTS:
+    case types.GET_SLOTS_SUCCESS:
       return {
         ...state,
         error: null,
