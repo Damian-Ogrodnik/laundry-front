@@ -6,7 +6,7 @@ import { Slot } from "../Slot";
 import { slots } from "../../utils/slots";
 
 export const Slots = () => {
-  const takenSlots = useSelector(state => state.board.bookings);
+  const takenSlots = useSelector(state => state.board.takenSlots);
   const selectedSlot = useSelector(state => state.board.selectedSlot);
 
   const renderSlots = () => {

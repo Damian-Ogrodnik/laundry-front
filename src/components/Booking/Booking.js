@@ -19,5 +19,4 @@ const Booking = () => {
 };
 
 const bookignWithError = withError(Booking);
-
 export { bookignWithError as Booking };

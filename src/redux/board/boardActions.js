@@ -14,10 +14,10 @@ export const setError = error => {
   };
 };
 
-export const setBookings = bookings => {
+export const getTakenSlots = takenSlots => {
   return {
-    type: types.SET_BOOKINGS,
-    payload: { bookings }
+    type: types.SET_TAKEN_SLOTS,
+    payload: { takenSlots }
   };
 };
 
