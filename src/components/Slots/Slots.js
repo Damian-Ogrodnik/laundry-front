@@ -1,14 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
 import { Slot } from "../Slot";
 
 import { slots } from "../../utils/slots";
 
-export const Slots = () => {
-  const takenSlots = useSelector(state => state.board.takenSlots);
-  const selectedSlot = useSelector(state => state.board.selectedSlot);
-
+export const Slots = ({ selectedSlot, takenSlots }) => {
   const renderSlots = () => {
     return slots.map(({ hours, number }) => {
       let taken, selected;

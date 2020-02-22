@@ -2,11 +2,11 @@ import * as actions from "./boardActions";
 
 import { standarizeDate, fetchBookings } from "../../services/Booking";
 
-export const fetchDate = date => async dispatch => {
+export const fetchDate = (date, standarized = false) => async dispatch => {
   try {
-    const standardDate = await standarizeDate(date);
-    dispatch(actions.setDate(standardDate));
-    const response = await fetchBookings(standardDate).catch(err => {
+    if (!standarized) date = await standarizeDate(date);
+    dispatch(actions.setDate(date));
+    const response = await fetchBookings(date).catch(err => {
       throw new Error("Internal Server Error");
     });
     dispatch(actions.getSlotsSuccess(response.data.booking.slots));
