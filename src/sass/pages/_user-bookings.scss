@@ -1,8 +1,5 @@
-.homepage {
+.user-bookings {
   @include flex-center;
   @include page-settings;
-
-  h1 {
-    font-size: 3rem;
-  }
+  position: relative;
 }

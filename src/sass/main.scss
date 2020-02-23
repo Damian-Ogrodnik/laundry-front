@@ -5,6 +5,7 @@
 
 @import "./components/booking";
 @import "./components/error";
+@import "./components//logout";
 @import "./components/navbar";
 @import "./components/userboard";
 
@@ -13,5 +14,7 @@
 @import "./pages/home";
 @import "./pages/signin";
 @import "./pages/signup";
+@import "./pages/user-bookings";
+@import "./pages/user-page";
 
 @import "config";

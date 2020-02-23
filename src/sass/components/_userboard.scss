@@ -1,19 +1,12 @@
 .userboard {
   &__wrapper {
-    @include flex-center;
+    @include flex-center-column;
     position: relative;
-    flex-direction: column;
     height: 93vh;
   }
 
   &__datepicker {
     position: absolute;
     top: 1rem;
-  }
-
-  &__logout {
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
   }
 }

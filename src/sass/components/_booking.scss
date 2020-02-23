@@ -1,6 +1,5 @@
 .booking {
-  @include flex-center;
-  flex-direction: column;
+  @include flex-center-column;
   width: 100%;
 
   &__slots {
