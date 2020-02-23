@@ -22,3 +22,9 @@ export const bookSlot = async (date, selectedSlot) => {
     number: selectedSlot
   });
 };
+
+export const fetchUserBookings = async () => {
+  const token = await localStorage.token;
+  axios.defaults.headers.common["Authorization"] = token;
+  return axios.get("http://localhost:7000/booking/user-bookings");
+};
