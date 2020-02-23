@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Error } from "../../components/Error";
 
-import { registerUser } from "../../redux/user/userUtils";
+import { registerUser } from "../../redux/login/loginUtils";
 import { registrationSchema } from "../../common/validation";
 
 export const SignUp = () => {
   const dispatch = useDispatch();
-  const error = useSelector(state => state.user.error);
+  const error = useSelector(state => state.login.error);
 
   return (
     <Formik

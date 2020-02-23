@@ -1,4 +1,4 @@
-import * as types from "./userTypes";
+import * as types from "./loginTypes";
 
 export const login = () => {
   return {

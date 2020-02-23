@@ -5,7 +5,7 @@ import { IconContext } from "react-icons";
 import { GiClothespin } from "react-icons/gi";
 
 export const NavBar = () => {
-  const logged = useSelector(state => state.user.logged);
+  const logged = useSelector(state => state.login.logged);
 
   const renderNavBar = () => {
     return logged ? (

@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Error } from "../../components/Error";
 
-import { logUser } from "../../redux/user/userUtils";
+import { logUser } from "../../redux/login/loginUtils";
 import { loginSchema } from "../../common/validation";
 
 export const SignIn = () => {
   const dispatch = useDispatch();
-  const error = useSelector(state => state.user.error);
+  const error = useSelector(state => state.login.error);
 
   const handleClick = async state => {
     const { nickName, password } = state;

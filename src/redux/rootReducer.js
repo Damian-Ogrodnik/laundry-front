@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 
-import userReducer from "./user/userReducer";
+import loginReducer from "./login/loginReducer";
 import boardReducer from "./board/boardReducer";
 import bookingReducer from "./booking/bookingReducer";
 
 const rootReducer = combineReducers({
-  user: userReducer,
+  login: loginReducer,
   board: boardReducer,
   booking: bookingReducer
 });

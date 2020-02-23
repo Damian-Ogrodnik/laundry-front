@@ -1,4 +1,4 @@
-import * as actions from "./userActions";
+import * as actions from "./loginActions";
 
 import { signIn, signUp } from "../../services/User";
 
