@@ -12,7 +12,13 @@ export const Slots = ({ selectedSlot, takenSlots }) => {
         taken = takenSlots.some(takenSlot => number === takenSlot.number);
       if (selectedSlot === number) selected = true;
       return (
-        <Slot hours={hours} number={number} taken={taken} selected={selected} />
+        <Slot
+          key={number}
+          hours={hours}
+          number={number}
+          taken={taken}
+          selected={selected}
+        />
       );
     });
   };
