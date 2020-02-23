@@ -8,7 +8,6 @@ export const bookSelectedSlot = (date, selectedSlot) => async dispatch => {
     const response = await bookSlot(date, selectedSlot).catch(err => {
       throw new Error("Internal Server Error");
     });
-    console.log(response);
     dispatch(actions.bookingSuccess(response.data));
   } catch (error) {
     dispatch(actions.bookingFailure(error.message));

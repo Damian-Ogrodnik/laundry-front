@@ -12,8 +12,10 @@ import { Booking } from "./pages/Booking";
 import { Home } from "./pages/Home";
 import { SignIn } from "./pages/SignIn";
 import { SignUp } from "./pages/SignUp";
+import { User } from "./pages/User";
+import { UserBookings } from "./pages/UserBookings";
 
-function App() {
+export const App = () => {
   return (
     <Provider store={store}>
       <Router>
@@ -21,18 +23,22 @@ function App() {
           <NavBar />
           <Switch>
             <ProtectedRoute path="/" exact component={Booking} />
-            <ProtectedRoute path="/sign-in" type="sign-in" component={SignIn} />
-            <ProtectedRoute path="/sign-up" type="sign-up" component={SignUp} />
+            <ProtectedRoute path="/sign-in" component={SignIn} />
+            <ProtectedRoute path="/sign-up" component={SignUp} />
+            <ProtectedRoute path="/user" secured={true} component={User} />
             <ProtectedRoute
               path="/booking"
               secured={true}
               component={Booking}
+            />
+            <ProtectedRoute
+              path="/user-bookings"
+              secured={true}
+              component={UserBookings}
             />
           </Switch>
         </div>
       </Router>
     </Provider>
   );
-}
-
-export default App;
+};
