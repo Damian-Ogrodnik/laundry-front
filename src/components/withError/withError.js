@@ -1,8 +1,10 @@
 import React from "react";
 
-export const withError = WrappedComponent => ({ error, ...props }) => {
+export const withError = WrappedComponent => ({ error, loading, ...props }) => {
   const renderComponent = () => {
-    if (error) {
+    if (loading) {
+      return <div>Loading...</div>;
+    } else if (error) {
       return <div>Ooops... Something went wrong. Try again later.</div>;
     } else {
       return <WrappedComponent {...props} />;

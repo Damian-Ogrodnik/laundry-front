@@ -3,7 +3,8 @@ import * as types from "./boardTypes";
 const initialState = {
   date: null,
   error: null,
-  takenSlots: null,
+  loading: false,
+  takenSlots: [],
   selectedSlot: null
 };
 
@@ -14,18 +15,21 @@ const boardReducer = (state = initialState, action) => {
     case types.SET_DATE:
       return {
         ...state,
+        loading: true,
         date: payload.date
       };
     case types.GET_SLOTS_FAILURE:
       return {
         ...state,
         error: payload.error,
+        loading: false,
         takenSlots: null
       };
     case types.GET_SLOTS_SUCCESS:
       return {
         ...state,
         error: null,
+        loading: false,
         takenSlots: payload.takenSlots
       };
     case types.SELECT_SLOT:
