@@ -1,6 +1,7 @@
 import * as actions from "./userBookingsActions";
 
 import { fetchUserBookings } from "../../services/Booking";
+import { sortByDates } from "../../services/Date";
 
 export const getUsersBookings = () => async dispatch => {
   try {
@@ -8,7 +9,8 @@ export const getUsersBookings = () => async dispatch => {
     const response = await fetchUserBookings().catch(() => {
       throw new Error("Internal Server Error");
     });
-    dispatch(actions.fetchUserBookingsSuccess(response.data));
+    let sortedResponse = await sortByDates(response.data);
+    dispatch(actions.fetchUserBookingsSuccess(sortedResponse));
   } catch (error) {
     dispatch(actions.fetchUserBookingsFailure(error.message));
   }
