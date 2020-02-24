@@ -19,7 +19,9 @@ export const Slot = ({ hours, number, taken, selected }) => {
       <h2>{hours}</h2>
       {taken && <h2>Booked</h2>}
       {!taken && (
-        <button onClick={() => dispatch(selectSlot(number))}>Select</button>
+        <button onClick={() => dispatch(selectSlot({ number, hours }))}>
+          Select
+        </button>
       )}
     </div>
   );
