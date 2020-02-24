@@ -1,5 +1,23 @@
 .user-bookings {
-  @include flex-center;
   @include page-settings;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   position: relative;
+
+  &__slot {
+    @include flex-center;
+    font-size: 1.25rem;
+    .date {
+      margin: 0.5rem 5rem;
+    }
+    .hours {
+      margin: 0.5rem 5rem;
+    }
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin: 3rem;
+  }
 }

@@ -272,6 +272,20 @@ button:active {
 }
 
 .user-bookings {
+  height: 93vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+.user-bookings__slot {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -281,9 +295,20 @@ button:active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 93vh;
-  width: 100%;
-  position: relative;
+  font-size: 1.25rem;
+}
+
+.user-bookings__slot .date {
+  margin: 0.5rem 5rem;
+}
+
+.user-bookings__slot .hours {
+  margin: 0.5rem 5rem;
+}
+
+.user-bookings h1 {
+  font-size: 2rem;
+  margin: 3rem;
 }
 
 .user-page {
