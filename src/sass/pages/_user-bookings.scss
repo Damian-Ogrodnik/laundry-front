@@ -2,17 +2,26 @@
   @include page-settings;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
   position: relative;
 
+  &__slots {
+    @include flex-center-column;
+    width: 80%;
+    padding: 1.5rem 1rem;
+    border: 3px solid $primary-color;
+    background-color: $secondary-color;
+  }
+
   &__slot {
-    @include flex-center;
+    padding: 0.25rem;
+    display: flex;
+    width: 100%;
     font-size: 1.25rem;
-    .date {
-      margin: 0.5rem 5rem;
-    }
-    .hours {
-      margin: 0.5rem 5rem;
+
+    &.header {
+      font-weight: 700;
+      border-bottom: 1px solid $primary-color;
     }
   }
 

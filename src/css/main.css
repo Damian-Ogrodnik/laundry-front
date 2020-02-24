@@ -281,11 +281,13 @@ button:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 
-.user-bookings__slot {
+.user-bookings__slots {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -295,15 +297,28 @@ button:active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  padding: 1.5rem 1rem;
+  border: 3px solid #4c4c47;
+  background-color: #848fa5;
+}
+
+.user-bookings__slot {
+  padding: 0.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
   font-size: 1.25rem;
 }
 
-.user-bookings__slot .date {
-  margin: 0.5rem 5rem;
-}
-
-.user-bookings__slot .hours {
-  margin: 0.5rem 5rem;
+.user-bookings__slot.header {
+  font-weight: 700;
+  border-bottom: 1px solid #4c4c47;
 }
 
 .user-bookings h1 {
