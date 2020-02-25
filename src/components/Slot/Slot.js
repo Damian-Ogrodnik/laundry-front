@@ -3,9 +3,8 @@ import { useDispatch } from "react-redux";
 
 import { selectSlot } from "../../redux/board/boardActions";
 
-export const Slot = ({ hours, number, taken, selected }) => {
+export const Slot = ({ hours, number, taken, selected, user }) => {
   const dispatch = useDispatch();
-
   const checkStatus = () => {
     return taken
       ? "--taken"
@@ -23,6 +22,7 @@ export const Slot = ({ hours, number, taken, selected }) => {
           Select
         </button>
       )}
+      {user && <div>Your booking</div>}
     </div>
   );
 };

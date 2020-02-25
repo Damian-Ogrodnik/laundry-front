@@ -1,16 +1,25 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import { Slot } from "../Slot";
 
 import { slots } from "../../utils/slots";
 
 export const Slots = ({ selectedSlot, takenSlots }) => {
-  console.log(selectedSlot);
+  const loggedUser = useSelector(state => state.login.user.data.id);
   const renderSlots = () => {
     return slots.map(({ hours, number }) => {
-      let taken, selected;
-      if (takenSlots)
+      let taken, selected, user;
+      if (takenSlots) {
         taken = takenSlots.some(takenSlot => number === takenSlot.number);
+      }
+      if (taken) {
+        takenSlots.forEach(takenSlot => {
+          if (takenSlot.number === number && takenSlot.user === loggedUser)
+            user = true;
+        });
+      }
+
       if (selectedSlot && selectedSlot.number === number) selected = true;
       return (
         <Slot
@@ -19,6 +28,7 @@ export const Slots = ({ selectedSlot, takenSlots }) => {
           number={number}
           taken={taken}
           selected={selected}
+          user={user}
         />
       );
     });
