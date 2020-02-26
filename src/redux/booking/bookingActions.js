@@ -19,3 +19,9 @@ export const bookingFailure = error => {
     payload: { error }
   };
 };
+
+export const resetCurrentBooking = () => {
+  return {
+    type: types.RESET_BOOKING
+  };
+};

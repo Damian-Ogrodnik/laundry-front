@@ -40,4 +40,17 @@
   &__button {
     margin-top: 1rem;
   }
+
+  &__error {
+    position: absolute;
+    bottom: -2rem;
+    //margin-top: 1rem;
+    color: $error-font-color;
+  }
+
+  &__wrapper {
+    @include flex-center;
+    width: 100%;
+    position: relative;
+  }
 }

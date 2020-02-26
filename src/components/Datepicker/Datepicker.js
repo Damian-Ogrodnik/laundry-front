@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { fetchDate } from "../../redux/board/boardUtils";
 import { resetBookings } from "../../redux/board/boardActions";
+import { resetCurrentBooking } from "../../redux/booking/bookingActions";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -15,6 +16,7 @@ export const Datepicker = () => {
 
   useEffect(() => {
     dispatch(resetBookings());
+    dispatch(resetCurrentBooking());
     dispatch(fetchDate(startDate));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
