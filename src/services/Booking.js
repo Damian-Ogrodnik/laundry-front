@@ -18,11 +18,19 @@ export const bookSlot = async (date, selectedSlot) => {
   const { number, hours } = selectedSlot;
   const token = await localStorage.token;
   axios.defaults.headers.common["Authorization"] = token;
-  return axios.post("http://localhost:7000/booking/", {
-    date: date,
-    number: number,
-    hours: hours
-  });
+  return await axios
+    .post("http://localhost:7000/booking/", {
+      date: date,
+      number: number,
+      hours: hours
+    })
+    .then(res => {
+      return res;
+    })
+    .catch(err => {
+      return err.response;
+    });
+  //return response;
 };
 
 export const fetchUserBookings = async () => {
