@@ -5,6 +5,7 @@ import { withError } from "../withError";
 import { Slots } from "../Slots";
 
 import { bookSelectedSlot } from "../../redux/booking/bookingUtils";
+import { bookingFailure } from "../../redux/booking/bookingActions";
 
 const Booking = () => {
   const date = useSelector(state => state.board.date);
@@ -14,6 +15,8 @@ const Booking = () => {
   const dispatch = useDispatch();
 
   const bookSlot = async () => {
+    if (!selectedSlot)
+      return dispatch(bookingFailure("You have to select slot before book..."));
     dispatch(bookSelectedSlot(date, selectedSlot));
   };
 
