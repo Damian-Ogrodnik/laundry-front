@@ -210,22 +210,68 @@ button:active {
   background-color: #c14953;
 }
 
-.homepage {
+.homepage__front {
+  height: 93vh;
+  width: 100%;
+  min-height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), to(rgba(250, 244, 244, 0.4))), url("../assets/background-front.jpg");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(250, 244, 244, 0.4)), url("../assets/background-front.jpg");
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.homepage__instruction {
+  height: 100vh;
+  width: 100%;
+  border: 3px solid green;
+}
+
+.homepage__footer {
+  height: 20vh;
+  width: 100%;
+  border: 3px solid yellow;
+}
+
+.homepage__welcome {
+  margin: 2rem;
+  text-align: center;
+}
+
+.homepage__welcome h1 {
+  margin: 1rem;
+  font-size: 3rem;
+}
+
+.homepage__welcome h2 {
+  font-size: 2rem;
+}
+
+.homepage__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 93vh;
-  width: 100%;
+  padding: 5rem;
 }
 
-.homepage h1 {
-  font-size: 3rem;
+.homepage__buttons button {
+  font-size: 2rem;
+  width: 10rem;
+  margin: 1rem;
 }
 
 .signup {
