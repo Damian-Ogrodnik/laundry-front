@@ -1,13 +1,15 @@
 button {
   outline: 0;
   width: 7.5rem;
-  padding: 0.5rem 0.75rem;
-  font-weight: 900;
-  border: 0.2rem solid $primary-color;
-  background-color: $background-color;
+  padding: 0.75rem 0.75rem;
+  font-weight: 100;
+  border-radius: 1rem;
+  border: 0.25rem solid black;
+  background-color: white;
+
   transition: background-color 0.5s ease;
   &:hover {
-    background-color: $tertiary-color;
+    background-color: $thi-color;
   }
   &:active {
     transform: translateY(4px);

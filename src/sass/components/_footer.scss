@@ -1,8 +1,7 @@
 .footer {
   height: 20vh;
   width: 100%;
-  background-color: $secondary-color;
-  border-top: 3px solid $primary-color;
+  background-color: black;
 
   &__wrapper {
     display: flex;
@@ -16,12 +15,13 @@
   @include flex-center-column;
 
   &__icon {
-    color: black;
+    color: $thi-color;
     height: 4rem;
     width: 4rem;
   }
 
   &__text {
+    color: white;
     padding-top: 1rem;
     text-align: center;
   }

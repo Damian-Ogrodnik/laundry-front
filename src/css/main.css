@@ -109,8 +109,7 @@ input {
 .footer {
   height: 20vh;
   width: 100%;
-  background-color: #848fa5;
-  border-top: 3px solid #4c4c47;
+  background-color: black;
 }
 
 .footer__wrapper {
@@ -142,12 +141,13 @@ input {
 }
 
 .container__icon {
-  color: black;
+  color: #b82601;
   height: 4rem;
   width: 4rem;
 }
 
 .container__text {
+  color: white;
   padding-top: 1rem;
   text-align: center;
 }
@@ -165,9 +165,8 @@ input {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #848fa5;
+  background-color: black;
   height: 7vh;
-  border-bottom: 3px solid #4c4c47;
 }
 
 .navigation__logo {
@@ -204,7 +203,11 @@ input {
 
 .navigation__links a {
   text-decoration: none;
-  color: #2d2d2a;
+  color: white;
+}
+
+.navigation__links a.selected > li {
+  color: #b82601;
 }
 
 .navigation__links li {
@@ -237,16 +240,17 @@ input {
 button {
   outline: 0;
   width: 7.5rem;
-  padding: 0.5rem 0.75rem;
-  font-weight: 900;
-  border: 0.2rem solid #4c4c47;
-  background-color: #e5dcc5;
+  padding: 0.75rem 0.75rem;
+  font-weight: 100;
+  border-radius: 1rem;
+  border: 0.25rem solid black;
+  background-color: white;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
 }
 
 button:hover {
-  background-color: #c14953;
+  background-color: #b82601;
 }
 
 button:active {
@@ -265,17 +269,28 @@ button:active {
   font-size: 2.5rem;
 }
 
+.homepage h2 span {
+  font-size: 2.5rem;
+  color: #b82601;
+}
+
 .homepage h3 {
   font-size: 1.5rem;
+}
+
+.homepage span {
+  font-size: 3rem;
+  color: #b82601;
 }
 
 .homepage__front {
   height: 93vh;
   width: 100%;
   min-height: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), to(rgba(250, 244, 244, 0.6))), url("../assets/background-front.jpg");
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(250, 244, 244, 0.6)), url("../assets/background-front.jpg");
+  background: -webkit-gradient(linear, left bottom, left top, from(black), to(rgba(0, 0, 0, 0))), url("../assets/background-front.jpg");
+  background: linear-gradient(0deg, black, rgba(0, 0, 0, 0)), url("../assets/background-front.jpg");
   background-size: cover;
+  background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,7 +315,7 @@ button:active {
           align-items: center;
   height: 100vh;
   width: 100%;
-  background-color: #e5dcc5;
+  background-color: white;
 }
 
 .homepage__instruction--header {
@@ -340,7 +355,7 @@ button:active {
           align-items: center;
   margin: 1rem;
   width: 100%;
-  border: 0.25rem solid #4c4c47;
+  border: 0.25rem solid #000000;
   overflow: hidden;
   border-radius: 10%;
   -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -348,14 +363,14 @@ button:active {
 }
 
 .homepage__tile__icon {
-  color: #c14953;
+  color: #062f4f;
   height: 10rem;
   padding: 1rem;
   width: 100%;
 }
 
 .homepage__tile__arrow {
-  color: #4c4c47;
+  color: #b82601;
   height: 5rem;
   width: 10rem;
 }
@@ -388,7 +403,7 @@ button:active {
           justify-content: center;
   background-color: #c9c1c1;
   padding: 2.5rem 0rem;
-  border-bottom: 0.25rem solid #4c4c47;
+  border-bottom: 0.25rem solid #000000;
 }
 
 .homepage__welcome {
@@ -568,7 +583,7 @@ button:active {
 }
 
 .App {
-  background-color: #e5dcc5;
+  background-color: white;
   height: 100vh;
 }
 /*# sourceMappingURL=main.css.map */

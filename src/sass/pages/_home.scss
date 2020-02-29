@@ -5,21 +5,26 @@
   }
   h2 {
     font-size: 2.5rem;
+    span {
+      font-size: 2.5rem;
+      color: $thi-color;
+    }
   }
   h3 {
     font-size: 1.5rem;
+  }
+  span {
+    font-size: 3rem;
+    color: $thi-color;
   }
 
   &__front {
     @include page-settings;
     min-height: 100%;
-    background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.8),
-        rgba(250, 244, 244, 0.6)
-      ),
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
       url("../assets/background-front.jpg");
     background-size: cover;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
@@ -31,7 +36,7 @@
     align-items: center;
     height: 100vh;
     width: 100%;
-    background-color: $background-color;
+    background-color: white;
 
     &--header {
       margin-top: 3rem;
@@ -52,18 +57,18 @@
     align-items: center;
     margin: 1rem;
     width: 100%;
-    border: 0.25rem solid $primary-color;
+    border: 0.25rem solid $main-color;
     overflow: hidden;
     border-radius: 10%;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     &__icon {
-      color: $tertiary-color;
+      color: $fir-color;
       height: 10rem;
       padding: 1rem;
       width: 100%;
     }
     &__arrow {
-      color: $primary-color;
+      color: $thi-color;
       height: 5rem;
       width: 10rem;
     }
@@ -79,7 +84,7 @@
         @include flex-center;
         background-color: rgb(201, 193, 193);
         padding: 2.5rem 0rem;
-        border-bottom: 0.25rem solid $primary-color;
+        border-bottom: 0.25rem solid $main-color;
       }
     }
   }

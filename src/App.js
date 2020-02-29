@@ -22,9 +22,9 @@ export const App = () => {
         <div className="App">
           <NavBar />
           <Switch>
-            <ProtectedRoute path="/" exact component={Home} />
-            <ProtectedRoute path="/sign-in" component={SignIn} />
-            <ProtectedRoute path="/sign-up" component={SignUp} />
+            <ProtectedRoute path="/home" exact component={Home} />
+            <ProtectedRoute path="/sign-in" exact component={SignIn} />
+            <ProtectedRoute path="/sign-up" exact component={SignUp} />
             <ProtectedRoute path="/user" secured={true} component={User} />
             <ProtectedRoute
               path="/booking"

@@ -1,9 +1,8 @@
 .navigation {
   display: flex;
   justify-content: space-between;
-  background-color: $secondary-color;
+  background-color: black;
   height: 7vh;
-  border-bottom: 3px solid $primary-color;
 
   &__logo {
     @include flex-center;
@@ -24,7 +23,11 @@
     justify-content: space-around;
     a {
       text-decoration: none;
-      color: $font-color;
+      color: white;
+
+      &.selected > li {
+        color: $thi-color;
+      }
     }
     li {
       list-style-type: none;

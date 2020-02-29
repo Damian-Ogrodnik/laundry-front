@@ -17,20 +17,24 @@ export const Home = () => {
       <div className="homepage__front">
         <div className="homepage__welcome">
           <h2>Welcome at</h2>
-          <h1 className="homepage__header">Student Dorm Laundry</h1>
+          <h1 className="homepage__header">
+            Student <span>Dorm</span> Laundry
+          </h1>
         </div>
         <div className="homepage__buttons">
           <Link to="/sign-in">
-            <button className="button__signin">Sign In</button>
+            <button className="button__signin">SIGN IN</button>
           </Link>
           <Link to="/sign-up">
-            <button className="button__signup">Sign Up</button>
+            <button className="button__signup">SIGN UP</button>
           </Link>
         </div>
       </div>
       <div className="homepage__instruction">
         <div className="homepage__instruction--header">
-          <h2>How it works?</h2>
+          <h2>
+            <span>How it works?</span>
+          </h2>
         </div>
         <div className="homepage__tiles">
           <div className="homepage__tile">

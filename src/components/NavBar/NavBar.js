@@ -1,8 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { IconContext } from "react-icons";
-import { GiClothespin } from "react-icons/gi";
+import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
   const logged = useSelector(state => state.login.logged);
@@ -10,38 +8,34 @@ export const NavBar = () => {
   const renderNavBar = () => {
     return logged ? (
       <ul className="navigation__links">
-        <Link to="/user">
+        <NavLink activeClassName="selected" to="/user">
           <li>Account</li>
-        </Link>
-        <Link to="/booking">
+        </NavLink>
+        <NavLink activeClassName="selected" to="/booking">
           <li>Book</li>
-        </Link>
-        <Link to="/user-bookings">
+        </NavLink>
+        <NavLink activeClassName="selected" to="/user-bookings">
           <li>My bookings</li>
-        </Link>
+        </NavLink>
       </ul>
     ) : (
       <ul className="navigation__links">
-        <Link to="/">
+        <NavLink activeClassName="selected" to="/home">
           <li>Home</li>
-        </Link>
-        <Link to="/booking">
-          <li>Booking</li>
-        </Link>
-        <Link to="/sign-up">
+        </NavLink>
+        <NavLink activeClassName="selected" to="/sign-in">
+          <li>Sign in</li>
+        </NavLink>
+        <NavLink activeClassName="selected" to="/sign-up">
           <li>Sign up</li>
-        </Link>
+        </NavLink>
       </ul>
     );
   };
 
   return (
     <div className="navigation">
-      <div className="navigation__logo">
-        <IconContext.Provider value={{ className: "navigation__logo--icon" }}>
-          <GiClothespin />
-        </IconContext.Provider>
-      </div>
+      <div className="navigation__logo"></div>
       {renderNavBar()}
     </div>
   );
