@@ -4,12 +4,13 @@ button {
   padding: 0.75rem 0.75rem;
   font-weight: 100;
   border-radius: 1rem;
-  border: 0.25rem solid black;
-  background-color: white;
+  color: white;
+  border: 0.15rem solid $fir-color;
+  background-color: black;
 
-  transition: background-color 0.5s ease;
+  transition: background-color 1s ease;
   &:hover {
-    background-color: $thi-color;
+    background-color: $fir-color;
   }
   &:active {
     transform: translateY(4px);
