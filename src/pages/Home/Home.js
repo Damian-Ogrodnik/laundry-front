@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { IconContext } from "react-icons";
+
 import { MdCreate } from "react-icons/md";
 import { FiLogIn } from "react-icons/fi";
 import { GoCalendar } from "react-icons/go";
 import { FaCheckCircle } from "react-icons/fa";
 import { GiClothespin } from "react-icons/gi";
 import { FaArrowRight } from "react-icons/fa";
+
+import { Footer } from "../../components/Footer";
 
 export const Home = () => {
   return (
@@ -106,7 +109,7 @@ export const Home = () => {
           </div>
         </div>
       </div>
-      <div className="homepage__footer"></div>
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,28 @@
+.footer {
+  height: 20vh;
+  width: 100%;
+  background-color: $secondary-color;
+  border-top: 3px solid $primary-color;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.container {
+  @include flex-center-column;
+
+  &__icon {
+    color: black;
+    height: 4rem;
+    width: 4rem;
+  }
+
+  &__text {
+    padding-top: 1rem;
+    text-align: center;
+  }
+}
