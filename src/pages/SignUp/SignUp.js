@@ -57,7 +57,7 @@ export const SignUp = () => {
             </ErrorMessage>
           </div>
           <button className="form__button" type="submit">
-            Submit
+            SUMBIT
           </button>
         </div>
       </Form>

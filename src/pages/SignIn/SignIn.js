@@ -45,7 +45,7 @@ export const SignIn = () => {
             </ErrorMessage>
           </div>
           <button className="form__button" type="submit">
-            Login
+            LOGIN
           </button>
         </div>
       </Form>
