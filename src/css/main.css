@@ -288,8 +288,8 @@ button:active {
   height: 93vh;
   width: 100%;
   min-height: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, from(black), to(rgba(0, 0, 0, 0))), url("../assets/background-front.jpg");
-  background: linear-gradient(0deg, black, rgba(0, 0, 0, 0)), url("../assets/background-front.jpg");
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0))), url("../assets/background-front.jpg");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url("../assets/background-front.jpg");
   background-size: cover;
   background-attachment: fixed;
   display: -webkit-box;
