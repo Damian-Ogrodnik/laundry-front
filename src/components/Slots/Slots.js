@@ -8,7 +8,7 @@ import { slots } from "../../utils/slots";
 export const Slots = ({ selectedSlot, takenSlots }) => {
   const loggedUser = useSelector(state => state.login.user.data.id);
   const renderSlots = () => {
-    return slots.map(({ hours, number }) => {
+    return slots.map(({ hours, number, lastBooking }) => {
       let taken, selected, user;
       if (takenSlots) {
         taken = takenSlots.some(takenSlot => number === takenSlot.number);
@@ -29,6 +29,7 @@ export const Slots = ({ selectedSlot, takenSlots }) => {
           taken={taken}
           selected={selected}
           user={user}
+          lastBooking={lastBooking}
         />
       );
     });

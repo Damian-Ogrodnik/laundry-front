@@ -30,7 +30,6 @@ export const bookSlot = async (date, selectedSlot) => {
     .catch(err => {
       return err.response;
     });
-  //return response;
 };
 
 export const fetchUserBookings = async () => {

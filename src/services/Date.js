@@ -13,10 +13,19 @@ export const sortByDates = async bookings => {
 
 const removeOldDates = async bookings => {
   return await bookings.filter(booking => {
-    let bookingArray = booking.date.split("-");
-    return (
-      new Date(bookingArray[2], bookingArray[1] - 1, bookingArray[0]) >
-      new Date()
-    );
+    let [day, month, year] = booking.date.split("-");
+    return new Date(year, month - 1, day) > new Date();
   });
+};
+
+export const checkAvailability = async (date, lastBooking) => {
+  let available = true;
+  if (date) {
+    let today = new Date().setHours(0, 0, 0, 0);
+    const [day, month, year] = date.split("-");
+    let bookDate = new Date(year, month - 1, day).setHours(0, 0, 0, 0);
+    if (today === bookDate && lastBooking <= new Date().getHours())
+      available = false;
+  }
+  return available;
 };
