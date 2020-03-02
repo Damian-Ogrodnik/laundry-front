@@ -8,7 +8,13 @@
     @include flex-center-column;
     @include tile;
     position: relative;
-    padding: 5rem;
+    padding: 3rem 5rem;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: $thi-color;
+    }
   }
 
   &__input {

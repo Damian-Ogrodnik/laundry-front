@@ -1,5 +1,5 @@
 label {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: black;
   pointer-events: none;
   -webkit-transition: all 0.5s ease-in-out;
@@ -12,7 +12,7 @@ input {
   background: transparent;
   width: 100%;
   padding: 8px 0 5px 0;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: black;
 }
 
@@ -53,6 +53,11 @@ input:focus {
 }
 
 .booking__slot {
+  border: 0.25rem solid #000000;
+  border-radius: 10%;
+  background-color: #c9c1c1;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,7 +73,6 @@ input:focus {
   width: 100%;
   margin: 1rem;
   height: 10rem;
-  border: 3px solid #4c4c47;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
 }
@@ -82,11 +86,15 @@ input:focus {
 }
 
 .booking__slot--available--selected {
-  background-color: #c14953;
+  background-color: #062f4f;
 }
 
 .booking__slot--available--selected button {
-  background-color: #c14953;
+  background-color: #b82601;
+}
+
+.booking__slot--available--selected button:hover {
+  background-color: #b82601;
 }
 
 .booking__button {
@@ -96,7 +104,7 @@ input:focus {
 .booking__error {
   position: absolute;
   bottom: -2rem;
-  color: darkred;
+  color: #b82601;
 }
 
 .booking__wrapper {
@@ -116,7 +124,7 @@ input:focus {
 .error {
   position: absolute;
   top: 2rem;
-  color: darkred;
+  color: #b82601;
 }
 
 .footer {
@@ -250,6 +258,14 @@ input:focus {
   top: 1rem;
 }
 
+.userboard__datepicker input {
+  color: #b82601;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 1em 0rem 0rem 0rem;
+}
+
 button {
   outline: 0;
   width: 7.5rem;
@@ -257,7 +273,7 @@ button {
   font-weight: 100;
   border-radius: 1rem;
   color: white;
-  border: 0.15rem solid #062f4f;
+  border: 0.15rem solid black;
   background-color: black;
   -webkit-transition: background-color 1s ease;
   transition: background-color 1s ease;
@@ -265,13 +281,14 @@ button {
 
 button:hover {
   background-color: #062f4f;
+  border: 0.15rem solid #062f4f;
 }
 
 button:active {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
-  border: 0.2rem solid #4c4c47;
-  background-color: #c14953;
+  border: 0.2rem solid #062f4f;
+  background-color: #062f4f;
 }
 
 .homepage h1 {
@@ -483,7 +500,13 @@ button:active {
   -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
           box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
-  padding: 5rem;
+  padding: 3rem 5rem;
+}
+
+.form__wrapper h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: #b82601;
 }
 
 .form__input {
@@ -494,7 +517,7 @@ button:active {
 
 .form__error {
   position: absolute;
-  color: darkred;
+  color: #b82601;
   font-size: 0.75rem;
   bottom: -1.25rem;
 }
@@ -533,10 +556,14 @@ button:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border: 0.25rem solid #000000;
+  border-radius: 10%;
+  background-color: #c9c1c1;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 5%;
   width: 80%;
   padding: 1.5rem 1rem;
-  border: 3px solid #4c4c47;
-  background-color: #848fa5;
 }
 
 .user-bookings__slot {
@@ -550,12 +577,13 @@ button:active {
 
 .user-bookings__slot.header {
   font-weight: 700;
-  border-bottom: 1px solid #4c4c47;
+  border-bottom: 1px solid #b82601;
 }
 
-.user-bookings h1 {
+.user-bookings h2 {
   font-size: 2rem;
   margin: 3rem;
+  color: #b82601;
 }
 
 .user-page {

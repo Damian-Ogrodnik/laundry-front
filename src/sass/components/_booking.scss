@@ -10,6 +10,7 @@
   }
 
   &__slot {
+    @include tile;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -17,7 +18,6 @@
     width: 100%;
     margin: 1rem;
     height: 10rem;
-    border: 3px solid $primary-color;
     transition: background-color 0.5s ease;
 
     &--taken {
@@ -28,10 +28,13 @@
       background-color: $secondary-color;
 
       &--selected {
-        background-color: $tertiary-color;
+        background-color: $fir-color;
 
         button {
-          background-color: $tertiary-color;
+          background-color: $thi-color;
+          &:hover {
+            background-color: $thi-color;
+          }
         }
       }
     }

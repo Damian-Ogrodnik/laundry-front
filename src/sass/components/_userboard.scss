@@ -8,5 +8,13 @@
   &__datepicker {
     position: absolute;
     top: 1rem;
+
+    input {
+      color: $thi-color;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-align: center;
+      padding: 1em 0rem 0rem 0rem;
+    }
   }
 }

@@ -16,7 +16,7 @@ export const UserBookings = () => {
 
   return (
     <div className="user-bookings">
-      <h1>User Bookings List</h1>
+      <h2>Bookings List</h2>
       <UserSlots bookings={bookings} />
       <Logout name={"logout"} />
     </div>

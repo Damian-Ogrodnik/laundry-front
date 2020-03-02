@@ -19,6 +19,6 @@
 @mixin tile {
   border: 0.25rem solid $main-color;
   border-radius: 10%;
-  background-color: rgb(201, 193, 193);
+  background-color: $tile-background;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }

@@ -29,6 +29,7 @@ export const SignIn = () => {
     >
       <Form className="signup">
         <div className="form__wrapper">
+          <h2>Sign In</h2>
           {error && <Error errorMsg={error} />}
           <div className="form__input">
             <label htmlFor="nickName">Nickname</label>

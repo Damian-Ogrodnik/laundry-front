@@ -7,10 +7,10 @@
 
   &__slots {
     @include flex-center-column;
+    @include tile;
+    border-radius: 5%;
     width: 80%;
     padding: 1.5rem 1rem;
-    border: 3px solid $primary-color;
-    background-color: $secondary-color;
   }
 
   &__slot {
@@ -21,12 +21,13 @@
 
     &.header {
       font-weight: 700;
-      border-bottom: 1px solid $primary-color;
+      border-bottom: 1px solid $thi-color;
     }
   }
 
-  h1 {
+  h2 {
     font-size: 2rem;
     margin: 3rem;
+    color: $thi-color;
   }
 }
