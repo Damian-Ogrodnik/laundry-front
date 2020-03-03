@@ -9,6 +9,7 @@ export const UserSlots = ({ bookings }) => {
         <div className="user-bookings__slot number">Number</div>
         <div className="user-bookings__slot date">Date</div>
         <div className="user-bookings__slot hours">Hours</div>
+        <div className="user-bookings__slot cancel">Cancel</div>
       </div>
       {bookings &&
         bookings.map((slot, index) => <UserSlot data={slot} number={index} />)}

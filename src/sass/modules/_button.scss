@@ -15,7 +15,18 @@ button {
   }
   &:active {
     transform: translateY(4px);
-    border: 0.2rem solid $fir-color;
+    border: 0.15rem solid $fir-color;
     background-color: $fir-color;
+  }
+
+  &.cancel {
+    padding: 0.25rem;
+    font-size: 0.75rem;
+    width: auto;
+    &:active {
+      transform: translateY(4px);
+      border: 0.15rem solid $fir-color;
+      background-color: $fir-color;
+    }
   }
 }

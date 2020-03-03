@@ -8,6 +8,9 @@ export const UserSlot = ({ data: { date, hours }, number }) => {
         {number + 1}.{date}
       </div>
       <div className="user-bookings__slot hours">{hours}</div>
+      <div className="user-bookings__slot cancel">
+        <button className="cancel">X</button>
+      </div>
     </div>
   );
 };

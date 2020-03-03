@@ -287,7 +287,20 @@ button:hover {
 button:active {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
-  border: 0.2rem solid #062f4f;
+  border: 0.15rem solid #062f4f;
+  background-color: #062f4f;
+}
+
+button.cancel {
+  padding: 0.25rem;
+  font-size: 0.75rem;
+  width: auto;
+}
+
+button.cancel:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  border: 0.15rem solid #062f4f;
   background-color: #062f4f;
 }
 
