@@ -1,6 +1,8 @@
 import React from "react";
 
-export const UserSlot = ({ data: { date, hours }, number }) => {
+import { deleteSlot } from "../../services/Booking";
+
+export const UserSlot = ({ data: { date, hours, _id }, number }) => {
   return (
     <div className="user-bookings__slot">
       <div className="user-bookings__slot number">{number + 1}</div>
@@ -9,7 +11,9 @@ export const UserSlot = ({ data: { date, hours }, number }) => {
       </div>
       <div className="user-bookings__slot hours">{hours}</div>
       <div className="user-bookings__slot cancel">
-        <button className="cancel">X</button>
+        <button className="cancel" onClick={() => deleteSlot(date, _id)}>
+          X
+        </button>
       </div>
     </div>
   );

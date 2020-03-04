@@ -37,3 +37,19 @@ export const fetchUserBookings = async () => {
   axios.defaults.headers.common["Authorization"] = token;
   return axios.get("http://localhost:7000/booking/user-bookings");
 };
+
+export const deleteSlot = async (date, id) => {
+  const token = await localStorage.token;
+  axios.defaults.headers.common["Authorization"] = token;
+  console.log(date);
+  return await axios
+    .delete(`http://localhost:7000/booking/${date}/${id}`)
+    .then(res => {
+      console.log(res);
+      return res;
+    })
+    .catch(err => {
+      console.log(err);
+      return err.response;
+    });
+};
