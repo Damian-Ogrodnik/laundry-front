@@ -1,8 +1,9 @@
 import React from "react";
 
+import { withError } from "../withError";
 import { UserSlot } from "../UserSlot";
 
-export const UserSlots = ({ bookings }) => {
+const UserSlots = ({ bookings }) => {
   return (
     <div className="user-bookings__slots">
       <div className="user-bookings__slot header">
@@ -16,3 +17,6 @@ export const UserSlots = ({ bookings }) => {
     </div>
   );
 };
+
+const userSlotsWithError = withError(UserSlots);
+export { userSlotsWithError as UserSlots };

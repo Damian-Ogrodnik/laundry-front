@@ -8,6 +8,8 @@ import { UserSlots } from "../../components/UserSlots";
 
 export const UserBookings = () => {
   const bookings = useSelector(state => state.userBookings.userBookings);
+  const error = useSelector(state => state.userBookings.error);
+  const loading = useSelector(state => state.userBookings.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,7 +19,7 @@ export const UserBookings = () => {
   return (
     <div className="user-bookings">
       <h2>Bookings List</h2>
-      <UserSlots bookings={bookings} />
+      <UserSlots bookings={bookings} error={error} loaing={loading} />
       <Logout name={"logout"} />
     </div>
   );

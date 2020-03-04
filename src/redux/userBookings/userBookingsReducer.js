@@ -11,11 +11,21 @@ const userBookingsReducer = (state = initialState, action) => {
 
   switch (type) {
     case types.FETCH_BOOKINGS:
-      return { ...state, loading: true };
+      return { ...state, error: false, loading: true, userBookings: null };
     case types.FETCH_BOOKINGS_SUCCESS:
-      return { ...state, loading: false, userBookings: payload.userBookings };
+      return {
+        ...state,
+        error: false,
+        loading: false,
+        userBookings: payload.userBookings
+      };
     case types.FETCH_BOOKINGS_FAILURE:
-      return { ...state, error: payload.error };
+      return {
+        ...state,
+        error: payload.error,
+        loading: false,
+        userBookings: null
+      };
     default:
       return state;
   }
