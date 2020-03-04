@@ -14,7 +14,7 @@ export const sortByDates = async bookings => {
 const removeOldDates = async bookings => {
   return await bookings.filter(booking => {
     let [day, month, year] = booking.date.split("-");
-    return new Date(year, month - 1, day) > new Date();
+    return new Date(year, month - 1, day) >= new Date().setHours(0, 0, 0, 0);
   });
 };
 
