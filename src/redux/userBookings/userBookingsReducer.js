@@ -26,6 +26,12 @@ const userBookingsReducer = (state = initialState, action) => {
         loading: false,
         userBookings: null
       };
+    case types.DELETE_BOOKING:
+      return { ...state, error: false, loading: true };
+    case types.DELETE_BOOKING_SUCCESS:
+      return { ...state, error: false, loading: false };
+    case types.DELETE_BOOKING_FAILURE:
+      return { ...state, error: payload.error, loading: false };
     default:
       return state;
   }

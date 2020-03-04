@@ -1,6 +1,6 @@
 import * as actions from "./userBookingsActions";
 
-import { fetchUserBookings } from "../../services/Booking";
+import { fetchUserBookings, deleteSlot } from "../../services/Booking";
 import { sortByDates } from "../../services/Date";
 
 export const getUsersBookings = () => async dispatch => {
@@ -13,5 +13,18 @@ export const getUsersBookings = () => async dispatch => {
     dispatch(actions.fetchUserBookingsSuccess(sortedResponse));
   } catch (error) {
     dispatch(actions.fetchUserBookingsFailure(error.message));
+  }
+};
+
+export const deleteUsersBooking = (date, id) => async dispatch => {
+  try {
+    await dispatch(actions.deleteUserBooking());
+    await deleteSlot(date, id).catch(() => {
+      throw new Error("Internal Server Error");
+    });
+    await dispatch(actions.deleteUserBookingSuccess());
+    dispatch(getUsersBookings());
+  } catch (error) {
+    dispatch(actions.deleteUserBookingFailure(error.message));
   }
 };

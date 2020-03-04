@@ -45,11 +45,9 @@ export const deleteSlot = async (date, id) => {
   return await axios
     .delete(`http://localhost:7000/booking/${date}/${id}`)
     .then(res => {
-      console.log(res);
       return res;
     })
     .catch(err => {
-      console.log(err);
       return err.response;
     });
 };

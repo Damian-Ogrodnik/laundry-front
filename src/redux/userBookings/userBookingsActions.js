@@ -19,3 +19,22 @@ export const fetchUserBookingsFailure = error => {
     payload: { error }
   };
 };
+
+export const deleteUserBooking = () => {
+  return {
+    type: types.DELETE_BOOKING
+  };
+};
+
+export const deleteUserBookingSuccess = () => {
+  return {
+    type: types.DELETE_BOOKING_SUCCESS
+  };
+};
+
+export const deleteUserBookingFailure = error => {
+  return {
+    type: types.DELETE_BOOKING_FAILURE,
+    payload: { error }
+  };
+};
