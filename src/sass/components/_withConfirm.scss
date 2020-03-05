@@ -1,0 +1,14 @@
+.ReactModal__Overlay--after-open {
+  position: relative;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open {
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+  }
+  button {
+    margin: 1rem;
+  }
+}

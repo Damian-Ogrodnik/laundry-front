@@ -266,6 +266,26 @@ input:focus {
   padding: 1em 0rem 0rem 0rem;
 }
 
+.ReactModal__Overlay--after-open {
+  position: relative;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open {
+  border-radius: 5% !important;
+  border: 3px solid black !important;
+  background-color: #c9c1c1 !important;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open h2 {
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open button {
+  margin: 1rem;
+}
+
 button {
   outline: 0;
   width: 7.5rem;
