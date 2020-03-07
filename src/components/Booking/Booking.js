@@ -24,7 +24,7 @@ const Booking = () => {
     <div className="booking">
       <Slots selectedSlot={selectedSlot} takenSlots={takenSlots} />
       <button className="booking__button" onClick={() => bookSlot()}>
-        Book
+        BOOK
       </button>
       <div className="booking__wrapper">
         {bookingError && <div className="booking__error">{bookingError}</div>}

@@ -7,7 +7,7 @@ export const Logout = ({ name }) => {
   const dispatch = useDispatch();
   return (
     <button className={name} onClick={() => dispatch(logout())}>
-      Log out
+      LOGOUT
     </button>
   );
 };
