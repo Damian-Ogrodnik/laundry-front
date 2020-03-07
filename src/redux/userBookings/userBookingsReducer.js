@@ -3,7 +3,7 @@ import * as types from "./userBookingsTypes";
 const initialState = {
   loading: false,
   error: false,
-  userBookings: null
+  userBookings: []
 };
 
 const userBookingsReducer = (state = initialState, action) => {
@@ -11,7 +11,7 @@ const userBookingsReducer = (state = initialState, action) => {
 
   switch (type) {
     case types.FETCH_BOOKINGS:
-      return { ...state, error: false, loading: true, userBookings: null };
+      return { ...state, error: false, loading: true, userBookings: [] };
     case types.FETCH_BOOKINGS_SUCCESS:
       return {
         ...state,
@@ -24,7 +24,7 @@ const userBookingsReducer = (state = initialState, action) => {
         ...state,
         error: payload.error,
         loading: false,
-        userBookings: null
+        userBookings: []
       };
     case types.DELETE_BOOKING:
       return { ...state, error: false, loading: true };

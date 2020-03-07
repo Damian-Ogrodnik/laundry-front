@@ -706,6 +706,11 @@ button.cancel:active {
   border-bottom: 1px solid #b82601;
 }
 
+.user-bookings__information {
+  padding: 2rem 1rem 1rem 1rem;
+  font-size: 1.25rem;
+}
+
 .user-bookings h2 {
   font-size: 2rem;
   margin: 3rem;
