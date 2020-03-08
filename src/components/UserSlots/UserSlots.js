@@ -17,7 +17,7 @@ const UserSlots = ({ bookings }) => {
         bookings.map((slot, index) => <UserSlot data={slot} number={index} />)}
       {!bookings.length && (
         <div className="user-bookings__information">
-          Your current booking list is empty.
+          Your booking list is empty.
         </div>
       )}
     </div>

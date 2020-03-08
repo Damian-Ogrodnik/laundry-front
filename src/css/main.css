@@ -146,7 +146,7 @@ input:focus {
 }
 
 .footer {
-  height: 20vh;
+  height: 25vh;
   width: 100%;
   background-color: black;
 }
@@ -161,6 +161,8 @@ input:focus {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
+  padding: 2rem;
+  padding-top: 2rem;
 }
 
 .container {
