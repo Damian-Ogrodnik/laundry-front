@@ -4,7 +4,6 @@ import { withError } from "../withError";
 import { UserSlot } from "../UserSlot";
 
 const UserSlots = ({ bookings }) => {
-  console.log(bookings);
   return (
     <div className="user-bookings__slots">
       <div className="user-bookings__slot header">

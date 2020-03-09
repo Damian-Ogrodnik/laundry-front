@@ -20,7 +20,7 @@ const UserSlot = ({ data: { date, hours, _id }, number, setOpen, confirm }) => {
       </div>
       <div className="user-bookings__slot hours">{hours}</div>
       <div className="user-bookings__slot cancel">
-        <button className="cancel" onClick={async () => setOpen(true)}>
+        <button className="cancel" onClick={() => setOpen(true)}>
           X
         </button>
       </div>

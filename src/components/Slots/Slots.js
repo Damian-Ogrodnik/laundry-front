@@ -5,11 +5,13 @@ import { Slot } from "../Slot";
 
 import { slots } from "../../utils/slots";
 
-export const Slots = ({ selectedSlot, takenSlots }) => {
+export const Slots = () => {
+  const selectedSlot = useSelector(state => state.board.selectedSlot);
+  const takenSlots = useSelector(state => state.board.takenSlots);
   const loggedUser = useSelector(state => state.login.user.data.id);
   const renderSlots = () => {
     return slots.map(({ hours, number, lastBooking }) => {
-      let taken, selected, user;
+      let taken, selected, user, id;
       if (takenSlots) {
         taken = takenSlots.some(takenSlot => number === takenSlot.number);
       }
@@ -17,6 +19,7 @@ export const Slots = ({ selectedSlot, takenSlots }) => {
         takenSlots.forEach(takenSlot => {
           if (takenSlot.number === number && takenSlot.user === loggedUser)
             user = true;
+          id = takenSlot._id;
         });
       }
 
@@ -30,6 +33,7 @@ export const Slots = ({ selectedSlot, takenSlots }) => {
           selected={selected}
           user={user}
           lastBooking={lastBooking}
+          id={id}
         />
       );
     });

@@ -10,7 +10,6 @@ import { bookingFailure } from "../../redux/booking/bookingActions";
 const Booking = () => {
   const date = useSelector(state => state.board.date);
   const selectedSlot = useSelector(state => state.board.selectedSlot);
-  const takenSlots = useSelector(state => state.board.takenSlots);
   const bookingError = useSelector(state => state.booking.error);
   const dispatch = useDispatch();
 
@@ -22,7 +21,7 @@ const Booking = () => {
 
   return (
     <div className="booking">
-      <Slots selectedSlot={selectedSlot} takenSlots={takenSlots} />
+      <Slots />
       <button className="booking__button" onClick={() => bookSlot()}>
         BOOK
       </button>

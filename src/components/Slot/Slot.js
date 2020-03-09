@@ -4,7 +4,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectSlot } from "../../redux/board/boardActions";
 import { checkAvailability } from "../../services/Date";
 
-export const Slot = ({ hours, number, taken, selected, user, lastBooking }) => {
+import { withConfirm } from "../withConfirm";
+
+import { deleteUsersBooking } from "../../redux/userBookings/userBookingsUtils";
+
+const Slot = ({
+  hours,
+  number,
+  taken,
+  selected,
+  user,
+  lastBooking,
+  setOpen,
+  confirm,
+  id
+}) => {
   const [unavailable, setUnavailability] = useState(taken);
   const date = useSelector(state => state.board.date);
   const dispatch = useDispatch();
@@ -16,6 +30,10 @@ export const Slot = ({ hours, number, taken, selected, user, lastBooking }) => {
     }
     check();
   });
+
+  useEffect(() => {
+    if (confirm) dispatch(deleteUsersBooking(date, id, true));
+  }, [confirm, date, dispatch, id]);
 
   const checkStatus = () => {
     return unavailable
@@ -29,7 +47,12 @@ export const Slot = ({ hours, number, taken, selected, user, lastBooking }) => {
     <div className={`booking__slot booking__slot${checkStatus()}`}>
       <h2>{hours}</h2>
       {unavailable && !user && <h2>Unavailable</h2>}
-      {user && <h2>Your booking</h2>}
+      {user && (
+        <>
+          <h2 className="booking__slot__info">Your booking</h2>
+          <button onClick={() => setOpen(true)}>Cancel</button>
+        </>
+      )}
       {!unavailable && (
         <button onClick={() => dispatch(selectSlot({ number, hours }))}>
           SELECT
@@ -39,4 +62,5 @@ export const Slot = ({ hours, number, taken, selected, user, lastBooking }) => {
   );
 };
 
-export default Slot;
+const slotWithConfirm = withConfirm(Slot);
+export { slotWithConfirm as Slot };

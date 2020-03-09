@@ -93,6 +93,7 @@ input:focus {
   height: 10rem;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
+  position: relative;
 }
 
 .booking__slot--taken {
@@ -113,6 +114,11 @@ input:focus {
 
 .booking__slot--available--selected button:hover {
   background-color: #b82601;
+}
+
+.booking__slot__info {
+  position: absolute;
+  top: 35%;
 }
 
 .booking__button {

@@ -41,7 +41,6 @@ export const fetchUserBookings = async () => {
 export const deleteSlot = async (date, id) => {
   const token = await localStorage.token;
   axios.defaults.headers.common["Authorization"] = token;
-  console.log(date);
   return await axios
     .delete(`http://localhost:7000/booking/${date}/${id}`)
     .then(res => {
