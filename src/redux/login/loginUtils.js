@@ -31,6 +31,7 @@ export const registerUser = ({
       }
       throw new Error("Internal Server Error");
     });
+    localStorage.setItem("token", response.data.token);
     await dispatch(actions.loginSuccess(response));
   } catch (error) {
     dispatch(actions.loginFailure(error.message));
