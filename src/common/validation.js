@@ -7,7 +7,9 @@ export const registrationSchema = Yup.object().shape({
   email: Yup.string()
     .email("Invalid email address")
     .required("Required"),
-  password: Yup.string().required("Required"),
+  password: Yup.string()
+    .required("Required")
+    .min(8, "Password must be at least 8 characters"),
   repassword: Yup.string().when("password", {
     is: val => (val && val.length > 0 ? true : false),
     then: Yup.string().oneOf(
