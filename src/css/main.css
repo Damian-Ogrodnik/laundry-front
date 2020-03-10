@@ -643,6 +643,13 @@ button.cancel:active {
   color: #b82601;
 }
 
+.form__error.main {
+  position: absolute;
+  font-size: 1rem;
+  height: 2rem;
+  top: 5%;
+}
+
 .form__input {
   position: relative;
   margin-bottom: 25px;
