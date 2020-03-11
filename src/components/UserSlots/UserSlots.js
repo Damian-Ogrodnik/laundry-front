@@ -13,7 +13,9 @@ const UserSlots = ({ bookings }) => {
         <div className="user-bookings__slot cancel">Cancel</div>
       </div>
       {bookings &&
-        bookings.map((slot, index) => <UserSlot data={slot} number={index} />)}
+        bookings.map((slot, index) => (
+          <UserSlot key={index} data={slot} number={index} />
+        ))}
       {!bookings.length && (
         <div className="user-bookings__information">
           Your booking list is empty.

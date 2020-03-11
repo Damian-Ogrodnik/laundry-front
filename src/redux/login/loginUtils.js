@@ -28,12 +28,13 @@ export const registerUser = ({
     const response = await signUp(nickName, password, email).catch(err => {
       if (err.response.status === 500) {
         throw new Error("Name or email has already been taken");
+      } else {
+        throw new Error("Internal Server Error");
       }
-      throw new Error("Internal Server Error");
     });
     localStorage.setItem("token", response.data.token);
     await dispatch(actions.loginSuccess(response));
   } catch (error) {
-    dispatch(actions.loginFailure(error.message));
+    dispatch(actions.loginFailure("Internal Server Error"));
   }
 };
