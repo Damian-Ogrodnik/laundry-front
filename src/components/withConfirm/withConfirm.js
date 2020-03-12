@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 
 const style = {
@@ -18,6 +18,8 @@ const style = {
 export const withConfirm = WrappedComponent => ({ ...props }) => {
   const [open, setOpen] = useState(false);
   const [confirm, setConfirm] = useState(false);
+
+  useEffect(() => Modal.setAppElement("body"), []);
 
   return (
     <>
