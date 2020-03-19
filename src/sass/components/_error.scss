@@ -3,3 +3,16 @@
   top: 2rem;
   color: $error-font-color;
 }
+
+.main.error {
+  @include flex-center-column;
+  position: absolute;
+  top: 30%;
+
+  &__icon {
+    color: $error-font-color;
+    width: 7rem;
+    height: 7rem;
+    margin-bottom: 1rem;
+  }
+}
