@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
-  const logged = useSelector(state => state.login.logged);
+  const logged = useSelector(state => state.user.logged);
 
   const renderNavBar = () => {
     return logged ? (

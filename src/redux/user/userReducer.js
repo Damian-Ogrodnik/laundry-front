@@ -1,4 +1,4 @@
-import * as types from "./loginTypes";
+import * as types from "./userTypes";
 
 const initialState = {
   logged: false,

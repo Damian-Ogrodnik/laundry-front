@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { clearErrors } from "../../redux/login/loginActions";
+import { clearErrors } from "../../redux/user/userActions";
 
 export const ProtectedRoute = ({
   component: Component,
@@ -11,7 +11,7 @@ export const ProtectedRoute = ({
   path,
   ...rest
 }) => {
-  const logged = useSelector(state => state.login.logged);
+  const logged = useSelector(state => state.user.logged);
   const dispatch = useDispatch();
 
   dispatch(clearErrors());

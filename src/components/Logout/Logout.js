@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { logout } from "../../redux/login/loginActions";
+import { logout } from "../../redux/user/userActions";
 
 export const Logout = ({ name }) => {
   const dispatch = useDispatch();
