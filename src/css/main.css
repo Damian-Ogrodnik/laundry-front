@@ -101,7 +101,7 @@ input:focus {
 }
 
 .booking__slot--available {
-  background-color: #848fa5;
+  background-color: #c9c1c1;
 }
 
 .booking__slot--available--selected {
