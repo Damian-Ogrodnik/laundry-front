@@ -3,6 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 
 import { changePasswordSchema } from "../../common/validation";
 
+import { Delete } from "../../components/Delete";
 import { Logout } from "../../components/Logout";
 
 export const User = () => {
@@ -49,6 +50,7 @@ export const User = () => {
           </div>
         </Form>
       </Formik>
+      <Delete name={"delete"} />
       <Logout name={"logout"} />
     </div>
   );

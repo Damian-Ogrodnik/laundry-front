@@ -30,3 +30,9 @@ export const signUp = async (name, password, email) => {
     }
   );
 };
+
+export const deleteAccount = async () => {
+  const token = await localStorage.token;
+  axios.defaults.headers.common["Authorization"] = token;
+  return axios.delete(`http://localhost:7000/user`);
+};

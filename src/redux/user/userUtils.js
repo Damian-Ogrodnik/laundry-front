@@ -1,6 +1,6 @@
 import * as actions from "./userActions";
 
-import { signIn, signUp } from "../../services/User";
+import { signIn, signUp, deleteAccount } from "../../services/User";
 
 export const logUser = (name, password) => async dispatch => {
   try {
@@ -36,5 +36,15 @@ export const registerUser = ({
     await dispatch(actions.loginSuccess(response));
   } catch (error) {
     dispatch(actions.loginFailure("Internal Server Error"));
+  }
+};
+
+export const deleteUser = () => async dispatch => {
+  try {
+    const response = await deleteAccount();
+    console.log(response);
+    dispatch(actions.logout());
+  } catch (error) {
+    console.log(error);
   }
 };

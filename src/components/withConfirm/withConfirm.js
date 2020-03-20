@@ -42,7 +42,7 @@ export const withConfirm = WrappedComponent => ({ ...props }) => {
           NO
         </button>
       </Modal>
-      <WrappedComponent {...props} setOpen={setOpen} confirm={confirm} />{" "}
+      <WrappedComponent {...props} setOpen={setOpen} confirm={confirm} />
     </>
   );
 };

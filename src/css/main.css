@@ -145,6 +145,12 @@ input:focus {
   position: relative;
 }
 
+.delete {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+}
+
 .error {
   position: absolute;
   top: 2rem;
