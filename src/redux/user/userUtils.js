@@ -43,6 +43,7 @@ export const deleteUser = () => async dispatch => {
   try {
     const response = await deleteAccount();
     console.log(response);
+    dispatch(actions.deleteAccount());
     dispatch(actions.logout());
   } catch (error) {
     console.log(error);

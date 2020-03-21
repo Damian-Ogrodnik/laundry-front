@@ -3,13 +3,16 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Error } from "../../components/Error";
+import { Alert } from "../../components/Alert";
 
+import { reset } from "../../redux/user/userActions";
 import { logUser } from "../../redux/user/userUtils";
 import { loginSchema } from "../../common/validation";
 
 export const SignIn = () => {
   const dispatch = useDispatch();
   const error = useSelector(state => state.user.error);
+  const deleted = useSelector(state => state.user.deleted);
 
   const handleClick = async state => {
     const { nickName, password } = state;
@@ -28,6 +31,7 @@ export const SignIn = () => {
       }}
     >
       <Form className="signup">
+        {deleted && <Alert text={"Account Deleted"} action={reset} />}
         <div className="form__wrapper">
           <h2>Sign In</h2>
           {error && <Error name="form__error main" errorMsg={error} />}
@@ -53,5 +57,3 @@ export const SignIn = () => {
     </Formik>
   );
 };
-
-export default SignIn;

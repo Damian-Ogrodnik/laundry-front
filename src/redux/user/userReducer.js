@@ -4,7 +4,8 @@ const initialState = {
   logged: false,
   user: null,
   loading: false,
-  error: null
+  error: null,
+  deleted: false
 };
 
 const userReducer = (state = initialState, action) => {
@@ -24,11 +25,28 @@ const userReducer = (state = initialState, action) => {
         logged: false,
         loading: false
       };
+    case types.DELETE_ACCOUNT:
+      return {
+        ...state,
+        deleted: true
+      };
+
     case types.CLEAR_ERRORS:
       return {
         ...state,
         error: null
       };
+
+    case types.RESET: {
+      return {
+        logged: false,
+        user: null,
+        loading: false,
+        error: null,
+        deleted: false
+      };
+    }
+
     default:
       return state;
   }

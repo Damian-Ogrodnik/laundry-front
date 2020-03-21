@@ -26,8 +26,20 @@ export const logout = () => {
   };
 };
 
+export const deleteAccount = () => {
+  return {
+    type: types.DELETE_ACCOUNT
+  };
+};
+
 export const clearErrors = () => {
   return {
     type: types.CLEAR_ERRORS
+  };
+};
+
+export const reset = () => {
+  return {
+    type: types.RESET
   };
 };
