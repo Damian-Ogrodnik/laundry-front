@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
 import "./css/main.css";
+import "react-toastify/dist/ReactToastify.css";
 
 import store from "./redux/store";
 
@@ -37,6 +39,7 @@ export const App = () => {
               component={UserBookings}
             />
           </Switch>
+          <ToastContainer />
         </div>
       </Router>
     </Provider>

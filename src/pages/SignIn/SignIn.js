@@ -3,7 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Error } from "../../components/Error";
-import { Alert } from "../../components/Alert";
+import { Toast } from "../../components/Toast";
 
 import { reset } from "../../redux/user/userActions";
 import { logUser } from "../../redux/user/userUtils";
@@ -31,7 +31,7 @@ export const SignIn = () => {
       }}
     >
       <Form className="signup">
-        {deleted && <Alert text={"Account Deleted"} action={reset} />}
+        {deleted && <Toast text={"Account Deleted"} action={reset} />}
         <div className="form__wrapper">
           <h2>Sign In</h2>
           {error && <Error name="form__error main" errorMsg={error} />}

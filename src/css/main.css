@@ -292,6 +292,10 @@ input:focus {
   list-style-type: none;
 }
 
+.Toastify__toast button {
+  width: auto;
+}
+
 .userboard__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
