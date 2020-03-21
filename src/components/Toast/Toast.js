@@ -7,7 +7,7 @@ export const Toast = ({ text, action }) => {
   const notify = () => {
     toast.warn(text, {
       position: "top-right",
-      autoClose: false,
+      autoClose: true,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: false,

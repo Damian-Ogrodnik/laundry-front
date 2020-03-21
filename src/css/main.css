@@ -292,8 +292,16 @@ input:focus {
   list-style-type: none;
 }
 
+.Toastify__toast {
+  background-color: #b82601 !important;
+}
+
 .Toastify__toast button {
   width: auto;
+}
+
+.Toastify__toast-container {
+  margin-top: 3rem;
 }
 
 .userboard__wrapper {

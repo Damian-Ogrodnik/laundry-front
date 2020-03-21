@@ -1,5 +1,10 @@
 .Toastify__toast {
+  background-color: $thi-color !important;
   button {
     width: auto;
   }
+}
+
+.Toastify__toast-container {
+  margin-top: 3rem;
 }
