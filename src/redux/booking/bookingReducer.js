@@ -13,7 +13,11 @@ const bookingReducer = (state = initialState, action) => {
     case types.START_BOOKING:
       return { ...state, loading: true };
     case types.BOOKING_SUCCESS:
-      return { ...state, loading: false, bookedSlot: payload.bookedSlot };
+      return {
+        ...state,
+        loading: false,
+        bookedSlot: payload.bookedSlot
+      };
     case types.BOOKING_FAILURE:
       return { ...state, loading: false, error: payload.error };
     case types.RESET_BOOKING:

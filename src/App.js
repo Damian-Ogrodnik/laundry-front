@@ -39,7 +39,7 @@ export const App = () => {
               component={UserBookings}
             />
           </Switch>
-          <ToastContainer autoClose={5000} />
+          <ToastContainer autoClose={3000} />
         </div>
       </Router>
     </Provider>

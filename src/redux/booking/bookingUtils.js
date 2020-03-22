@@ -1,6 +1,7 @@
 import * as actions from "./bookingActions";
 
 import { bookSlot } from "../../services/Booking";
+import { enableToast } from "../../redux/toast/toastActions";
 
 export const bookSelectedSlot = (date, selectedSlot) => async dispatch => {
   try {
@@ -10,6 +11,7 @@ export const bookSelectedSlot = (date, selectedSlot) => async dispatch => {
       return dispatch(actions.bookingFailure(response.data.msg));
     }
     dispatch(actions.bookingSuccess(response.data));
+    dispatch(enableToast());
   } catch (error) {
     dispatch(actions.bookingFailure(error.message));
   }

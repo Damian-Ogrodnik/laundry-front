@@ -1,9 +1,15 @@
 import React from "react";
 import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import { activateToast } from "../../redux/toast/toastActions";
+import { resetToast } from "../../redux/toast/toastActions";
 
 export const Toast = ({ text, action }) => {
+  const displayToast = useSelector(state => state.toast.displayToast);
+  const toastActive = useSelector(state => state.toast.toastActive);
   const dispatch = useDispatch();
+
   const notify = () => {
     toast.warn(text, {
       position: "top-right",
@@ -12,8 +18,9 @@ export const Toast = ({ text, action }) => {
       closeOnClick: true,
       pauseOnHover: false,
       draggable: false,
-      onClose: () => dispatch(action())
+      onOpen: () => dispatch(activateToast()),
+      onClose: () => dispatch(resetToast())
     });
   };
-  return <>{notify()}</>;
+  return <>{!toastActive && displayToast ? notify() : null}</>;
 };

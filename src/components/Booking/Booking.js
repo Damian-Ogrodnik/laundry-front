@@ -6,11 +6,15 @@ import { Slots } from "../Slots";
 
 import { bookSelectedSlot } from "../../redux/booking/bookingUtils";
 import { bookingFailure } from "../../redux/booking/bookingActions";
+import { resetToast } from "../../redux/toast/toastActions";
+
+import { Toast } from "../Toast";
 
 const Booking = () => {
   const date = useSelector(state => state.board.date);
   const selectedSlot = useSelector(state => state.board.selectedSlot);
   const bookingError = useSelector(state => state.booking.error);
+  const displayToast = useSelector(state => state.toast.displayToast);
   const dispatch = useDispatch();
 
   const bookSlot = async () => {
@@ -21,6 +25,7 @@ const Booking = () => {
 
   return (
     <div className="booking">
+      <Toast text={"Slot booked"} action={resetToast} />
       <Slots />
       <button className="booking__button" onClick={() => bookSlot()}>
         BOOK
