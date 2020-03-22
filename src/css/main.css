@@ -335,18 +335,39 @@ input:focus {
   padding: 1em 0rem 0rem 0rem;
 }
 
-.ReactModal__Overlay--after-open {
-  position: relative;
+.modal {
+  position: absolute;
+  padding: 2rem;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  outline: none;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  border: 0.2rem solid black;
+  background-color: #c9c1c1;
 }
 
-.ReactModal__Content.ReactModal__Content--after-open h2 {
+.modal h2 {
   text-align: center;
   font-size: 2rem;
   padding-bottom: 1.5rem;
 }
 
-.ReactModal__Content.ReactModal__Content--after-open button {
+.modal button {
   margin: 1rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 button {
