@@ -64,6 +64,8 @@ export const changePassword = (password, newPassword) => async dispatch => {
     dispatch(actions.changePassword());
     await passwordChange(password, newPassword);
     dispatch(actions.changePasswordSuccess());
+    dispatch(enableToast());
+    dispatch(actions.clearErrors());
   } catch (error) {
     if (error.response) {
       dispatch(actions.changePasswordFailure(error.response.data.msg));
