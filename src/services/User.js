@@ -36,3 +36,18 @@ export const deleteAccount = async () => {
   axios.defaults.headers.common["Authorization"] = token;
   return axios.delete(`http://localhost:7000/user`);
 };
+
+export const passwordChange = async (password, newPassword) => {
+  return axios.post(
+    "http://localhost:7000/user/change-password",
+    {
+      password,
+      newPassword
+    },
+    {
+      headers: {
+        "content-type": "application/json"
+      }
+    }
+  );
+};

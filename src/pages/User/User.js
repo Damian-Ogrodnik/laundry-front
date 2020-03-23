@@ -1,12 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 
 import { changePasswordSchema } from "../../common/validation";
+import { changePassword } from "../../redux/user/userUtils";
 
 import { Delete } from "../../components/Delete";
 import { Logout } from "../../components/Logout";
 
 export const User = () => {
+  const dispatch = useDispatch();
   return (
     <div className="user-page">
       <Formik
@@ -16,8 +19,8 @@ export const User = () => {
           repasswordConfirm: ""
         }}
         validationSchema={changePasswordSchema}
-        onSubmit={() => {
-          console.log("Password changed");
+        onSubmit={({ password, repassword }) => {
+          dispatch(changePassword(password, repassword));
         }}
       >
         <Form className="signup">

@@ -16,6 +16,12 @@ const userReducer = (state = initialState, action) => {
       return { ...state, user: payload.user, loading: false, logged: true };
     case types.LOGIN_FAILURE:
       return { ...state, error: payload.error, loading: false };
+    case types.CHANGE_PASSWORD:
+      return { ...state, loading: true };
+    case types.CHANGE_PASSWORD_SUCCESS:
+      return { ...state, loading: false, error: null };
+    case types.CHANGE_PASSWORD_FAILURE:
+      return { ...state, loading: false, error: payload.error };
     case types.LOGOUT:
       return {
         ...state,

@@ -20,6 +20,25 @@ export const loginFailure = error => {
   };
 };
 
+export const changePassword = () => {
+  return {
+    type: types.CHANGE_PASSWORD
+  };
+};
+
+export const changePasswordSuccess = () => {
+  return {
+    type: types.CHANGE_PASSWORD_SUCCESS
+  };
+};
+
+export const changePasswordFailure = error => {
+  return {
+    type: types.CHANGE_PASSWORD_FAILURE,
+    payload: { error }
+  };
+};
+
 export const logout = () => {
   return {
     type: types.LOGOUT

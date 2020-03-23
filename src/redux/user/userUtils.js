@@ -1,6 +1,11 @@
 import * as actions from "./userActions";
 
-import { signIn, signUp, deleteAccount } from "../../services/User";
+import {
+  signIn,
+  signUp,
+  deleteAccount,
+  passwordChange
+} from "../../services/User";
 import { enableToast } from "../../redux/toast/toastActions";
 
 export const logUser = (name, password) => async dispatch => {
@@ -42,11 +47,28 @@ export const registerUser = ({
 
 export const deleteUser = () => async dispatch => {
   try {
-    const response = await deleteAccount();
-    console.log(response);
+    await deleteAccount();
     dispatch(enableToast());
     dispatch(actions.logout());
   } catch (error) {
-    console.log(error);
+    if (error.response) {
+      dispatch(actions.changePasswordFailure(error.response.data.msg));
+    } else {
+      dispatch(actions.changePasswordFailure("Internal server error"));
+    }
+  }
+};
+
+export const changePassword = (password, newPassword) => async dispatch => {
+  try {
+    dispatch(actions.changePassword());
+    await passwordChange(password, newPassword);
+    dispatch(actions.changePasswordSuccess());
+  } catch (error) {
+    if (error.response) {
+      dispatch(actions.changePasswordFailure(error.response.data.msg));
+    } else {
+      dispatch(actions.changePasswordFailure("Internal server error"));
+    }
   }
 };
