@@ -20,8 +20,8 @@ export const registrationSchema = Yup.object().shape({
 });
 
 export const loginSchema = Yup.object().shape({
-  nickName: Yup.string().required("Required"),
-  password: Yup.string().required("Required")
+  Nickname: Yup.string().required("Required"),
+  Password: Yup.string().required("Required")
 });
 
 export const changePasswordSchema = Yup.object().shape({

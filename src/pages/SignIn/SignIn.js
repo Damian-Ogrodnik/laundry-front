@@ -8,24 +8,18 @@ import { Toast } from "../../components/Toast";
 import { logUser } from "../../redux/user/userUtils";
 import { loginSchema } from "../../common/validation";
 
+const values = { Nickname: "", Password: "" };
+
 export const SignIn = () => {
   const dispatch = useDispatch();
   const error = useSelector(state => state.user.error);
 
-  const handleClick = async state => {
-    const { nickName, password } = state;
-    dispatch(logUser(nickName, password));
-  };
-
   return (
     <Formik
-      initialValues={{
-        nickName: "",
-        password: ""
-      }}
+      initialValues={values}
       validationSchema={loginSchema}
-      onSubmit={state => {
-        handleClick(state);
+      onSubmit={({ Nickname, Password }) => {
+        dispatch(logUser(Nickname, Password));
       }}
     >
       <Form className="signup">
@@ -33,20 +27,15 @@ export const SignIn = () => {
         <div className="form__wrapper">
           <h2>Sign In</h2>
           {error && <Error name="form__error main" errorMsg={error} />}
-          <div className="form__input">
-            <label htmlFor="nickName">Nickname</label>
-            <Field name="nickName" type="text" />
-            <ErrorMessage name="nickName">
-              {msg => <div className="form__error">{msg}</div>}
-            </ErrorMessage>
-          </div>
-          <div className="form__input">
-            <label htmlFor="password">Password</label>
-            <Field name="password" type="password" />
-            <ErrorMessage name="password">
-              {msg => <div className="form__error">{msg}</div>}
-            </ErrorMessage>
-          </div>
+          {Object.keys(values).map(value => (
+            <div className="form__input">
+              <label htmlFor={value}>{value}</label>
+              <Field name={value} type={value} />
+              <ErrorMessage name={value}>
+                {msg => <div className="form__error">{msg}</div>}
+              </ErrorMessage>
+            </div>
+          ))}
           <button className="form__button" type="submit">
             LOGIN
           </button>
