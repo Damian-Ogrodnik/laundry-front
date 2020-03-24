@@ -6,7 +6,6 @@ import { Slots } from "../Slots";
 
 import { bookSelectedSlot } from "../../redux/booking/bookingUtils";
 import { bookingFailure } from "../../redux/booking/bookingActions";
-import { resetToast } from "../../redux/toast/toastActions";
 
 import { Toast } from "../Toast";
 
@@ -25,6 +24,7 @@ const Booking = () => {
   return (
     <div className="booking">
       <Toast text={"Slot booked"} toastType="BOOK" />
+      <Toast text={"Booking canceled"} toastType={"CANCEL"} />
       <Slots />
       <button className="booking__button" onClick={() => bookSlot()}>
         BOOK

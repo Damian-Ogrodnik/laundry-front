@@ -3,6 +3,7 @@ import * as actions from "./userBookingsActions";
 import { fetchUserBookings, deleteSlot } from "../../services/Booking";
 import { sortByDates } from "../../services/Date";
 import { fetchDate } from "../board/boardUtils";
+import { enableToast } from "../toast/toastActions";
 
 export const getUsersBookings = () => async dispatch => {
   try {
@@ -28,6 +29,7 @@ export const deleteUsersBooking = (
       throw new Error("Internal Server Error");
     });
     await dispatch(actions.deleteUserBookingSuccess());
+    await dispatch(enableToast("CANCEL"));
     if (requestFromBoardSlot) {
       dispatch(fetchDate(date, true));
     } else {
