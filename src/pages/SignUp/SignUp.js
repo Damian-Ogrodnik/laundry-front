@@ -7,18 +7,20 @@ import { Error } from "../../components/Error";
 import { registerUser } from "../../redux/user/userUtils";
 import { registrationSchema } from "../../common/validation";
 
+const values = {
+  Nickname: "",
+  Email: "",
+  Password: "",
+  Repassword: ""
+};
+
 export const SignUp = () => {
   const dispatch = useDispatch();
   const error = useSelector(state => state.user.error);
 
   return (
     <Formik
-      initialValues={{
-        nickName: "",
-        email: "",
-        password: "",
-        repassword: ""
-      }}
+      initialValues={values}
       validationSchema={registrationSchema}
       onSubmit={(values, { setSubmitting }) => {
         dispatch(registerUser(values));
@@ -29,34 +31,18 @@ export const SignUp = () => {
         <div className="form__wrapper">
           <h2>Create Account</h2>
           {error && <Error name="form__error main" errorMsg={error} />}
-          <div className="form__input">
-            <label htmlFor="nickName">Nickname</label>
-            <Field name="nickName" type="text" />
-            <ErrorMessage name="nickName">
-              {msg => <div className="form__error">{msg}</div>}
-            </ErrorMessage>
-          </div>
-          <div className="form__input">
-            <label htmlFor="email">Email Address</label>
-            <Field name="email" type="email" />
-            <ErrorMessage name="email">
-              {msg => <div className="form__error">{msg}</div>}
-            </ErrorMessage>
-          </div>
-          <div className="form__input">
-            <label htmlFor="password">Password</label>
-            <Field name="password" type="password" />
-            <ErrorMessage name="password">
-              {msg => <div className="form__error">{msg}</div>}
-            </ErrorMessage>
-          </div>
-          <div className="form__input">
-            <label htmlFor="repassword">Confirm Password</label>
-            <Field name="repassword" type="password" />
-            <ErrorMessage name="repassword">
-              {msg => <div className="form__error">{msg}</div>}
-            </ErrorMessage>
-          </div>
+          {Object.keys(values).map(value => (
+            <div className="form__input">
+              <label htmlFor={value}>{value}</label>
+              <Field
+                name={value}
+                type={value === "Repassword" ? "password" : value}
+              />
+              <ErrorMessage name={value}>
+                {msg => <div className="form__error">{msg}</div>}
+              </ErrorMessage>
+            </div>
+          ))}
           <button className="form__button" type="submit">
             SUMBIT
           </button>

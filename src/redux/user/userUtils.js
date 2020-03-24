@@ -25,13 +25,13 @@ export const logUser = (name, password) => async dispatch => {
 };
 
 export const registerUser = ({
-  nickName,
-  password,
-  email
+  Nickname,
+  Password,
+  Email
 }) => async dispatch => {
   try {
     dispatch(actions.login());
-    const response = await signUp(nickName, password, email).catch(err => {
+    const response = await signUp(Nickname, Password, Email).catch(err => {
       if (err.response.status === 500) {
         throw new Error("Name or email has already been taken");
       } else {
