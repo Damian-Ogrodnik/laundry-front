@@ -21,7 +21,7 @@ export const Instruction = () => {
     <div className="homepage__instruction">
       <div className="homepage__instruction--header">
         <h2>
-          <span>How it works?</span>
+          <span>How it Works?</span>
         </h2>
       </div>
       <div className="homepage__tiles">

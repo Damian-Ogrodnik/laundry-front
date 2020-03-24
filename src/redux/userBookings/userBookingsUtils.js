@@ -29,8 +29,8 @@ export const deleteUsersBooking = (
       throw new Error("Internal Server Error");
     });
     await dispatch(actions.deleteUserBookingSuccess());
-    await dispatch(enableToast("CANCEL"));
     if (requestFromBoardSlot) {
+      await dispatch(enableToast("CANCEL"));
       dispatch(fetchDate(date, true));
     } else {
       dispatch(getUsersBookings());

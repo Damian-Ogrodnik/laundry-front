@@ -15,7 +15,7 @@ export const NavBar = () => {
           <li>Book</li>
         </NavLink>
         <NavLink activeClassName="selected" to="/user-bookings">
-          <li>My bookings</li>
+          <li>My Bookings</li>
         </NavLink>
       </ul>
     ) : (
@@ -24,10 +24,10 @@ export const NavBar = () => {
           <li>Home</li>
         </NavLink>
         <NavLink activeClassName="selected" to="/sign-in">
-          <li>Sign in</li>
+          <li>Sign In</li>
         </NavLink>
         <NavLink activeClassName="selected" to="/sign-up">
-          <li>Sign up</li>
+          <li>Sign Up</li>
         </NavLink>
       </ul>
     );

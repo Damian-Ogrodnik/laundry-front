@@ -27,7 +27,7 @@ export const SignUp = () => {
     >
       <Form className="signup">
         <div className="form__wrapper">
-          <h2>Create account</h2>
+          <h2>Create Account</h2>
           {error && <Error name="form__error main" errorMsg={error} />}
           <div className="form__input">
             <label htmlFor="nickName">Nickname</label>

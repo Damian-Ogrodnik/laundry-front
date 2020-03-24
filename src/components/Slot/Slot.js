@@ -49,7 +49,7 @@ const Slot = ({
       {unavailable && !user && <h2>Unavailable</h2>}
       {user && (
         <>
-          <h2 className="booking__slot__info">Your booking</h2>
+          <h2 className="booking__slot__info">Your Booking</h2>
           <button onClick={() => setOpen(true)}>Cancel</button>
         </>
       )}
