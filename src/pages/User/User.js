@@ -15,7 +15,7 @@ export const User = () => {
   const error = useSelector(state => state.user.error);
   return (
     <div className="user-page">
-      <Toast text={"Password Changed"} />
+      <Toast text={"Password Changed"} toastType={"CHANGE"} />
       <Formik
         initialValues={{
           password: "",

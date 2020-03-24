@@ -1,8 +1,9 @@
 import * as types from "./toastTypes";
 
-export const enableToast = () => {
+export const enableToast = type => {
   return {
-    type: types.ENABLE_TOAST
+    type: types.ENABLE_TOAST,
+    payload: { type }
   };
 };
 

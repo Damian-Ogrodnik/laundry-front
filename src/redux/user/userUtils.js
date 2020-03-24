@@ -48,7 +48,7 @@ export const registerUser = ({
 export const deleteUser = () => async dispatch => {
   try {
     await deleteAccount();
-    dispatch(enableToast());
+    dispatch(enableToast("DELETE"));
     dispatch(actions.logout());
   } catch (error) {
     if (error.response) {
@@ -64,7 +64,7 @@ export const changePassword = (password, newPassword) => async dispatch => {
     dispatch(actions.changePassword());
     await passwordChange(password, newPassword);
     dispatch(actions.changePasswordSuccess());
-    dispatch(enableToast());
+    dispatch(enableToast("CHANGE"));
     dispatch(actions.clearErrors());
   } catch (error) {
     if (error.response) {

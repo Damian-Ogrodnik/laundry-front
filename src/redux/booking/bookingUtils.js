@@ -11,7 +11,7 @@ export const bookSelectedSlot = (date, selectedSlot) => async dispatch => {
       return dispatch(actions.bookingFailure(response.data.msg));
     }
     dispatch(actions.bookingSuccess(response.data));
-    dispatch(enableToast());
+    dispatch(enableToast("BOOK"));
   } catch (error) {
     dispatch(actions.bookingFailure(error.message));
   }

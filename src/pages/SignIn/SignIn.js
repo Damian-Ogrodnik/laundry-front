@@ -29,7 +29,7 @@ export const SignIn = () => {
       }}
     >
       <Form className="signup">
-        <Toast text={"Account Deleted"} />
+        <Toast text={"Account Deleted"} toastType={"DELETE"} />
         <div className="form__wrapper">
           <h2>Sign In</h2>
           {error && <Error name="form__error main" errorMsg={error} />}

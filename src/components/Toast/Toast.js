@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { activateToast } from "../../redux/toast/toastActions";
 import { resetToast } from "../../redux/toast/toastActions";
 
-export const Toast = ({ text, action }) => {
-  const displayToast = useSelector(state => state.toast.displayToast);
+export const Toast = ({ text, toastType }) => {
   const toastActive = useSelector(state => state.toast.toastActive);
+  const type = useSelector(state => state.toast.type);
   const dispatch = useDispatch();
 
   const notify = () => {
@@ -22,5 +22,5 @@ export const Toast = ({ text, action }) => {
       onClose: () => dispatch(resetToast())
     });
   };
-  return <>{!toastActive && displayToast ? notify() : null}</>;
+  return <>{!toastActive && toastType === type ? notify() : null}</>;
 };

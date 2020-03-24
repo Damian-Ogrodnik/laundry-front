@@ -14,7 +14,6 @@ const Booking = () => {
   const date = useSelector(state => state.board.date);
   const selectedSlot = useSelector(state => state.board.selectedSlot);
   const bookingError = useSelector(state => state.booking.error);
-  const displayToast = useSelector(state => state.toast.displayToast);
   const dispatch = useDispatch();
 
   const bookSlot = async () => {
@@ -25,7 +24,7 @@ const Booking = () => {
 
   return (
     <div className="booking">
-      <Toast text={"Slot booked"} action={resetToast} />
+      <Toast text={"Slot booked"} toastType="BOOK" />
       <Slots />
       <button className="booking__button" onClick={() => bookSlot()}>
         BOOK
