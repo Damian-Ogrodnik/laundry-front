@@ -10,6 +10,12 @@ import { Error } from "../../components/Error";
 import { Logout } from "../../components/Logout";
 import { Toast } from "../../components/Toast";
 
+const values = {
+  Password: "",
+  newPassword: "",
+  newPasswordConfirm: ""
+};
+
 export const User = () => {
   const dispatch = useDispatch();
   const error = useSelector(state => state.user.error);
@@ -17,42 +23,32 @@ export const User = () => {
     <div className="user-page">
       <Toast text={"Password Changed"} toastType={"CHANGE"} />
       <Formik
-        initialValues={{
-          password: "",
-          repassword: "",
-          repasswordConfirm: ""
-        }}
+        initialValues={values}
         validationSchema={changePasswordSchema}
-        onSubmit={({ password, repassword }, { resetForm }) => {
+        onSubmit={({ Password, newPassword }, { resetForm }) => {
           resetForm({});
-          dispatch(changePassword(password, repassword));
+          dispatch(changePassword(Password, newPassword));
         }}
       >
         <Form className="signup">
           <div className="form__wrapper">
             <h2>Change Password</h2>
             {error && <Error name="form__error main" errorMsg={error} />}
-            <div className="form__input">
-              <label htmlFor="password">Password</label>
-              <Field name="password" type="password" />
-              <ErrorMessage name="password">
-                {msg => <div className="form__error">{msg}</div>}
-              </ErrorMessage>
-            </div>
-            <div className="form__input">
-              <label htmlFor="repassword">New Paswordd</label>
-              <Field name="repassword" type="password" />
-              <ErrorMessage name="repassword">
-                {msg => <div className="form__error">{msg}</div>}
-              </ErrorMessage>
-            </div>
-            <div className="form__input">
-              <label htmlFor="repasswordConfirm">Confirm New Password</label>
-              <Field name="repasswordConfirm" type="password" />
-              <ErrorMessage name="repasswordConfirm">
-                {msg => <div className="form__error">{msg}</div>}
-              </ErrorMessage>
-            </div>
+            {Object.keys(values).map(value => (
+              <div className="form__input">
+                <label htmlFor={value}>
+                  {value === "Password"
+                    ? value
+                    : value === "newPassword"
+                    ? "New Password"
+                    : "Confirm New Password"}
+                </label>
+                <Field name={value} type="Password" />
+                <ErrorMessage name={value}>
+                  {msg => <div className="form__error">{msg}</div>}
+                </ErrorMessage>
+              </div>
+            ))}
             <button className="form__button" type="submit">
               CHANGE
             </button>
