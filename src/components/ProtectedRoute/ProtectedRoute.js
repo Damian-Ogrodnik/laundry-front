@@ -16,9 +16,9 @@ export const ProtectedRoute = ({
 
   dispatch(clearErrors());
 
-  if (logged && path === "/sign-in") return <Redirect to="/booking" />;
-  if (logged && path === "/sign-up") return <Redirect to="/booking" />;
-  if (!logged && secured) return <Redirect to="/sign-in" />;
+  if (logged && (path === "/sign-in" || path === "/sign-up")) {
+    return <Redirect to="/booking" />;
+  } else if (!logged && secured) return <Redirect to="/sign-in" />;
 
   return <Route {...rest} render={props => <Component {...props} />} />;
 };
