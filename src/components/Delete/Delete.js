@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { deleteUser } from "../../redux/user/userUtils";
 
-import { withConfirm } from "../withConfirm";
+import { withConfirm } from "../../HOC/withConfirm";
 
 const Delete = ({ name, setOpen, confirm }) => {
   const dispatch = useDispatch();

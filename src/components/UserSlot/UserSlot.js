@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { withConfirm } from "../withConfirm";
+import { withConfirm } from "../../HOC/withConfirm";
 
 import { deleteUsersBooking } from "../../redux/userBookings/userBookingsUtils";
 

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectSlot } from "../../redux/board/boardActions";
 import { checkAvailability } from "../../services/Date";
 
-import { withConfirm } from "../withConfirm";
+import { withConfirm } from "../../HOC/withConfirm";
 
 import { deleteUsersBooking } from "../../redux/userBookings/userBookingsUtils";
 
