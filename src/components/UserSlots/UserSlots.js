@@ -6,6 +6,7 @@ import { UserSlot } from "../UserSlot";
 const UserSlots = ({ bookings }) => {
   return (
     <div className="user-bookings__slots">
+      <h2>Bookings List</h2>
       <div className="user-bookings__slot header">
         <div className="user-bookings__slot number">Number</div>
         <div className="user-bookings__slot date">Date</div>
