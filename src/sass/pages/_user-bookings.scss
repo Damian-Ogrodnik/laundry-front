@@ -1,6 +1,6 @@
 .user-bookings {
   @include page-settings;
-  margin-top: 3rem;
+  padding-top: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +23,11 @@
     &.header {
       font-weight: 700;
       border-bottom: 1px solid $thi-color;
+      margin-bottom: 0.5rem;
+    }
+
+    &.slot {
+      margin-bottom: 0.25rem;
     }
   }
 
