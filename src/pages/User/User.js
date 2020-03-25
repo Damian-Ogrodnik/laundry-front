@@ -35,7 +35,7 @@ export const User = () => {
             <h2>Change Password</h2>
             {error && <Error name="form__error main" errorMsg={error} />}
             {Object.keys(values).map(value => (
-              <div className="form__input">
+              <div key={value} className="form__input">
                 <label htmlFor={value}>
                   {value === "Password"
                     ? value

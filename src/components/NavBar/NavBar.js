@@ -21,7 +21,7 @@ export const NavBar = () => {
       <div className="navigation__logo"></div>
       <ul className="navigation__links">
         {(logged ? loggedNav : unloggedNav).map(([text, link]) => (
-          <NavLink activeClassName="selected" to={link}>
+          <NavLink key={text} activeClassName="selected" to={link}>
             <li>{text}</li>
           </NavLink>
         ))}

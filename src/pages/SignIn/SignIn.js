@@ -28,7 +28,7 @@ export const SignIn = () => {
           <h2>Sign In</h2>
           {error && <Error name="form__error main" errorMsg={error} />}
           {Object.keys(values).map(value => (
-            <div className="form__input">
+            <div key={value} className="form__input">
               <label htmlFor={value}>{value}</label>
               <Field name={value} type={value} />
               <ErrorMessage name={value}>
