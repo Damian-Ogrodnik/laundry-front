@@ -25,9 +25,7 @@ export const deleteUsersBooking = (
 ) => async dispatch => {
   try {
     await dispatch(actions.deleteUserBooking());
-    await deleteSlot(date, id).catch(() => {
-      throw new Error("Internal Server Error");
-    });
+    await deleteSlot(date, id);
     await dispatch(actions.deleteUserBookingSuccess());
     if (requestFromBoardSlot) {
       await dispatch(enableToast("CANCEL"));
@@ -36,6 +34,10 @@ export const deleteUsersBooking = (
       dispatch(getUsersBookings());
     }
   } catch (error) {
-    dispatch(actions.deleteUserBookingFailure(error.message));
+    if (error.response) {
+      dispatch(actions.deleteUserBookingFailure(error.response.data.msg));
+    } else {
+      dispatch(actions.deleteUserBookingFailure("Internal server error"));
+    }
   }
 };

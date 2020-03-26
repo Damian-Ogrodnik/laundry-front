@@ -1,52 +1,18 @@
-import axios from "axios";
+import { axiosInstance } from "./Axios";
 
 export const fetchBookings = async date => {
-  const token = await localStorage.token;
-  axios.defaults.headers.common["Authorization"] = token;
-  return axios.get(`http://localhost:7000/booking/${date}`);
-};
-
-export const standarizeDate = async date => {
-  const year = await date.getUTCFullYear();
-  const month = (await date.getUTCMonth()) + 1;
-  const day = await date.getUTCDate();
-
-  return `${day}-${month}-${year}`;
+  return axiosInstance.get(`/booking/${date}`);
 };
 
 export const bookSlot = async (date, selectedSlot) => {
   const { number, hours } = selectedSlot;
-  const token = await localStorage.token;
-  axios.defaults.headers.common["Authorization"] = token;
-  return await axios
-    .post("http://localhost:7000/booking/", {
-      date: date,
-      number: number,
-      hours: hours
-    })
-    .then(res => {
-      return res;
-    })
-    .catch(err => {
-      return err.response;
-    });
+  return await axiosInstance.post("/booking/", { date, number, hours });
 };
 
 export const fetchUserBookings = async () => {
-  const token = await localStorage.token;
-  axios.defaults.headers.common["Authorization"] = token;
-  return axios.get("http://localhost:7000/booking/user-bookings");
+  return await axiosInstance.get("/booking/user-bookings");
 };
 
 export const deleteSlot = async (date, id) => {
-  const token = await localStorage.token;
-  axios.defaults.headers.common["Authorization"] = token;
-  return await axios
-    .delete(`http://localhost:7000/booking/${date}/${id}`)
-    .then(res => {
-      return res;
-    })
-    .catch(err => {
-      return err.response;
-    });
+  return await axiosInstance.delete(`/booking/${date}/${id}`);
 };

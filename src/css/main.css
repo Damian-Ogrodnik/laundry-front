@@ -711,7 +711,7 @@ button.cancel:active {
   position: absolute;
   font-size: 1rem;
   height: 2rem;
-  top: 5%;
+  top: 1rem;
 }
 
 .form__input {

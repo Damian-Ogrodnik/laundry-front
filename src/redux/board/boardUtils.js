@@ -1,6 +1,7 @@
 import * as actions from "./boardActions";
 
-import { standarizeDate, fetchBookings } from "../../services/Booking";
+import { standarizeDate } from "../../services/Date";
+import { fetchBookings } from "../../services/Booking";
 
 export const fetchDate = (date, standarized = false) => async dispatch => {
   try {

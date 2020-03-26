@@ -29,3 +29,11 @@ export const checkAvailability = async (date, lastBooking) => {
   }
   return available;
 };
+
+export const standarizeDate = async date => {
+  const year = await date.getUTCFullYear();
+  const month = (await date.getUTCMonth()) + 1;
+  const day = await date.getUTCDate();
+
+  return `${day}-${month}-${year}`;
+};
