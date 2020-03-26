@@ -1,6 +1,6 @@
 import React from "react";
 
-import { withError } from "../withError";
+import { withError } from "../../HOC/withError";
 import { UserSlot } from "../UserSlot";
 
 const UserSlots = ({ bookings }) => {
