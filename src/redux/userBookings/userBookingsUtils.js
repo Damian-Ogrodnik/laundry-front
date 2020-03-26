@@ -8,13 +8,15 @@ import { enableToast } from "../toast/toastActions";
 export const getUsersBookings = () => async dispatch => {
   try {
     dispatch(actions.fetchUserBookings());
-    const response = await fetchUserBookings().catch(() => {
-      throw new Error("Internal Server Error");
-    });
+    const response = await fetchUserBookings();
     let sortedResponse = await sortByDates(response.data);
     dispatch(actions.fetchUserBookingsSuccess(sortedResponse));
   } catch (error) {
-    dispatch(actions.fetchUserBookingsFailure(error.message));
+    if (error.response) {
+      dispatch(actions.deleteUserBookingFailure(error.response.data.msg));
+    } else {
+      dispatch(actions.deleteUserBookingFailure("Internal server error"));
+    }
   }
 };
 

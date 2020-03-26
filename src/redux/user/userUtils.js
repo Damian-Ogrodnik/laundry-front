@@ -11,16 +11,15 @@ import { enableToast } from "../../redux/toast/toastActions";
 export const logUser = (name, password) => async dispatch => {
   try {
     dispatch(actions.login());
-    const response = await signIn(name, password).catch(err => {
-      if (err.response) {
-        throw new Error(err.response.data.errors[0].msg);
-      }
-      throw new Error("Internal Server Error");
-    });
+    const response = await signIn(name, password);
     localStorage.setItem("token", response.data.token);
     await dispatch(actions.loginSuccess(response));
   } catch (error) {
-    dispatch(actions.loginFailure(error.message));
+    if (error.response) {
+      dispatch(actions.loginFailure(error.response.data.errors[0].msg));
+    } else {
+      dispatch(actions.loginFailure("Internal server error"));
+    }
   }
 };
 
@@ -31,17 +30,15 @@ export const registerUser = ({
 }) => async dispatch => {
   try {
     dispatch(actions.login());
-    const response = await signUp(Nickname, Password, Email).catch(err => {
-      if (err.response.status === 500) {
-        throw new Error("Name or email has already been taken");
-      } else {
-        throw new Error("Internal Server Error");
-      }
-    });
+    const response = await signUp(Nickname, Password, Email);
     localStorage.setItem("token", response.data.token);
     await dispatch(actions.loginSuccess(response));
   } catch (error) {
-    dispatch(actions.loginFailure("Internal Server Error"));
+    if (error.response) {
+      dispatch(actions.loginFailure(error.response.data.msg));
+    } else {
+      dispatch(actions.loginFailure("Internal server error"));
+    }
   }
 };
 
