@@ -21,7 +21,7 @@ const bookingReducer = (state = initialState, action) => {
     case types.BOOKING_FAILURE:
       return { ...state, loading: false, error: payload.error };
     case types.RESET_BOOKING:
-      return { ...state, loading: false, error: false, bookedSlot: false };
+      return { ...state, loading: false, error: false, bookedSlot: null };
     default:
       return state;
   }
