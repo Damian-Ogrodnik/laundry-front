@@ -230,6 +230,11 @@ input:focus {
   text-align: center;
 }
 
+.loader {
+  position: fixed;
+  top: 40%;
+}
+
 .logout {
   position: absolute;
   bottom: 2rem;

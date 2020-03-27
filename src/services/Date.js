@@ -7,7 +7,6 @@ export const sortByDates = async bookings => {
       new Date(aArray[2], aArray[1] - 1, aArray[0])
     );
   });
-
   return await removeOldDates(sortedBookings);
 };
 
@@ -31,9 +30,6 @@ export const checkAvailability = async (date, lastBooking) => {
 };
 
 export const standarizeDate = async date => {
-  const year = await date.getUTCFullYear();
-  const month = (await date.getUTCMonth()) + 1;
-  const day = await date.getUTCDate();
-
-  return `${day}-${month}-${year}`;
+  return `${await date.getUTCDate()}-${(await date.getUTCMonth()) +
+    1}-${await date.getUTCFullYear()}`;
 };
