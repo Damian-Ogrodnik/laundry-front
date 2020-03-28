@@ -9,6 +9,7 @@ import store from "./redux/store";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
+import { Admin } from "./pages/Admin";
 import { NavBar } from "./components/NavBar";
 import { Booking } from "./pages/Booking";
 import { Home } from "./pages/Home";
@@ -28,6 +29,7 @@ export const App = () => {
             <ProtectedRoute path="/sign-in" exact component={SignIn} />
             <ProtectedRoute path="/sign-up" exact component={SignUp} />
             <ProtectedRoute path="/user" secured={true} component={User} />
+            <ProtectedRoute path="/admin" secured={true} component={Admin} />
             <ProtectedRoute
               path="/booking"
               secured={true}

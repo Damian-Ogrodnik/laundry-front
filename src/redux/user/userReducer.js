@@ -4,7 +4,8 @@ const initialState = {
   logged: false,
   user: null,
   loading: false,
-  error: null
+  error: null,
+  isAdmin: true
 };
 
 const userReducer = (state = initialState, action) => {

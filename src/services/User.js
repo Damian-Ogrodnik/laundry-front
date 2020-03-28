@@ -13,5 +13,5 @@ export const deleteAccount = async () => {
 };
 
 export const passwordChange = async (password, newPassword) => {
-  return axiosInstance.post("/change-password", { password, newPassword });
+  return axiosInstance.post("/user/change-password", { password, newPassword });
 };
