@@ -8,7 +8,7 @@ import { slots } from "../../utils/slots";
 export const Slots = () => {
   const selectedSlot = useSelector(state => state.board.selectedSlot);
   const takenSlots = useSelector(state => state.board.takenSlots);
-  const loggedUser = useSelector(state => state.user.user.data.id);
+  const loggedUser = useSelector(state => state.user.id);
 
   const renderSlots = () => {
     return slots.map(({ hours, number, lastBooking }) => {

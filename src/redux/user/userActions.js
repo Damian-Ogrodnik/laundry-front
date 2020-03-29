@@ -6,10 +6,10 @@ export const login = () => {
   };
 };
 
-export const loginSuccess = user => {
+export const loginSuccess = ({ token, id, name, admin }) => {
   return {
     type: types.LOGIN_SUCCESS,
-    payload: { user }
+    payload: { token, id, name, admin }
   };
 };
 

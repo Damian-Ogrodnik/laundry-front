@@ -18,10 +18,10 @@ export const ProtectedRoute = ({
 
   dispatch(clearErrors());
 
-  if (logged && (path === "/sign-in" || path === "/sign-up")) {
+  if (logged && !isAdmin && (path === "/sign-in" || path === "/sign-up")) {
     return <Redirect to="/booking" />;
-  } else if (isAdmin && path === "/admin") {
-    return <Route {...rest} render={props => <Component {...props} />} />;
+  } else if (isAdmin && logged && path === "/sign-in") {
+    return <Redirect to="/admin" />;
   } else if (!logged && secured) return <Redirect to="/sign-in" />;
 
   return <Route {...rest} render={props => <Component {...props} />} />;

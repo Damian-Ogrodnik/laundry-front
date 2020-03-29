@@ -2,10 +2,13 @@ import * as types from "./userTypes";
 
 const initialState = {
   logged: false,
-  user: null,
+  user: {},
   loading: false,
   error: null,
-  isAdmin: true
+  id: null,
+  name: null,
+  token: null,
+  isAdmin: false
 };
 
 const userReducer = (state = initialState, action) => {
@@ -14,7 +17,15 @@ const userReducer = (state = initialState, action) => {
     case types.LOGIN:
       return { ...state, loading: true };
     case types.LOGIN_SUCCESS:
-      return { ...state, user: payload.user, loading: false, logged: true };
+      return {
+        ...state,
+        token: payload.token,
+        id: payload.id,
+        name: payload.name,
+        isAdmin: payload.admin,
+        loading: false,
+        logged: true
+      };
     case types.LOGIN_FAILURE:
       return { ...state, error: payload.error, loading: false };
     case types.CHANGE_PASSWORD:
@@ -27,9 +38,13 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         error: null,
-        user: null,
+        user: {},
         logged: false,
-        loading: false
+        loading: false,
+        id: null,
+        name: null,
+        token: null,
+        isAdmin: false
       };
 
     case types.CLEAR_ERRORS:

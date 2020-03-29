@@ -13,7 +13,8 @@ export const logUser = (name, password) => async dispatch => {
     dispatch(actions.login());
     const response = await signIn(name, password);
     localStorage.setItem("token", response.data.token);
-    await dispatch(actions.loginSuccess(response));
+    console.log(response);
+    await dispatch(actions.loginSuccess(response.data));
   } catch (error) {
     if (error.response) {
       dispatch(actions.loginFailure(error.response.data.errors[0].msg));
