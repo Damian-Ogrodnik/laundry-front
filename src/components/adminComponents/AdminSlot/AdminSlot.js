@@ -1,26 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 
-import { checkAvailability } from "../../../services/Date";
+import { useDateCheck } from "../../../custom-hooks";
 
-export const AdminSlot = ({ id, hours, taken, lastBooking, ...props }) => {
-  const [unavailable, setUnavailability] = useState(taken);
-  const date = useSelector(state => state.board.date);
-
-  useEffect(() => {
-    async function check() {
-      let avaiability = await checkAvailability(date, lastBooking);
-      if (!avaiability) setUnavailability(true);
-    }
-    check();
-  });
+export const AdminSlot = ({ id, hours, taken, lastBooking }) => {
+  let [unavailable, style] = useDateCheck(taken, lastBooking);
 
   return (
-    <div
-      className={`booking__slot booking__slot${
-        unavailable ? "--taken" : "--available"
-      }`}
-    >
+    <div className={`booking__slot booking__slot${style}`}>
       <h2>{hours}</h2>
       {id && !unavailable && (
         <>

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { selectSlot } from "../../redux/board/boardActions";
-import { checkAvailability } from "../../services/Date";
+import { useDateCheck } from "../../custom-hooks/index";
 
 import { withConfirm } from "../../HOC/withConfirm";
 
@@ -19,32 +19,16 @@ const Slot = ({
   confirm,
   id
 }) => {
-  const [unavailable, setUnavailability] = useState(taken);
+  let [unavailable, style] = useDateCheck(taken, lastBooking, selected);
   const date = useSelector(state => state.board.date);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    async function check() {
-      let avaiability = await checkAvailability(date, lastBooking);
-      if (!avaiability) setUnavailability(true);
-    }
-    check();
-  });
 
   useEffect(() => {
     if (confirm) dispatch(deleteUsersBooking(date, id, true));
   }, [confirm, date, dispatch, id]);
 
-  const checkStatus = () => {
-    return unavailable
-      ? "--taken"
-      : selected
-      ? "--available--selected"
-      : "--available";
-  };
-
   return (
-    <div className={`booking__slot booking__slot${checkStatus()}`}>
+    <div className={`booking__slot booking__slot${style}`}>
       <h2>{hours}</h2>
       {unavailable && !user && <h2>Unavailable</h2>}
       {user && (
