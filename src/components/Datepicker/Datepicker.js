@@ -9,7 +9,7 @@ import { resetCurrentBooking } from "../../redux/booking/bookingActions";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-export const Datepicker = () => {
+export const Datepicker = ({ name }) => {
   const [startDate, setStartDate] = useState(new Date());
   const bookedSlot = useSelector(state => state.booking.bookedSlot);
   const dispatch = useDispatch();
@@ -18,12 +18,11 @@ export const Datepicker = () => {
     dispatch(resetBookings());
     dispatch(resetCurrentBooking());
     dispatch(fetchDate(startDate));
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startDate, bookedSlot]);
 
   return (
-    <div className="userboard__datepicker">
+    <div className={`${name}__datepicker`}>
       <DatePicker
         minDate={new Date()}
         maxDate={addDays(new Date(), 7)}

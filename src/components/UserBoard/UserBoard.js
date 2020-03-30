@@ -10,7 +10,7 @@ export const UserBoard = () => {
   const loading = useSelector(state => state.board.loading);
   return (
     <div className="userboard__wrapper">
-      <Datepicker />
+      <Datepicker name="userboard" />
       <Booking error={fetchError} loading={loading} />
       <Logout />
     </div>

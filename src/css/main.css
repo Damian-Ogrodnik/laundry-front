@@ -425,6 +425,29 @@ button.cancel:active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: fixed;
+}
+
+.admin__datepicker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 1rem;
+}
+
+.admin__datepicker input {
+  color: #b82601;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 1em 0rem 0rem 0rem;
 }
 
 .homepage h1 {

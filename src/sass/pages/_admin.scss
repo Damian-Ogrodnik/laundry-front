@@ -1,4 +1,19 @@
 .admin {
   @include page-settings;
   @include flex-center;
+  position: fixed;
+
+  &__datepicker {
+    @include flex-center;
+    position: absolute;
+    top: 1rem;
+
+    input {
+      color: $thi-color;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-align: center;
+      padding: 1em 0rem 0rem 0rem;
+    }
+  }
 }

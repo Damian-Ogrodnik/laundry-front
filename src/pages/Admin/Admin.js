@@ -1,10 +1,12 @@
 import React from "react";
+
 import { Logout } from "../../components/Logout";
+import { Datepicker } from "../../components/Datepicker";
 
 export const Admin = () => {
   return (
     <div className="admin">
-      Admin panel
+      <Datepicker name="admin" />
       <Logout />
     </div>
   );
