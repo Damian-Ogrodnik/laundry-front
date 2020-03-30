@@ -3,10 +3,10 @@ import { useDispatch } from "react-redux";
 
 import { logout } from "../../redux/user/userActions";
 
-export const Logout = ({ name }) => {
+export const Logout = () => {
   const dispatch = useDispatch();
   return (
-    <button className={name} onClick={() => dispatch(logout())}>
+    <button className="logout" onClick={() => dispatch(logout())}>
       LOGOUT
     </button>
   );

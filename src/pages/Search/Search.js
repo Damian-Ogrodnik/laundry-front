@@ -1,10 +1,11 @@
 import React from "react";
+
 import { Logout } from "../../components/Logout";
 
-export const Admin = () => {
+export const Search = () => {
   return (
-    <div className="admin">
-      Admin panel
+    <div className="search">
+      Admin Search Panel
       <Logout />
     </div>
   );

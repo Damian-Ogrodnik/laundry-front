@@ -13,7 +13,10 @@ const unloggedNav = [
   ["Sign Up", "/sign-up"]
 ];
 
-const adminNav = [];
+const adminNav = [
+  ["Bookings", "/admin"],
+  ["Search", "/search"]
+];
 
 export const NavBar = () => {
   const logged = useSelector(state => state.user.logged);

@@ -17,6 +17,7 @@ import { SignIn } from "./pages/SignIn";
 import { SignUp } from "./pages/SignUp";
 import { User } from "./pages/User";
 import { UserBookings } from "./pages/UserBookings";
+import { Search } from "./pages/Search/Search";
 
 export const App = () => {
   return (
@@ -30,6 +31,7 @@ export const App = () => {
             <ProtectedRoute path="/sign-up" exact component={SignUp} />
             <ProtectedRoute path="/user" secured={true} component={User} />
             <ProtectedRoute path="/admin" secured={true} component={Admin} />
+            <ProtectedRoute path="/search" secured={true} component={Search} />
             <ProtectedRoute
               path="/booking"
               secured={true}

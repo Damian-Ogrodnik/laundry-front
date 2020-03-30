@@ -54,7 +54,7 @@ export const User = () => {
         </Form>
       </Formik>
       <Delete name={"delete"} />
-      <Logout name={"logout"} />
+      <Logout />
     </div>
   );
 };

@@ -12,7 +12,7 @@ export const UserBoard = () => {
     <div className="userboard__wrapper">
       <Datepicker />
       <Booking error={fetchError} loading={loading} />
-      <Logout name={"logout"} />
+      <Logout />
     </div>
   );
 };

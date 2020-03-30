@@ -19,7 +19,7 @@ export const UserBookings = () => {
   return (
     <div className="user-bookings">
       <UserSlots bookings={bookings} error={error} loading={loading} />
-      <Logout name={"logout"} />
+      <Logout />
     </div>
   );
 };
