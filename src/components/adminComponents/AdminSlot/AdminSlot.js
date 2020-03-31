@@ -1,8 +1,9 @@
 import React from "react";
 
 import { useDateCheck } from "../../../custom-hooks";
+import { withBookingModal } from "../withBookingModal";
 
-export const AdminSlot = ({ id, hours, taken, lastBooking }) => {
+const AdminSlot = ({ id, hours, taken, lastBooking, setOpen }) => {
   let [unavailable, style] = useDateCheck(taken, lastBooking);
 
   return (
@@ -15,7 +16,7 @@ export const AdminSlot = ({ id, hours, taken, lastBooking }) => {
       )}
       {!id && !unavailable && (
         <>
-          <p>Available</p> <button>BOOK</button>
+          <p>Available</p> <button onClick={() => setOpen(true)}>BOOK</button>
         </>
       )}
       {unavailable && (
@@ -26,3 +27,6 @@ export const AdminSlot = ({ id, hours, taken, lastBooking }) => {
     </div>
   );
 };
+
+const adminSlotWithBookingModal = withBookingModal(AdminSlot);
+export { adminSlotWithBookingModal as AdminSlot };
