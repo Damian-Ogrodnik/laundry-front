@@ -4,9 +4,11 @@ import { useSelector } from "react-redux";
 import { slots } from "../../../utils/slots";
 
 import { AdminSlot } from "../AdminSlot";
+import { Toast } from "../../Toast";
 
 export const AdminSlots = () => {
   const takenSlots = useSelector(state => state.board.takenSlots);
+  const error = useSelector(state => state.admin.error);
 
   const renderSlots = () => {
     return slots.map(({ hours, number, lastBooking }) => {
@@ -32,5 +34,11 @@ export const AdminSlots = () => {
       );
     });
   };
-  return <div className="booking__slots">{renderSlots()}</div>;
+  return (
+    <div className="booking__slots">
+      {renderSlots()}
+      <Toast text={"Slot booked"} toastType="BOOK" />
+      <Toast text={error} toastType={"ERROR"} />
+    </div>
+  );
 };

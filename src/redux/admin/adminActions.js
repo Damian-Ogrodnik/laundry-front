@@ -6,3 +6,23 @@ export const chooseSlot = choosedSlot => {
     payload: choosedSlot
   };
 };
+
+export const startBookSlot = () => {
+  return {
+    type: types.BOOK_SLOT_START
+  };
+};
+
+export const bookSlootSucces = bookedSloot => {
+  return {
+    type: types.BOOK_SLOT_SUCCESS,
+    payload: { bookedSloot }
+  };
+};
+
+export const bookSlootFailure = error => {
+  return {
+    type: types.BOOK_SLOT_FAILURE,
+    payload: { error }
+  };
+};

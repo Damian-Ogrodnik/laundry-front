@@ -1,1 +1,4 @@
 export const CHOOSE_SLOT = "CHOOSE_SLOT";
+export const BOOK_SLOT_START = "BOOK_SLOT_START";
+export const BOOK_SLOT_SUCCESS = "BOOK_SLOT_SUCCESS";
+export const BOOK_SLOT_FAILURE = "BOOK_SLOT_FAILURE";

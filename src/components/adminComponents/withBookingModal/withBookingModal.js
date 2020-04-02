@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Modal from "react-modal";
 
 import { nicknameSchema } from "../../../common/validation";
+import { bookSelectedSlot } from "../../../redux/admin/adminUtils";
 
 const values = {
   Nickname: ""
@@ -13,6 +14,8 @@ export const withBookingModal = WrappedComponent => ({ ...props }) => {
   const [open, setOpen] = useState(false);
   const date = useSelector(store => store.board.date);
   const time = useSelector(store => store.admin.choosedSlot.hours);
+  const number = useSelector(store => store.admin.choosedSlot.number);
+  const dispatch = useDispatch();
 
   useEffect(() => Modal.setAppElement("body"), []);
 
@@ -40,6 +43,8 @@ export const withBookingModal = WrappedComponent => ({ ...props }) => {
           initialValues={values}
           validationSchema={nicknameSchema}
           onSubmit={({ Nickname }) => {
+            console.log(Nickname);
+            dispatch(bookSelectedSlot(Nickname, date, number, time));
             setOpen(false);
           }}
         >
