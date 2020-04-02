@@ -28,6 +28,14 @@
     &--available {
       background-color: $tile-background;
 
+      &.user {
+        background-color: $fir-color;
+        button:hover {
+          background-color: $main-color;
+          border: 0.15rem solid $main-color;
+        }
+      }
+
       &--selected {
         background-color: $fir-color;
 

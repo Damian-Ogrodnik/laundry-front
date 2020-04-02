@@ -6,7 +6,7 @@ import { useDateCheck } from "../../../custom-hooks";
 import { withBookingModal } from "../withBookingModal";
 
 const AdminSlot = ({ id, hours, taken, lastBooking, setOpen, number }) => {
-  let [unavailable, style] = useDateCheck(taken, lastBooking);
+  let [unavailable, style] = useDateCheck(taken, lastBooking, false, id);
   const dispatch = useDispatch();
   return (
     <div className={`booking__slot booking__slot${style}`}>

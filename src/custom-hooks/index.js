@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { checkAvailability } from "../services/Date";
 
-export const useDateCheck = (taken, lastBooking, selected = false) => {
+export const useDateCheck = (taken, lastBooking, selected = false, id) => {
   const [unavailable, setUnavailability] = useState(taken);
   const [style, setStyle] = useState("");
   const date = useSelector(state => state.board.date);
@@ -21,8 +21,10 @@ export const useDateCheck = (taken, lastBooking, selected = false) => {
       ? setStyle("--taken")
       : selected
       ? setStyle("--available--selected")
+      : id
+      ? setStyle("--available user")
       : setStyle("--available");
-  }, [selected, unavailable]);
+  }, [id, selected, unavailable]);
 
   return [unavailable, style];
 };

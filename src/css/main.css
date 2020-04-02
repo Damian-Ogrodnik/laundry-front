@@ -104,6 +104,15 @@ input:focus {
   background-color: #c9c1c1;
 }
 
+.booking__slot--available.user {
+  background-color: #062f4f;
+}
+
+.booking__slot--available.user button:hover {
+  background-color: #000000;
+  border: 0.15rem solid #000000;
+}
+
 .booking__slot--available--selected {
   background-color: #062f4f;
 }
