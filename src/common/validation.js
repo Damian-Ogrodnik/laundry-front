@@ -24,6 +24,10 @@ export const loginSchema = Yup.object().shape({
   Password: Yup.string().required("Required")
 });
 
+export const nicknameSchema = Yup.object().shape({
+  Nickname: Yup.string().required("Required")
+});
+
 export const changePasswordSchema = Yup.object().shape({
   Password: Yup.string().required("Required"),
   newPassword: Yup.string()

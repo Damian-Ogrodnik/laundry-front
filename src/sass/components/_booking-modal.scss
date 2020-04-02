@@ -18,6 +18,7 @@
 
   &__input {
     @include flex-center-column;
+    position: relative;
     width: auto;
     margin: 4rem 0;
 
@@ -29,5 +30,13 @@
       font-size: 1rem;
       width: 100%;
     }
+  }
+
+  &__buttons {
+    @include flex-center;
+  }
+
+  &__error {
+    width: 100%;
   }
 }

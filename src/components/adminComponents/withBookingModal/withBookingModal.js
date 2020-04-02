@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useSelector } from "react-redux";
 import Modal from "react-modal";
+
+import { nicknameSchema } from "../../../common/validation";
+
+const values = {
+  Nickname: ""
+};
 
 export const withBookingModal = WrappedComponent => ({ ...props }) => {
   const [open, setOpen] = useState(false);
@@ -29,27 +36,33 @@ export const withBookingModal = WrappedComponent => ({ ...props }) => {
             </p>
           </div>
         </div>
-        <div className="booking-modal__input">
-          <label htmlFor="name">User Name</label>
-          <input type="text" />
-        </div>
-
-        <div className="booking-modal__buttons">
-          <button
-            onClick={() => {
-              setOpen(false);
-            }}
-          >
-            SUBMIT
-          </button>
-          <button
-            onClick={() => {
-              setOpen(false);
-            }}
-          >
-            CANCEL
-          </button>
-        </div>
+        <Formik
+          initialValues={values}
+          validationSchema={nicknameSchema}
+          onSubmit={({ Nickname }) => {
+            setOpen(false);
+          }}
+        >
+          <Form>
+            <div key={"Nickname"} className="booking-modal__input">
+              <label htmlFor={"Nickname"}>User Nickname</label>
+              <Field name={"Nickname"} type="text" />
+              <ErrorMessage name={"Nickname"}>
+                {msg => (
+                  <div className="form__error booking-modal__error">{msg}</div>
+                )}
+              </ErrorMessage>
+            </div>
+            <div className="booking-modal__buttons">
+              <button className="form__button" type="submit">
+                SUBMIT
+              </button>
+              <button className="form__button" onClick={() => setOpen(false)}>
+                CANCEL
+              </button>
+            </div>
+          </Form>
+        </Formik>
       </Modal>
       <WrappedComponent {...props} setOpen={setOpen} />
     </div>
