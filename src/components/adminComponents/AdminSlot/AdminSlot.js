@@ -1,11 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
+import { chooseSlot } from "../../../redux/admin/adminActions";
 import { useDateCheck } from "../../../custom-hooks";
 import { withBookingModal } from "../withBookingModal";
 
-const AdminSlot = ({ id, hours, taken, lastBooking, setOpen }) => {
+const AdminSlot = ({ id, hours, taken, lastBooking, setOpen, number }) => {
   let [unavailable, style] = useDateCheck(taken, lastBooking);
-
+  const dispatch = useDispatch();
   return (
     <div className={`booking__slot booking__slot${style}`}>
       <h2>{hours}</h2>
@@ -16,7 +18,15 @@ const AdminSlot = ({ id, hours, taken, lastBooking, setOpen }) => {
       )}
       {!id && !unavailable && (
         <>
-          <p>Available</p> <button onClick={() => setOpen(true)}>BOOK</button>
+          <p>Available</p>{" "}
+          <button
+            onClick={() => {
+              setOpen(true);
+              dispatch(chooseSlot({ id, hours, number }));
+            }}
+          >
+            BOOK
+          </button>
         </>
       )}
       {unavailable && (

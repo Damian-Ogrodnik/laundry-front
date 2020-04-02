@@ -1,0 +1,33 @@
+.booking-modal {
+  @include flex-center-column;
+  width: 50%;
+
+  &__basics {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    p {
+      font-size: 1.5rem;
+
+      span {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__input {
+    @include flex-center-column;
+    width: auto;
+    margin: 4rem 0;
+
+    input {
+      font-size: 2rem;
+    }
+
+    label {
+      font-size: 1rem;
+      width: 100%;
+    }
+  }
+}
