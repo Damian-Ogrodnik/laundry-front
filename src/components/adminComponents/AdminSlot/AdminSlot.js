@@ -12,34 +12,35 @@ const AdminSlot = ({
   hours,
   taken,
   lastBooking,
-  setOpen,
   number,
-  setAvailability
+  openBooking,
+  openDetails
 }) => {
   let [unavailable, style] = useDateCheck(taken, lastBooking, false, id);
   const dispatch = useDispatch();
   return (
     <div className={`booking__slot booking__slot${style}`}>
       <h2>{hours}</h2>
-      {id && !unavailable && (
+      {unavailable ? (
+        <p>Unavailable</p>
+      ) : id ? (
         <>
-          <p>Taken</p>{" "}
+          <p>Taken</p>
           <button
             onClick={() => {
-              setAvailability(true);
+              openDetails(true);
               dispatch(chooseSlot({ id, hours, number }));
             }}
           >
             DETAILS
           </button>
         </>
-      )}
-      {!id && !unavailable && (
+      ) : (
         <>
-          <p>Available</p>{" "}
+          <p>Available</p>
           <button
             onClick={() => {
-              setOpen(true);
+              openBooking(true);
               dispatch(chooseSlot({ id, hours, number }));
             }}
           >
@@ -47,16 +48,10 @@ const AdminSlot = ({
           </button>
         </>
       )}
-      {unavailable && (
-        <>
-          <p>Unavailable</p>
-        </>
-      )}
     </div>
   );
 };
 
 const withModals = compose(withBookingModal, withDetailsModal);
-
 const adminSlotWithModals = withModals(AdminSlot);
 export { adminSlotWithModals as AdminSlot };

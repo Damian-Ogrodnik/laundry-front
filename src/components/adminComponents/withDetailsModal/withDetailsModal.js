@@ -5,7 +5,7 @@ import Modal from "react-modal";
 import { DateInfo } from "../DateInfo";
 
 export const withDetailsModal = WrappedComponent => ({ ...props }) => {
-  const [available, setAvailability] = useState(false);
+  const [isOpen, openDetails] = useState(false);
   const date = useSelector(store => store.board.date);
   const time = useSelector(store => store.admin.choosedSlot.hours);
 
@@ -14,7 +14,7 @@ export const withDetailsModal = WrappedComponent => ({ ...props }) => {
   return (
     <div>
       <Modal
-        isOpen={available}
+        isOpen={isOpen}
         contentLabel="Details"
         className="modal details-modal"
         overlayClassName="overlay"
@@ -28,10 +28,10 @@ export const withDetailsModal = WrappedComponent => ({ ...props }) => {
         </div>
         <div className="modal__buttons">
           <button>DELETE</button>
-          <button onClick={() => setAvailability(false)}>CLOSE</button>
+          <button onClick={() => openDetails(false)}>CLOSE</button>
         </div>
       </Modal>
-      <WrappedComponent {...props} setAvailability={setAvailability} />
+      <WrappedComponent {...props} openDetails={openDetails} />
     </div>
   );
 };

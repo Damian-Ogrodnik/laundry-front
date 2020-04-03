@@ -12,7 +12,7 @@ const values = {
 };
 
 export const withBookingModal = WrappedComponent => ({ ...props }) => {
-  const [open, setOpen] = useState(false);
+  const [isOpen, openBooking] = useState(false);
   const date = useSelector(store => store.board.date);
   const time = useSelector(store => store.admin.choosedSlot.hours);
   const number = useSelector(store => store.admin.choosedSlot.number);
@@ -23,7 +23,7 @@ export const withBookingModal = WrappedComponent => ({ ...props }) => {
   return (
     <div>
       <Modal
-        isOpen={open}
+        isOpen={isOpen}
         contentLabel="Booking"
         className="modal modal"
         overlayClassName="overlay"
@@ -35,7 +35,7 @@ export const withBookingModal = WrappedComponent => ({ ...props }) => {
           onSubmit={({ Nickname }) => {
             console.log(Nickname);
             dispatch(bookSelectedSlot(Nickname, date, number, time));
-            setOpen(false);
+            openBooking(false);
           }}
         >
           <Form>
@@ -50,14 +50,17 @@ export const withBookingModal = WrappedComponent => ({ ...props }) => {
               <button className="form__button" type="submit">
                 BOOK
               </button>
-              <button className="form__button" onClick={() => setOpen(false)}>
+              <button
+                className="form__button"
+                onClick={() => openBooking(false)}
+              >
                 CLOSE
               </button>
             </div>
           </Form>
         </Formik>
       </Modal>
-      <WrappedComponent {...props} setOpen={setOpen} />
+      <WrappedComponent {...props} openBooking={openBooking} />
     </div>
   );
 };
