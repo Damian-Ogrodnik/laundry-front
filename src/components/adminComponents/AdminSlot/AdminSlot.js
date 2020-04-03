@@ -18,33 +18,22 @@ const AdminSlot = ({
 }) => {
   let [unavailable, style] = useDateCheck(taken, lastBooking, false, id);
   const dispatch = useDispatch();
+
   return (
     <div className={`booking__slot booking__slot${style}`}>
       <h2>{hours}</h2>
       {unavailable ? (
         <p>Unavailable</p>
-      ) : id ? (
-        <>
-          <p>Taken</p>
-          <button
-            onClick={() => {
-              openDetails(true);
-              dispatch(chooseSlot({ id, hours, number }));
-            }}
-          >
-            DETAILS
-          </button>
-        </>
       ) : (
         <>
-          <p>Available</p>
+          <p>{id ? "Taken" : "Available"}</p>
           <button
             onClick={() => {
-              openBooking(true);
+              id ? openDetails(true) : openBooking(true);
               dispatch(chooseSlot({ id, hours, number }));
             }}
           >
-            BOOK
+            {id ? "DETAILS" : "BOOK"}
           </button>
         </>
       )}
