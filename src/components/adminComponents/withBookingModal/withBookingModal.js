@@ -24,16 +24,17 @@ export const withBookingModal = WrappedComponent => ({ ...props }) => {
       <Modal
         isOpen={open}
         contentLabel="Booking"
-        className="modal booking-modal"
+        className="modal modal"
         overlayClassName="overlay"
       >
-        <div className="booking-modal__basics">
-          <div className="booking-modal__date">
+        <h2>Book Slot</h2>
+        <div className="modal__basics">
+          <div className="modal__date">
             <p>
               <span>Date:</span> {date}
             </p>
           </div>
-          <div className="booking-modal__time">
+          <div className="modal__time">
             <p>
               <span>Time:</span> {time}
             </p>
@@ -49,16 +50,14 @@ export const withBookingModal = WrappedComponent => ({ ...props }) => {
           }}
         >
           <Form>
-            <div key={"Nickname"} className="booking-modal__input">
+            <div key={"Nickname"} className="modal__input">
               <label htmlFor={"Nickname"}>User Nickname</label>
               <Field name={"Nickname"} type="text" />
               <ErrorMessage name={"Nickname"}>
-                {msg => (
-                  <div className="form__error booking-modal__error">{msg}</div>
-                )}
+                {msg => <div className="form__error modal__error">{msg}</div>}
               </ErrorMessage>
             </div>
-            <div className="booking-modal__buttons">
+            <div className="modal__buttons">
               <button className="form__button" type="submit">
                 BOOK
               </button>

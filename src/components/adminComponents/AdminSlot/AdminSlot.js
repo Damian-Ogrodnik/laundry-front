@@ -27,6 +27,7 @@ const AdminSlot = ({
           <button
             onClick={() => {
               setAvailability(true);
+              dispatch(chooseSlot({ id, hours, number }));
             }}
           >
             DETAILS
