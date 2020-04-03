@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Modal from "react-modal";
 
+import { DateInfo } from "../DateInfo";
+
 export const withDetailsModal = WrappedComponent => ({ ...props }) => {
   const [available, setAvailability] = useState(false);
   const date = useSelector(store => store.board.date);
@@ -17,19 +19,7 @@ export const withDetailsModal = WrappedComponent => ({ ...props }) => {
         className="modal details-modal"
         overlayClassName="overlay"
       >
-        <h2>Booking Details</h2>
-        <div className="modal__basics">
-          <div className="modal__date">
-            <p>
-              <span>Date:</span> {date}
-            </p>
-          </div>
-          <div className="modal__time">
-            <p>
-              <span>Time:</span> {time}
-            </p>
-          </div>
-        </div>
+        <DateInfo text={"Booking Details"} date={date} time={time} />
         <div className="modal__user">
           <p>User</p>
           <p>

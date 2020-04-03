@@ -5,6 +5,7 @@ import Modal from "react-modal";
 
 import { nicknameSchema } from "../../../common/validation";
 import { bookSelectedSlot } from "../../../redux/admin/adminUtils";
+import { DateInfo } from "../DateInfo";
 
 const values = {
   Nickname: ""
@@ -27,19 +28,7 @@ export const withBookingModal = WrappedComponent => ({ ...props }) => {
         className="modal modal"
         overlayClassName="overlay"
       >
-        <h2>Book Slot</h2>
-        <div className="modal__basics">
-          <div className="modal__date">
-            <p>
-              <span>Date:</span> {date}
-            </p>
-          </div>
-          <div className="modal__time">
-            <p>
-              <span>Time:</span> {time}
-            </p>
-          </div>
-        </div>
+        <DateInfo text={"Book Slot"} time={time} date={date} />
         <Formik
           initialValues={values}
           validationSchema={nicknameSchema}
