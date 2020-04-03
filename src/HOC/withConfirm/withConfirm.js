@@ -5,7 +5,7 @@ export const withConfirm = WrappedComponent => ({ ...props }) => {
   const [open, setOpen] = useState(false);
   const [confirm, setConfirm] = useState(false);
 
-  useEffect(() => Modal.setAppElement("body"), []);
+  useEffect(() => Modal.setAppElement("#root"), []);
 
   return (
     <>

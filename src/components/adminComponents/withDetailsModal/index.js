@@ -1,0 +1,1 @@
+export { withDetailsModal } from "./withDetailsModal";

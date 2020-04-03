@@ -17,7 +17,7 @@ export const withBookingModal = WrappedComponent => ({ ...props }) => {
   const number = useSelector(store => store.admin.choosedSlot.number);
   const dispatch = useDispatch();
 
-  useEffect(() => Modal.setAppElement("body"), []);
+  useEffect(() => Modal.setAppElement("#root"), []);
 
   return (
     <div>
@@ -60,10 +60,10 @@ export const withBookingModal = WrappedComponent => ({ ...props }) => {
             </div>
             <div className="booking-modal__buttons">
               <button className="form__button" type="submit">
-                SUBMIT
+                BOOK
               </button>
               <button className="form__button" onClick={() => setOpen(false)}>
-                CANCEL
+                CLOSE
               </button>
             </div>
           </Form>
