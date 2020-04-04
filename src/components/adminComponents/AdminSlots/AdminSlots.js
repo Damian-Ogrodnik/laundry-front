@@ -13,6 +13,7 @@ export const AdminSlots = () => {
   const renderSlots = () => {
     return slots.map(({ hours, number, lastBooking }) => {
       let taken, id;
+      console.log(takenSlots);
       if (takenSlots) {
         taken = takenSlots.some(takenSlot => number === takenSlot.number);
       }

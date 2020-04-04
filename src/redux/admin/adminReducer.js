@@ -3,7 +3,6 @@ import * as types from "./adminTypes";
 const initialState = {
   loading: false,
   error: null,
-  bookedSlot: null,
   choosedSlot: {}
 };
 
@@ -18,14 +17,31 @@ const adminReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        error: null,
-        bookedSlot: payload.bookedSlot
+        error: null
       };
     case types.BOOK_SLOT_FAILURE:
       return {
         ...state,
         loading: false,
         error: payload.error
+      };
+    case types.DELETE_SLOT_START:
+      return {
+        ...state,
+        error: null,
+        loading: true
+      };
+    case types.DELETE_SLOT_SUCCESS:
+      return {
+        ...state,
+        error: null,
+        loading: false
+      };
+    case types.DELETE_SLOT_FAILURE:
+      return {
+        ...state,
+        error: payload.error,
+        loading: false
       };
     default:
       return state;
