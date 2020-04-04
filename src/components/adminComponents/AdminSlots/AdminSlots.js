@@ -13,16 +13,14 @@ export const AdminSlots = () => {
   const renderSlots = () => {
     return slots.map(({ hours, number, lastBooking }) => {
       let taken, id;
-      console.log(takenSlots);
       if (takenSlots) {
         taken = takenSlots.some(takenSlot => number === takenSlot.number);
       }
       if (taken) {
-        takenSlots.forEach(takenSlot => {
+        takenSlots.forEach(async takenSlot => {
           if (takenSlot.number === number) id = takenSlot._id;
         });
       }
-
       return (
         <AdminSlot
           key={number}
@@ -30,7 +28,7 @@ export const AdminSlots = () => {
           number={number}
           taken={taken}
           lastBooking={lastBooking}
-          id={id}
+          slotId={id}
         />
       );
     });

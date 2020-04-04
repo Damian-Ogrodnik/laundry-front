@@ -8,15 +8,15 @@ import { withBookingModal } from "../withBookingModal";
 import { withDetailsModal } from "../withDetailsModal";
 
 const AdminSlot = ({
-  id,
   hours,
   taken,
   lastBooking,
   number,
   openBooking,
-  openDetails
+  openDetails,
+  slotId
 }) => {
-  let [unavailable, style] = useDateCheck(taken, lastBooking, false, id);
+  let [unavailable, style] = useDateCheck(taken, lastBooking, false, slotId);
   const dispatch = useDispatch();
 
   return (
@@ -26,14 +26,14 @@ const AdminSlot = ({
         <p>Unavailable</p>
       ) : (
         <>
-          <p>{id ? "Taken" : "Available"}</p>
+          <p>{slotId ? "Taken" : "Available"}</p>
           <button
             onClick={() => {
-              id ? openDetails(true) : openBooking(true);
-              dispatch(chooseSlot({ id, hours, number }));
+              slotId ? openDetails(true) : openBooking(true);
+              dispatch(chooseSlot({ slotId, hours, number }));
             }}
           >
-            {id ? "DETAILS" : "BOOK"}
+            {slotId ? "DETAILS" : "BOOK"}
           </button>
         </>
       )}

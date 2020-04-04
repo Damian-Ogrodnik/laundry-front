@@ -33,7 +33,6 @@ export const withBookingModal = WrappedComponent => ({ ...props }) => {
           initialValues={values}
           validationSchema={nicknameSchema}
           onSubmit={({ Nickname }) => {
-            console.log(Nickname);
             dispatch(bookSelectedSlot(Nickname, date, number, time));
             openBooking(false);
           }}
