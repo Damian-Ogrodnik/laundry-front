@@ -10,9 +10,8 @@ import { bookingFailure } from "../../redux/booking/bookingActions";
 import { Toast } from "../Toast";
 
 const Booking = () => {
-  const date = useSelector(state => state.board.date);
-  const selectedSlot = useSelector(state => state.board.selectedSlot);
-  const bookingError = useSelector(state => state.booking.error);
+  const { date, selectedSlot } = useSelector(({ state }) => state.board);
+  const bookingError = useSelector((state) => state.booking.error);
   const dispatch = useDispatch();
 
   const bookSlot = async () => {
