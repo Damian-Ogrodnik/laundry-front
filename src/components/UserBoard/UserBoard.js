@@ -6,12 +6,11 @@ import { Logout } from "../Logout";
 import { Booking } from "../Booking";
 
 export const UserBoard = () => {
-  const fetchError = useSelector(state => state.board.error);
-  const loading = useSelector(state => state.board.loading);
+  const { error, loading } = useSelector((state) => state.board);
   return (
     <div className="userboard__wrapper">
       <Datepicker name="userboard" />
-      <Booking error={fetchError} loading={loading} />
+      <Booking error={error} loading={loading} />
       <Logout />
     </div>
   );
