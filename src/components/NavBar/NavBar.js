@@ -19,8 +19,7 @@ const adminNav = [
 ];
 
 export const NavBar = () => {
-  const logged = useSelector(state => state.user.logged);
-  const isAdmin = useSelector(state => state.user.isAdmin);
+  const {isAdmin, logged } = useSelector(state => state.user);
 
   return (
     <div className="navigation">
