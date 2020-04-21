@@ -8,14 +8,13 @@ import { bookSelectedSlot } from "../../../redux/admin/adminUtils";
 import { DateInfo } from "../DateInfo";
 
 const values = {
-  Nickname: ""
+  Nickname: "",
 };
 
-export const withBookingModal = WrappedComponent => ({ ...props }) => {
+export const withBookingModal = (WrappedComponent) => ({ ...props }) => {
   const [isOpen, openBooking] = useState(false);
-  const date = useSelector(store => store.board.date);
-  const time = useSelector(store => store.admin.choosedSlot.hours);
-  const number = useSelector(store => store.admin.choosedSlot.number);
+  const date = useSelector((store) => store.board.date);
+  const { hours, number } = useSelector((store) => store.admin.choosedSlot);
   const dispatch = useDispatch();
 
   useEffect(() => Modal.setAppElement("#root"), []);
@@ -28,12 +27,12 @@ export const withBookingModal = WrappedComponent => ({ ...props }) => {
         className="modal modal"
         overlayClassName="overlay"
       >
-        <DateInfo text={"Book Slot"} time={time} date={date} />
+        <DateInfo text={"Book Slot"} time={hours} date={date} />
         <Formik
           initialValues={values}
           validationSchema={nicknameSchema}
           onSubmit={({ Nickname }) => {
-            dispatch(bookSelectedSlot(Nickname, date, number, time));
+            dispatch(bookSelectedSlot(Nickname, date, number, hours));
             openBooking(false);
           }}
         >
@@ -42,7 +41,7 @@ export const withBookingModal = WrappedComponent => ({ ...props }) => {
               <label htmlFor={"Nickname"}>User Nickname</label>
               <Field name={"Nickname"} type="text" />
               <ErrorMessage name={"Nickname"}>
-                {msg => <div className="form__error modal__error">{msg}</div>}
+                {(msg) => <div className="form__error modal__error">{msg}</div>}
               </ErrorMessage>
             </div>
             <div className="modal__buttons">

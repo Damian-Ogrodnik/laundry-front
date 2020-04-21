@@ -5,21 +5,21 @@ import { NavLink } from "react-router-dom";
 const loggedNav = [
   ["Account", "/user"],
   ["Book", "/booking"],
-  ["My Bookings", "/user-bookings"]
+  ["My Bookings", "/user-bookings"],
 ];
 const unloggedNav = [
   ["Home", "/home"],
   ["Sign In", "/sign-in"],
-  ["Sign Up", "/sign-up"]
+  ["Sign Up", "/sign-up"],
 ];
 
 const adminNav = [
   ["Bookings", "/admin"],
-  ["Search", "/search"]
+  ["Search", "/search"],
 ];
 
 export const NavBar = () => {
-  const {isAdmin, logged } = useSelector(state => state.user);
+  const { isAdmin, logged } = useSelector((state) => state.user);
 
   return (
     <div className="navigation">
