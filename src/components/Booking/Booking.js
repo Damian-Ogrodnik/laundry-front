@@ -11,7 +11,7 @@ import { Toast } from "../Toast";
 
 const Booking = () => {
   const { date, selectedSlot } = useSelector(({ state }) => state.board);
-  const bookingError = useSelector((state) => state.booking.error);
+  const { error } = useSelector((state) => state.booking);
   const dispatch = useDispatch();
 
   const bookSlot = async () => {
@@ -29,7 +29,7 @@ const Booking = () => {
         BOOK
       </button>
       <div className="booking__wrapper">
-        {bookingError && <div className="booking__error">{bookingError}</div>}
+        {error && <div className="booking__error">{error}</div>}
       </div>
     </div>
   );
