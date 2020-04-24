@@ -150,3 +150,49 @@
     }
   }
 }
+
+@media only screen and (max-width: 860px) {
+  .homepage {
+    height: auto;
+    &__front {
+      height: 100vh;
+    }
+    &__tiles {
+      flex-direction: column;
+      width: auto;
+      margin-top: 0;
+
+      &:last-child {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &__tile {
+      width: 80%;
+      &__arrow {
+        transform: rotate(90deg);
+      }
+      &__wrapper {
+        &--top {
+          width: 100%;
+        }
+      }
+    }
+
+    &__instruction {
+      height: auto;
+
+      &--header {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .homepage {
+    &__tile {
+      width: 60%;
+    }
+  }
+}

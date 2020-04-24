@@ -815,6 +815,48 @@ button.cancel:active {
   margin-bottom: 5rem;
 }
 
+@media only screen and (max-width: 860px) {
+  .homepage {
+    height: auto;
+  }
+  .homepage__front {
+    height: 100vh;
+  }
+  .homepage__tiles {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: auto;
+    margin-top: 0;
+  }
+  .homepage__tiles:last-child {
+    margin-bottom: 2rem;
+  }
+  .homepage__tile {
+    width: 80%;
+  }
+  .homepage__tile__arrow {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  .homepage__tile__wrapper--top {
+    width: 100%;
+  }
+  .homepage__instruction {
+    height: auto;
+  }
+  .homepage__instruction--header {
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .homepage__tile {
+    width: 60%;
+  }
+}
+
 .search {
   height: 93vh;
   width: 100%;
