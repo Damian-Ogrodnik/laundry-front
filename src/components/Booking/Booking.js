@@ -10,7 +10,7 @@ import { bookingFailure } from "../../redux/booking/bookingActions";
 import { Toast } from "../Toast";
 
 const Booking = () => {
-  const { date, selectedSlot } = useSelector(({ state }) => state.board);
+  const { date, selectedSlot } = useSelector((state) => state.board);
   const { error } = useSelector((state) => state.booking);
   const dispatch = useDispatch();
 
