@@ -154,6 +154,7 @@
 @media only screen and (max-width: 860px) {
   .homepage {
     height: auto;
+
     &__front {
       height: 100vh;
     }
@@ -171,6 +172,8 @@
       width: 80%;
       &__arrow {
         transform: rotate(90deg);
+        height: 5rem;
+        width: 3rem;
       }
       &__wrapper {
         &--top {
