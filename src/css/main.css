@@ -941,6 +941,25 @@ button.cancel:active {
   margin-top: 1rem;
 }
 
+@media only screen and (max-width: 500px) {
+  .form__wrapper {
+    width: 80%;
+  }
+  .form__input input {
+    font-size: 1.5rem;
+  }
+  .form__input label {
+    font-size: 1.2rem;
+  }
+  .form__error {
+    font-size: 1rem;
+    bottom: -2rem;
+  }
+  .form__button {
+    font-size: 1.5rem;
+  }
+}
+
 .user-bookings {
   height: 93vh;
   width: 100%;
