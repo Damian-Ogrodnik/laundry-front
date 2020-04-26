@@ -71,3 +71,16 @@
     position: relative;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .booking {
+    &__slots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    &__slot {
+      width: 12rem;
+      place-self: center;
+    }
+  }
+}

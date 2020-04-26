@@ -254,6 +254,19 @@ input:focus {
   position: relative;
 }
 
+@media only screen and (max-width: 500px) {
+  .booking__slots {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .booking__slot {
+    width: 12rem;
+    place-self: center;
+  }
+}
+
 .delete {
   position: absolute;
   bottom: 2rem;
