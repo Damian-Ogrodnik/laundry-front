@@ -7,17 +7,18 @@ import "react-toastify/dist/ReactToastify.css";
 
 import store from "./redux/store";
 
-import { ProtectedRoute } from "./components/ProtectedRoute";
+import { Route } from "./components/Route";
+
+import { NavBar } from "./components/NavBar";
 
 import { Admin } from "./pages/Admin";
-import { NavBar } from "./components/NavBar";
 import { Booking } from "./pages/Booking";
 import { Home } from "./pages/Home";
+import { Search } from "./pages/Search/Search";
 import { SignIn } from "./pages/SignIn";
 import { SignUp } from "./pages/SignUp";
 import { User } from "./pages/User";
 import { UserBookings } from "./pages/UserBookings";
-import { Search } from "./pages/Search/Search";
 
 export const App = () => {
   return (
@@ -26,22 +27,14 @@ export const App = () => {
         <div className="App">
           <NavBar />
           <Switch>
-            <ProtectedRoute path="/home" exact component={Home} />
-            <ProtectedRoute path="/sign-in" exact component={SignIn} />
-            <ProtectedRoute path="/sign-up" exact component={SignUp} />
-            <ProtectedRoute path="/user" secured={true} component={User} />
-            <ProtectedRoute path="/admin" secured={true} component={Admin} />
-            <ProtectedRoute path="/search" secured={true} component={Search} />
-            <ProtectedRoute
-              path="/booking"
-              secured={true}
-              component={Booking}
-            />
-            <ProtectedRoute
-              path="/user-bookings"
-              secured={true}
-              component={UserBookings}
-            />
+            <Route path="/admin" secured component={Admin} />
+            <Route path="/booking" component={Booking} secured />
+            <Route path="/home" component={Home} />
+            <Route path="/search" component={Search} secured />
+            <Route path="/sign-in" component={SignIn} />
+            <Route path="/sign-up" component={SignUp} />
+            <Route path="/user" component={User} secured />
+            <Route path="/user-bookings" component={UserBookings} secured />
           </Switch>
           <ToastContainer autoClose={3000} />
         </div>
