@@ -3,7 +3,7 @@ import { IconContext } from "react-icons";
 
 import { FaArrowRight } from "react-icons/fa";
 
-export const Tile = ({ icon, text, arrow = true, animate }) => {
+export const Tile = ({ animate, arrow, icon, text }) => {
   return (
     <>
       <div className={`homepage__tile ${animate}`}>
