@@ -14,7 +14,7 @@ export const Route = ({ component: Component, secured, path, ...rest }) => {
   }, [path]);
 
   if (logged && !isAdmin && (path === "/sign-in" || path === "/sign-up")) {
-    return <Redirect to="/booking" />;
+    return <Redirect to="/booking-board" />;
   } else if (isAdmin && logged && path === "/sign-in") {
     return <Redirect to="/admin" />;
   } else if (!logged && secured) return <Redirect to="/sign-in" />;

@@ -431,37 +431,6 @@ input:focus {
   margin-top: 3rem;
 }
 
-.userboard__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: relative;
-  height: 93vh;
-}
-
-.userboard__datepicker {
-  position: absolute;
-  top: 1rem;
-}
-
-.userboard__datepicker input {
-  color: #b82601;
-  font-weight: 700;
-  font-size: 1.25rem;
-  text-align: center;
-  padding: 1em 0rem 0rem 0rem;
-}
-
 .modal {
   position: absolute;
   padding: 2rem;
@@ -565,6 +534,37 @@ button.cancel:active {
 }
 
 .admin__datepicker input {
+  color: #b82601;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 1em 0rem 0rem 0rem;
+}
+
+.booking-board__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  height: 93vh;
+}
+
+.booking-board__datepicker {
+  position: absolute;
+  top: 1rem;
+}
+
+.booking-board__datepicker input {
   color: #b82601;
   font-weight: 700;
   font-size: 1.25rem;

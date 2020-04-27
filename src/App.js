@@ -12,7 +12,7 @@ import { Route } from "./components/Route";
 import { NavBar } from "./components/NavBar";
 
 import { Admin } from "./pages/Admin";
-import { Booking } from "./pages/Booking";
+import { BookingBoard } from "./pages/BookingBoard";
 import { Home } from "./pages/Home";
 import { Search } from "./pages/Search/Search";
 import { SignIn } from "./pages/SignIn";
@@ -28,7 +28,7 @@ export const App = () => {
           <NavBar />
           <Switch>
             <Route path="/admin" secured component={Admin} />
-            <Route path="/booking" component={Booking} secured />
+            <Route path="/booking-board" component={BookingBoard} secured />
             <Route path="/home" component={Home} />
             <Route path="/search" component={Search} secured />
             <Route path="/sign-in" component={SignIn} />
