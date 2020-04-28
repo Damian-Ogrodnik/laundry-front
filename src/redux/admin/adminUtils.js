@@ -4,12 +4,9 @@ import { fetchDate } from "../board/boardUtils";
 import { bookSlot, deleteSlot } from "../../services/Admin";
 import { enableToast } from "../../redux/toast/toastActions";
 
-export const bookSelectedSlot = (
-  name,
-  date,
-  number,
-  hours
-) => async dispatch => {
+export const bookSelectedSlot = (name, date, number, hours) => async (
+  dispatch
+) => {
   try {
     dispatch(actions.startBookSlot());
     const response = await bookSlot({ name, date, number, hours });
@@ -27,7 +24,7 @@ export const bookSelectedSlot = (
   }
 };
 
-export const deleteSelectedSlot = (date, id) => async dispatch => {
+export const deleteSelectedSlot = (date, id) => async (dispatch) => {
   try {
     dispatch(actions.startDeleteSlot());
     await deleteSlot(id);
@@ -36,7 +33,7 @@ export const deleteSelectedSlot = (date, id) => async dispatch => {
     dispatch(fetchDate(date, true));
   } catch (error) {
     if (error.response) {
-      dispatch(actions.deleteSlotFailure(error.response.data.msg));
+      dispatch(actions.deleteSlotFailure(error.response.statusText));
       dispatch(enableToast("ERROR"));
     } else {
       dispatch(actions.deleteSlotFailure("Internal server error"));

@@ -7,17 +7,17 @@ import { AdminSlot } from "../AdminSlot";
 import { Toast } from "../../Toast";
 
 export const AdminSlots = () => {
-  const takenSlots = useSelector(state => state.board.takenSlots);
-  const error = useSelector(state => state.admin.error);
+  const takenSlots = useSelector((state) => state.board.takenSlots);
+  const error = useSelector((state) => state.admin.error);
 
   const renderSlots = () => {
     return slots.map(({ hours, number, lastBooking }) => {
       let taken, id;
       if (takenSlots) {
-        taken = takenSlots.some(takenSlot => number === takenSlot.number);
+        taken = takenSlots.some((takenSlot) => number === takenSlot.number);
       }
       if (taken) {
-        takenSlots.forEach(async takenSlot => {
+        takenSlots.forEach(async (takenSlot) => {
           if (takenSlot.number === number) id = takenSlot._id;
         });
       }
