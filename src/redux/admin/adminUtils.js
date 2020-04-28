@@ -29,7 +29,7 @@ export const deleteSelectedSlot = (date, id) => async (dispatch) => {
     dispatch(actions.startDeleteSlot());
     await deleteSlot(id);
     dispatch(actions.deleteSlotSuccess());
-    // dispatch(enableToast("BOOK"));
+    dispatch(enableToast("DELETE"));
     dispatch(fetchDate(date, true));
   } catch (error) {
     if (error.response) {

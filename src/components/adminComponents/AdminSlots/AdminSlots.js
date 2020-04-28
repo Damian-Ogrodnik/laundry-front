@@ -37,6 +37,7 @@ export const AdminSlots = () => {
     <div className="booking__slots">
       {renderSlots()}
       <Toast text={"Slot booked"} toastType="BOOK" />
+      <Toast text={"Slot deleted"} toastType="DELETE" />
       <Toast text={error} toastType={"ERROR"} />
     </div>
   );
