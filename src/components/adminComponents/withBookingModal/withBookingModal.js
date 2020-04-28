@@ -17,48 +17,54 @@ export const withBookingModal = (WrappedComponent) => ({ ...props }) => {
   const { hours, number } = useSelector((store) => store.admin.choosedSlot);
   const dispatch = useDispatch();
 
-  useEffect(() => Modal.setAppElement("#root"), []);
+  useEffect(() => {
+    if (isOpen) Modal.setAppElement("#root");
+  }, [isOpen]);
 
   return (
-    <div>
-      <Modal
-        isOpen={isOpen}
-        contentLabel="Booking"
-        className="modal modal"
-        overlayClassName="overlay"
-      >
-        <DateInfo text={"Book Slot"} time={hours} date={date} />
-        <Formik
-          initialValues={values}
-          validationSchema={nicknameSchema}
-          onSubmit={({ Nickname }) => {
-            dispatch(bookSelectedSlot(Nickname, date, number, hours));
-            openBooking(false);
-          }}
+    <>
+      {isOpen && (
+        <Modal
+          isOpen={isOpen}
+          contentLabel="Booking"
+          className="modal modal"
+          overlayClassName="overlay"
         >
-          <Form>
-            <div key={"Nickname"} className="modal__input">
-              <label htmlFor={"Nickname"}>User Nickname</label>
-              <Field name={"Nickname"} type="text" />
-              <ErrorMessage name={"Nickname"}>
-                {(msg) => <div className="form__error modal__error">{msg}</div>}
-              </ErrorMessage>
-            </div>
-            <div className="modal__buttons">
-              <button className="form__button" type="submit">
-                BOOK
-              </button>
-              <button
-                className="form__button"
-                onClick={() => openBooking(false)}
-              >
-                CLOSE
-              </button>
-            </div>
-          </Form>
-        </Formik>
-      </Modal>
+          <DateInfo text={"Book Slot"} time={hours} date={date} />
+          <Formik
+            initialValues={values}
+            validationSchema={nicknameSchema}
+            onSubmit={({ Nickname }) => {
+              dispatch(bookSelectedSlot(Nickname, date, number, hours));
+              openBooking(false);
+            }}
+          >
+            <Form>
+              <div key={"Nickname"} className="modal__input">
+                <label htmlFor={"Nickname"}>User Nickname</label>
+                <Field name={"Nickname"} type="text" />
+                <ErrorMessage name={"Nickname"}>
+                  {(msg) => (
+                    <div className="form__error modal__error">{msg}</div>
+                  )}
+                </ErrorMessage>
+              </div>
+              <div className="modal__buttons">
+                <button className="form__button" type="submit">
+                  BOOK
+                </button>
+                <button
+                  className="form__button"
+                  onClick={() => openBooking(false)}
+                >
+                  CLOSE
+                </button>
+              </div>
+            </Form>
+          </Formik>
+        </Modal>
+      )}
       <WrappedComponent {...props} openBooking={openBooking} />
-    </div>
+    </>
   );
 };
