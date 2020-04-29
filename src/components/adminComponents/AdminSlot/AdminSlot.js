@@ -14,7 +14,7 @@ const AdminSlot = ({
   number,
   openBooking,
   openDetails,
-  slotId
+  slotId,
 }) => {
   let [unavailable, style] = useDateCheck(taken, lastBooking, false, slotId);
   const dispatch = useDispatch();

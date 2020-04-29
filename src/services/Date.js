@@ -1,4 +1,4 @@
-export const sortByDates = async bookings => {
+export const sortByDates = async (bookings) => {
   let sortedBookings = await bookings.sort((aBooking, bBooking) => {
     let aArray = aBooking.date.split("-");
     let bArray = bBooking.date.split("-");
@@ -10,8 +10,8 @@ export const sortByDates = async bookings => {
   return await removeOldDates(sortedBookings);
 };
 
-const removeOldDates = async bookings => {
-  return await bookings.filter(booking => {
+const removeOldDates = async (bookings) => {
+  return await bookings.filter((booking) => {
     let [day, month, year] = booking.date.split("-");
     return new Date(year, month - 1, day) >= new Date().setHours(0, 0, 0, 0);
   });
@@ -29,7 +29,8 @@ export const checkAvailability = async (date, lastBooking) => {
   return available;
 };
 
-export const standarizeDate = async date => {
-  return `${await date.getUTCDate()}-${(await date.getUTCMonth()) +
-    1}-${await date.getUTCFullYear()}`;
+export const standarizeDate = async (date) => {
+  return `${await date.getUTCDate()}-${
+    (await date.getUTCMonth()) + 1
+  }-${await date.getUTCFullYear()}`;
 };
