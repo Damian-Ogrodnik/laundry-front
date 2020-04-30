@@ -9,12 +9,12 @@ import { withDetailsModal } from "../withDetailsModal";
 
 const AdminSlot = ({
   hours,
-  taken,
   lastBooking,
   number,
   openBooking,
   openDetails,
   slotId,
+  taken,
 }) => {
   let [unavailable, style] = useDateCheck(taken, lastBooking, false, slotId);
   const dispatch = useDispatch();

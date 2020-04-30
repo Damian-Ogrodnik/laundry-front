@@ -8,8 +8,6 @@ export const useDateCheck = (taken, lastBooking, selected = false, id) => {
   const [style, setStyle] = useState("");
   const date = useSelector((state) => state.board.date);
 
-  console.log("rerender 1", date);
-
   useEffect(() => {
     async function check() {
       let avaiability = await checkAvailability(date, lastBooking);
