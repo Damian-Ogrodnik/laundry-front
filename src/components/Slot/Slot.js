@@ -17,10 +17,10 @@ const Slot = ({
   lastBooking,
   setOpen,
   confirm,
-  id
+  id,
 }) => {
   let [unavailable, style] = useDateCheck(taken, lastBooking, selected);
-  const date = useSelector(state => state.board.date);
+  const date = useSelector((state) => state.board.date);
   const dispatch = useDispatch();
 
   useEffect(() => {

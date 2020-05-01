@@ -10,11 +10,13 @@ export const useDateCheck = (taken, lastBooking, selected = false, id) => {
 
   useEffect(() => {
     async function check() {
-      let avaiability = await checkAvailability(date, lastBooking);
-      setUnavailability(!avaiability);
+      if (!taken) {
+        let avaiability = await checkAvailability(date, lastBooking);
+        setUnavailability(!avaiability);
+      }
     }
     check();
-  }, [date, lastBooking]);
+  }, [date, lastBooking, taken]);
 
   useEffect(() => {
     unavailable
