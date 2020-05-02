@@ -25,7 +25,7 @@ const Slot = ({
 
   useEffect(() => {
     if (confirm) dispatch(deleteUsersBooking(date, id, true));
-  }, [confirm, date, dispatch, id]);
+  }, [confirm, date, dispatch, id, number]);
 
   return (
     <div className={`booking__slot booking__slot${style}`}>

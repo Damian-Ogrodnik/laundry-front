@@ -17,9 +17,10 @@ export const Slots = () => {
       }
       if (taken) {
         takenSlots.forEach((takenSlot) => {
-          if (takenSlot.number === number && takenSlot.user === loggedUser)
+          if (takenSlot.number === number && takenSlot.user === loggedUser) {
             user = true;
-          id = takenSlot._id;
+            id = takenSlot._id;
+          }
         });
       }
 
