@@ -21,8 +21,8 @@ export const Instruction = () => {
         </h2>
       </div>
       <div className="homepage__tiles">
-        {tiles.map(([icon, text, arrow]) => (
-          <Tile animate={animate} arrow={arrow} icon={icon} text={text} />
+        {tiles.map((props) => (
+          <Tile key={props[1]} props={[animate, ...props]} />
         ))}
       </div>
     </div>
