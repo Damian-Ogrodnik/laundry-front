@@ -9,15 +9,9 @@ import { withConfirm } from "../../HOC/withConfirm";
 import { deleteUsersBooking } from "../../redux/userBookings/userBookingsUtils";
 
 const Slot = ({
-  hours,
-  number,
-  taken,
-  selected,
-  user,
-  lastBooking,
-  setOpen,
   confirm,
-  id,
+  propSlot: { hours, id, lastBooking, number, selected, taken, user },
+  setOpen,
 }) => {
   let [unavailable, style] = useDateCheck(taken, lastBooking, selected);
   const date = useSelector((state) => state.board.date);

@@ -10,7 +10,7 @@ export const Slots = () => {
   const loggedUser = useSelector((state) => state.user.id);
 
   const renderSlots = () => {
-    return slots.map(({ hours, number, lastBooking }) => {
+    return slots.map(({ number, ...props }) => {
       let taken, selected, user, id;
       if (takenSlots) {
         taken = takenSlots.some((takenSlot) => number === takenSlot.number);
@@ -23,18 +23,11 @@ export const Slots = () => {
           }
         });
       }
-
       if (selectedSlot && selectedSlot.number === number) selected = true;
       return (
         <Slot
           key={number}
-          hours={hours}
-          number={number}
-          taken={taken}
-          selected={selected}
-          user={user}
-          lastBooking={lastBooking}
-          id={id}
+          propSlot={{ id, number, selected, taken, user, ...props }}
         />
       );
     });
