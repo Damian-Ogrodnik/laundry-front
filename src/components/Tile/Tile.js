@@ -1,27 +1,24 @@
 import React from "react";
-import { IconContext } from "react-icons";
-
 import { FaArrowRight } from "react-icons/fa";
+
+import { IconProvider } from "../IconProvider";
 
 export const Tile = ({ props: [animate, icon, text, arrow] }) => {
   return (
     <>
       <div className={`homepage__tile ${animate}`}>
         <div className="homepage__tile__wrapper--top">
-          <IconContext.Provider value={{ className: "homepage__tile__icon" }}>
-            {icon}
-          </IconContext.Provider>
+          <IconProvider icon={icon} name={"homepage__tile__icon"} />
         </div>
         <div className="homepage__tile__wrapper">
           <h3>{text}</h3>
         </div>
       </div>
       {arrow && (
-        <IconContext.Provider
-          value={{ className: `homepage__tile__arrow ${animate}` }}
-        >
-          <FaArrowRight />
-        </IconContext.Provider>
+        <IconProvider
+          icon={<FaArrowRight />}
+          name={`homepage__tile__arrow ${animate}`}
+        />
       )}
     </>
   );

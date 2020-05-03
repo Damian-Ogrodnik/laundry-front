@@ -1,9 +1,13 @@
 import React from "react";
 
-import { Loader } from "../../components/Loader";
 import { Error } from "../../components/Error";
+import { Loader } from "../../components/Loader";
 
-export const withError = WrappedComponent => ({ error, loading, ...props }) => {
+export const withError = (WrappedComponent) => ({
+  error,
+  loading,
+  ...props
+}) => {
   return loading ? (
     <Loader />
   ) : error ? (

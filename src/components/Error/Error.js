@@ -1,15 +1,12 @@
 import React from "react";
-import { IconContext } from "react-icons";
 import { MdError } from "react-icons/md";
+
+import { IconProvider } from "../IconProvider";
 
 export const Error = ({ errorMsg, name, icon }) => {
   return (
     <div className={`${name} error`}>
-      {icon && (
-        <IconContext.Provider value={{ className: `${name} error__icon` }}>
-          <MdError />
-        </IconContext.Provider>
-      )}
+      {icon && <IconProvider icon={<MdError />} name={`${name} error__icon`} />}
       <p>{errorMsg}</p>
     </div>
   );

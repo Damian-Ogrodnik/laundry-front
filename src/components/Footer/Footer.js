@@ -1,7 +1,8 @@
 import React from "react";
-import { IconContext } from "react-icons";
 
 import { footerData } from "./utils";
+
+import { IconProvider } from "../IconProvider";
 
 export const Footer = () => {
   return (
@@ -9,9 +10,7 @@ export const Footer = () => {
       <div className="footer__wrapper">
         {footerData.map(([icon, textArray]) => (
           <div key={textArray[0]} className="container">
-            <IconContext.Provider value={{ className: "container__icon" }}>
-              {icon}
-            </IconContext.Provider>
+            <IconProvider name={"container__icon"} icon={icon} />
             <div className="container__text">
               {textArray.map((text) => (
                 <p key={text}>{text}</p>
