@@ -1,14 +1,7 @@
 import React from "react";
 import { IconContext } from "react-icons";
-import { GoLocation } from "react-icons/go";
-import { MdEmail } from "react-icons/md";
-import { MdPhone } from "react-icons/md";
 
-const footerData = [
-  [<GoLocation />, ["21 Kamienna Street", "Warsaw, Poland"]],
-  [<MdEmail />, ["laundry_dorn@gmail.com"]],
-  [<MdPhone />, ["+48 888 436 493"]]
-];
+import { footerData } from "./utils";
 
 export const Footer = () => {
   return (
@@ -20,7 +13,7 @@ export const Footer = () => {
               {icon}
             </IconContext.Provider>
             <div className="container__text">
-              {textArray.map(text => (
+              {textArray.map((text) => (
                 <p key={text}>{text}</p>
               ))}
             </div>
