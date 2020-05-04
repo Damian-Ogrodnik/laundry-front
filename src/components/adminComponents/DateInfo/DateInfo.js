@@ -1,6 +1,6 @@
 import React from "react";
 
-export const DateInfo = ({ text, date, time }) => {
+export const DateInfo = ({ date, text, time }) => {
   return (
     <>
       <h2>{text}</h2>

@@ -5,7 +5,7 @@ import { deleteUser } from "../../redux/user/userUtils";
 
 import { withConfirm } from "../../HOC/withConfirm";
 
-const Delete = ({ name, setOpen, confirm }) => {
+const Delete = ({ confirm, name, setOpen }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
