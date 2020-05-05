@@ -24,10 +24,10 @@ export const Datepicker = ({ name }) => {
   return (
     <div className={`${name}__datepicker`}>
       <DatePicker
-        minDate={new Date()}
         maxDate={addDays(new Date(), 7)}
-        selected={startDate}
+        minDate={new Date()}
         onChange={date => setStartDate(date)}
+        selected={startDate}
       />
     </div>
   );

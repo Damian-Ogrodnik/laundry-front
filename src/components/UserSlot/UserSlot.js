@@ -5,7 +5,7 @@ import { withConfirm } from "../../HOC/withConfirm";
 
 import { deleteUsersBooking } from "../../redux/userBookings/userBookingsUtils";
 
-const UserSlot = ({ data: { date, hours, _id }, number, setOpen, confirm }) => {
+const UserSlot = ({ confirm, data: { date, hours, _id }, number, setOpen }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
