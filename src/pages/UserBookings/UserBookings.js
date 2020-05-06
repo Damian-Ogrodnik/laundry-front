@@ -7,9 +7,9 @@ import { Logout } from "../../components/Logout";
 import { UserSlots } from "../../components/UserSlots";
 
 export const UserBookings = () => {
-  const bookings = useSelector(state => state.userBookings.userBookings);
-  const error = useSelector(state => state.userBookings.error);
-  const loading = useSelector(state => state.userBookings.loading);
+  const { error, loading, userBookings } = useSelector(
+    (state) => state.userBookings
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export const UserBookings = () => {
 
   return (
     <div className="user-bookings">
-      <UserSlots bookings={bookings} error={error} loading={loading} />
+      <UserSlots bookings={userBookings} error={error} loading={loading} />
       <Logout />
     </div>
   );

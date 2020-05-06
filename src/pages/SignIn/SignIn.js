@@ -2,8 +2,8 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 
-import { Toast } from "../../components/Toast";
 import { FormWrapper } from "../../components/FormWrapper";
+import { Toast } from "../../components/Toast";
 
 import { logUser } from "../../redux/user/userUtils";
 import { loginSchema } from "../../common/validation";
@@ -27,12 +27,12 @@ export const SignIn = () => {
           title={"Sign In"}
           action={"LOGIN"}
           render={() => {
-            return Object.keys(values).map(value => (
+            return Object.keys(values).map((value) => (
               <div key={value} className="form__input">
                 <label htmlFor={value}>{value}</label>
                 <Field name={value} type={value} />
                 <ErrorMessage name={value}>
-                  {msg => <div className="form__error">{msg}</div>}
+                  {(msg) => <div className="form__error">{msg}</div>}
                 </ErrorMessage>
               </div>
             ));

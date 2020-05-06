@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Logout } from "../../components/Logout";
-import { Datepicker } from "../../components/Datepicker";
 import { AdminSlots } from "../../components/adminComponents/AdminSlots";
+import { Datepicker } from "../../components/Datepicker";
+import { Logout } from "../../components/Logout";
 
 export const Admin = () => {
   return (
