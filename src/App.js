@@ -7,9 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 import store from "./redux/store";
 
-import { Route } from "./components/Route";
-
 import { NavBar } from "./components/NavBar";
+import { Route } from "./components/Route";
 
 import { Admin } from "./pages/Admin";
 import { BookingBoard } from "./pages/BookingBoard";
