@@ -7,14 +7,15 @@ import { DateInfo } from "../DateInfo";
 import { deleteSelectedSlot } from "../../../redux/admin/adminUtils";
 
 export const withDetailsModal = (WrappedComponent) => ({
-  id,
-  slotId,
-  ...props
+  props: { ...props },
+  openBooking,
 }) => {
   const [isOpen, openDetails] = useState(false);
   const date = useSelector((store) => store.board.date);
   const time = useSelector((store) => store.admin.choosedSlot.hours);
   const dispatch = useDispatch();
+
+  console.log(props);
 
   useEffect(() => {
     if (isOpen) Modal.setAppElement("#root");
@@ -39,7 +40,7 @@ export const withDetailsModal = (WrappedComponent) => ({
           <div className="modal__buttons">
             <button
               onClick={() => {
-                dispatch(deleteSelectedSlot(date, slotId));
+                dispatch(deleteSelectedSlot(date, props.slotId));
                 openDetails(false);
               }}
             >
@@ -49,7 +50,7 @@ export const withDetailsModal = (WrappedComponent) => ({
           </div>
         </Modal>
       )}
-      <WrappedComponent {...props} slotId={slotId} openDetails={openDetails} />
+      <WrappedComponent props={{ openBooking, openDetails, ...props }} />
     </>
   );
 };

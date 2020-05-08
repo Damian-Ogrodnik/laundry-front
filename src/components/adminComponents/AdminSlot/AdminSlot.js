@@ -8,9 +8,15 @@ import { withBookingModal } from "../withBookingModal";
 import { withDetailsModal } from "../withDetailsModal";
 
 const AdminSlot = ({
-  openBooking,
-  openDetails,
-  props: { hours, lastBooking, number, slotId, taken },
+  props: {
+    hours,
+    lastBooking,
+    number,
+    openBooking,
+    openDetails,
+    slotId,
+    taken,
+  },
 }) => {
   let [unavailable, style] = useDateCheck(taken, lastBooking, false, slotId);
   const dispatch = useDispatch();
