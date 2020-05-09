@@ -4,7 +4,10 @@ import Modal from "react-modal";
 
 import { DateInfo } from "../DateInfo";
 
-import { deleteSelectedSlot } from "../../../redux/admin/adminUtils";
+import {
+  deleteSelectedSlot,
+  getDetails,
+} from "../../../redux/admin/adminUtils";
 
 export const withDetailsModal = (WrappedComponent) => ({
   props: { ...props },
@@ -12,13 +15,18 @@ export const withDetailsModal = (WrappedComponent) => ({
 }) => {
   const [isOpen, openDetails] = useState(false);
   const date = useSelector((store) => store.board.date);
-  const time = useSelector((store) => store.admin.choosedSlot.hours);
+  const {
+    choosedSlot: { hours },
+    details: { user },
+  } = useSelector((store) => store.admin);
   const dispatch = useDispatch();
 
-  console.log(props);
-
   useEffect(() => {
-    if (isOpen) Modal.setAppElement("#root");
+    if (isOpen) {
+      Modal.setAppElement("#root");
+      dispatch(getDetails(props.slotId));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
   return (
@@ -30,11 +38,11 @@ export const withDetailsModal = (WrappedComponent) => ({
           className="modal details-modal"
           overlayClassName="overlay"
         >
-          <DateInfo text={"Booking Details"} date={date} time={time} />
+          <DateInfo text={"Booking Details"} date={date} time={hours} />
           <div className="modal__user">
             <p>User</p>
             <p>
-              <span>Dogrodnik</span>
+              <span>{user}</span>
             </p>
           </div>
           <div className="modal__buttons">

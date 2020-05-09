@@ -7,3 +7,7 @@ export const bookSlot = async (data) => {
 export const deleteSlot = async (id) => {
   return await axiosInstance.delete(`/admin/delete/${id}`);
 };
+
+export const fetchDetails = async (id) => {
+  return await axiosInstance.get(`/admin/booking/${id}`);
+};
