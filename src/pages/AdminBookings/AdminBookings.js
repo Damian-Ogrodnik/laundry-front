@@ -6,8 +6,8 @@ import { Logout } from "../../components/Logout";
 
 export const AdminBookings = () => {
   return (
-    <div className="admin">
-      <Datepicker name="admin" />
+    <div className="admin-bookings">
+      <Datepicker name="admin-bookings" />
       <AdminSlots />
       <Logout />
     </div>

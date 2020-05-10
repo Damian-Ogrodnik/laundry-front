@@ -1,0 +1,16 @@
+.admin-search {
+  @include page-settings;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+
+  &__input {
+    margin-top: 1rem;
+
+    input {
+      text-align: center;
+      color: $thi-color;
+    }
+  }
+}

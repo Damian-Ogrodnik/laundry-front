@@ -1,4 +1,4 @@
-.admin {
+.admin-bookings {
   @include page-settings;
   @include flex-center;
   position: fixed;
@@ -13,7 +13,6 @@
       font-weight: 700;
       font-size: 1.25rem;
       text-align: center;
-      padding: 1em 0rem 0rem 0rem;
     }
   }
 }

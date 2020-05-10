@@ -11,9 +11,9 @@ import { NavBar } from "./components/NavBar";
 import { Route } from "./components/Route";
 
 import { AdminBookings } from "./pages/AdminBookings";
+import { AdminSearch } from "./pages/AdminSearch";
 import { BookingBoard } from "./pages/BookingBoard";
 import { Home } from "./pages/Home";
-import { Search } from "./pages/Search/Search";
 import { SignIn } from "./pages/SignIn";
 import { SignUp } from "./pages/SignUp";
 import { User } from "./pages/User";
@@ -29,7 +29,7 @@ export const App = () => {
             <Route path="/admin" secured component={AdminBookings} />
             <Route path="/booking-board" component={BookingBoard} secured />
             <Route path="/home" component={Home} />
-            <Route path="/search" component={Search} secured />
+            <Route path="/search" component={AdminSearch} secured />
             <Route path="/sign-in" component={SignIn} />
             <Route path="/sign-up" component={SignUp} />
             <Route path="/user" component={User} secured />
