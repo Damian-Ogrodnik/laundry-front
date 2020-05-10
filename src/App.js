@@ -10,7 +10,7 @@ import store from "./redux/store";
 import { NavBar } from "./components/NavBar";
 import { Route } from "./components/Route";
 
-import { Admin } from "./pages/Admin";
+import { AdminBookings } from "./pages/AdminBookings";
 import { BookingBoard } from "./pages/BookingBoard";
 import { Home } from "./pages/Home";
 import { Search } from "./pages/Search/Search";
@@ -26,7 +26,7 @@ export const App = () => {
         <div className="App">
           <NavBar />
           <Switch>
-            <Route path="/admin" secured component={Admin} />
+            <Route path="/admin" secured component={AdminBookings} />
             <Route path="/booking-board" component={BookingBoard} secured />
             <Route path="/home" component={Home} />
             <Route path="/search" component={Search} secured />
