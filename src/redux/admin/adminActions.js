@@ -13,12 +13,6 @@ export const startBookSlot = () => {
   };
 };
 
-export const bookSlotSuccess = () => {
-  return {
-    type: types.BOOK_SLOT_SUCCESS,
-  };
-};
-
 export const bookSlotFailure = (error) => {
   return {
     type: types.BOOK_SLOT_FAILURE,
@@ -26,15 +20,15 @@ export const bookSlotFailure = (error) => {
   };
 };
 
-export const startDeleteSlot = () => {
+export const bookSlotSuccess = () => {
   return {
-    type: types.DELETE_SLOT_START,
+    type: types.BOOK_SLOT_SUCCESS,
   };
 };
 
-export const deleteSlotSuccess = () => {
+export const startDeleteSlot = () => {
   return {
-    type: types.DELETE_SLOT_SUCCESS,
+    type: types.DELETE_SLOT_START,
   };
 };
 
@@ -45,16 +39,15 @@ export const deleteSlotFailure = (error) => {
   };
 };
 
-export const startGetDetails = () => {
+export const deleteSlotSuccess = () => {
   return {
-    type: types.GET_DETAILS_START,
+    type: types.DELETE_SLOT_SUCCESS,
   };
 };
 
-export const getDetailsSuccess = (details) => {
+export const startGetDetails = () => {
   return {
-    type: types.GET_DETAILS_SUCCESS,
-    payload: { ...details },
+    type: types.GET_DETAILS_START,
   };
 };
 
@@ -62,5 +55,12 @@ export const getDetailsFailure = (error) => {
   return {
     type: types.GET_DETAILS_FAILURE,
     payload: { error },
+  };
+};
+
+export const getDetailsSuccess = (details) => {
+  return {
+    type: types.GET_DETAILS_SUCCESS,
+    payload: { ...details },
   };
 };

@@ -2,8 +2,8 @@ import * as types from "./adminTypes";
 
 const initialState = {
   choosedSlot: {},
-  details: {},
   error: null,
+  details: {},
   loading: false,
 };
 
