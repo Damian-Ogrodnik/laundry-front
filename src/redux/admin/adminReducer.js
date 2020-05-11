@@ -41,7 +41,7 @@ const adminReducer = (state = initialState, action) => {
     case types.GET_USERS_SUCCESS:
       return {
         ...state,
-        users: { ...payload },
+        users: payload.users,
         error: null,
         loading: false,
       };

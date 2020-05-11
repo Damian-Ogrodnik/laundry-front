@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik, Field, Form } from "formik";
 import { useDispatch } from "react-redux";
 
@@ -10,6 +10,11 @@ const values = {
 
 export const UserSearch = ({ name }) => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUsers());
+  });
+
   return (
     <Formik
       initialValues={values}

@@ -54,7 +54,7 @@ export const getDetails = (id) => async (dispatch) => {
   }
 };
 
-export const getUsers = (name) => async (dispatch) => {
+export const getUsers = (name = "") => async (dispatch) => {
   try {
     await dispatch(actions.startGetUsers());
     const response = await services.fetchUsers(name).catch(() => {
