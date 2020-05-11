@@ -11,3 +11,7 @@ export const deleteSlot = async (id) => {
 export const fetchDetails = async (id) => {
   return await axiosInstance.get(`/admin/booking/${id}`);
 };
+
+export const fetchUsers = async (name) => {
+  return await axiosInstance.get("/admin/users", { params: { name } });
+};

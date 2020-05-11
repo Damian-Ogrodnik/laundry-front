@@ -64,3 +64,23 @@ export const getDetailsSuccess = (details) => {
     payload: { ...details },
   };
 };
+
+export const startGetUsers = () => {
+  return {
+    type: types.GET_USERS_START,
+  };
+};
+
+export const getUsersFailure = (error) => {
+  return {
+    type: types.GET_USERS_FAILURE,
+    payload: { error },
+  };
+};
+
+export const getUsersSuccess = (users) => {
+  return {
+    type: types.GET_USERS_SUCCESS,
+    payload: { users },
+  };
+};

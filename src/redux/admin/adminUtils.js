@@ -1,6 +1,6 @@
 import * as actions from "./adminActions";
 
-import { bookSlot, deleteSlot, fetchDetails } from "../../services/Admin";
+import * as services from "../../services/Admin";
 import { enableToast } from "../../redux/toast/toastActions";
 import { fetchDate } from "../board/boardUtils";
 
@@ -9,7 +9,7 @@ export const bookSelectedSlot = (name, date, number, hours) => async (
 ) => {
   try {
     dispatch(actions.startBookSlot());
-    const response = await bookSlot({ name, date, number, hours });
+    const response = await services.bookSlot({ name, date, number, hours });
     dispatch(actions.bookSlotSuccess(response.data));
     dispatch(enableToast("BOOK"));
     dispatch(fetchDate(date, true));
@@ -27,7 +27,7 @@ export const bookSelectedSlot = (name, date, number, hours) => async (
 export const deleteSelectedSlot = (date, id) => async (dispatch) => {
   try {
     dispatch(actions.startDeleteSlot());
-    await deleteSlot(id);
+    await services.deleteSlot(id);
     dispatch(actions.deleteSlotSuccess());
     dispatch(enableToast("DELETE"));
     dispatch(fetchDate(date, true));
@@ -45,11 +45,23 @@ export const deleteSelectedSlot = (date, id) => async (dispatch) => {
 export const getDetails = (id) => async (dispatch) => {
   try {
     await dispatch(actions.startGetDetails());
-    const response = await fetchDetails(id).catch(() => {
+    const response = await services.fetchDetails(id).catch(() => {
       throw new Error("Internal Server Error");
     });
     dispatch(actions.getDetailsSuccess(response.data));
   } catch (error) {
     dispatch(actions.getDetailsFailure(error.message));
+  }
+};
+
+export const getUsers = (name) => async (dispatch) => {
+  try {
+    await dispatch(actions.startGetUsers());
+    const response = await services.fetchUsers(name).catch(() => {
+      throw new Error("Internal Server Error");
+    });
+    dispatch(actions.getUsersSuccess(response.data));
+  } catch (error) {
+    dispatch(actions.getUsersFailure(error.message));
   }
 };

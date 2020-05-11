@@ -5,6 +5,7 @@ const initialState = {
   error: null,
   details: {},
   loading: false,
+  users: null,
 };
 
 const adminReducer = (state = initialState, action) => {
@@ -12,11 +13,13 @@ const adminReducer = (state = initialState, action) => {
   switch (type) {
     case types.BOOK_SLOT_START ||
       types.DELETE_SLOT_START ||
-      types.GET_DETAILS_START:
+      types.GET_DETAILS_START ||
+      types.GET_USERS_START:
       return { ...state, loading: true, error: null };
     case types.BOOK_SLOT_FAILURE ||
       types.DELETE_SLOT_FAILURE ||
-      types.GET_DETAILS_FAILURE:
+      types.GET_DETAILS_FAILURE ||
+      types.GET_USERS_FAILURE:
       return {
         ...state,
         error: payload.error,
@@ -32,6 +35,13 @@ const adminReducer = (state = initialState, action) => {
       return {
         ...state,
         details: { ...payload },
+        error: null,
+        loading: false,
+      };
+    case types.GET_USERS_SUCCESS:
+      return {
+        ...state,
+        users: { ...payload },
         error: null,
         loading: false,
       };
