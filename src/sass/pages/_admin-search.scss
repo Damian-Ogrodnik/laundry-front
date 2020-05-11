@@ -13,4 +13,20 @@
       color: $thi-color;
     }
   }
+  &__list {
+    @include tile;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    padding: 1.5rem 1rem;
+    width: 75%;
+
+    & > div {
+      display: flex;
+      justify-content: space-around;
+      padding: 0.25rem 0rem;
+      & > p {
+        width: 100%;
+      }
+    }
+  }
 }

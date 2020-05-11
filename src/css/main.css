@@ -565,6 +565,31 @@ button.cancel:active {
   color: #b82601;
 }
 
+.admin-search__list {
+  border: 0.25rem solid #000000;
+  border-radius: 10%;
+  background-color: #c9c1c1;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  margin-top: 1rem;
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  width: 75%;
+}
+
+.admin-search__list > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0.25rem 0rem;
+}
+
+.admin-search__list > div > p {
+  width: 100%;
+}
+
 .booking-board__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;

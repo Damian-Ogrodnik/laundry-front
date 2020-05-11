@@ -8,7 +8,7 @@ export const AdminSearch = () => {
   return (
     <div className="admin-search">
       <UserSearch name={"admin-search__input"} />
-      <UsersList />
+      <UsersList name={"admin-search__list"} />
       <Logout />
     </div>
   );
