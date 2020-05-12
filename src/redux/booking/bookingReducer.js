@@ -1,27 +1,27 @@
 import * as types from "./bookingTypes";
 
 const initialState = {
-  loading: false,
+  bookedSlot: null,
   error: false,
-  bookedSlot: null
+  loading: false,
 };
 
 const bookingReducer = (state = initialState, action) => {
-  const { type, payload } = action;
+  const { payload, type } = action;
 
   switch (type) {
     case types.START_BOOKING:
       return { ...state, loading: true };
+    case types.BOOKING_FAILURE:
+      return { ...state, error: payload.error, loading: false };
     case types.BOOKING_SUCCESS:
       return {
         ...state,
+        bookedSlot: payload.bookedSlot,
         loading: false,
-        bookedSlot: payload.bookedSlot
       };
-    case types.BOOKING_FAILURE:
-      return { ...state, loading: false, error: payload.error };
     case types.RESET_BOOKING:
-      return { ...state, loading: false, error: false, bookedSlot: null };
+      return { ...state, bookedSlot: null, error: false, loading: false };
     default:
       return state;
   }
