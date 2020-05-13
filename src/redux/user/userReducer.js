@@ -1,14 +1,14 @@
 import * as types from "./userTypes";
 
 const initialState = {
-  logged: false,
-  user: {},
-  loading: false,
   error: null,
+  loading: false,
+  logged: false,
   id: null,
+  isAdmin: false,
   name: null,
   token: null,
-  isAdmin: false
+  user: {},
 };
 
 const userReducer = (state = initialState, action) => {
