@@ -553,7 +553,6 @@ button.cancel:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: fixed;
 }
 
 .admin-search__input {
@@ -561,8 +560,10 @@ button.cancel:active {
 }
 
 .admin-search__input input {
-  text-align: center;
   color: #b82601;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: center;
 }
 
 .admin-search__list {
@@ -625,7 +626,6 @@ button.cancel:active {
   font-weight: 700;
   font-size: 1.25rem;
   text-align: center;
-  padding: 1em 0rem 0rem 0rem;
 }
 
 .homepage h1 {

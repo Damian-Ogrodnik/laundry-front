@@ -3,15 +3,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: fixed;
 
   &__input {
+    @include input-main;
     margin-top: 1rem;
-
-    input {
-      text-align: center;
-      color: $third-color;
-    }
   }
   &__list {
     @include tile;
