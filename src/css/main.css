@@ -473,7 +473,7 @@ button {
   font-weight: 100;
   border-radius: 1rem;
   color: white;
-  border: 0.15rem solid black;
+  border: none;
   background-color: black;
   -webkit-transition: background-color 1s ease;
   transition: background-color 1s ease;
@@ -481,13 +481,13 @@ button {
 
 button:hover {
   background-color: #062f4f;
-  border: 0.15rem solid #062f4f;
+  border: none;
 }
 
 button:active {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
-  border: 0.15rem solid #062f4f;
+  border: none;
   background-color: #062f4f;
 }
 
@@ -500,7 +500,7 @@ button.cancel {
 button.cancel:active {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
-  border: 0.15rem solid #062f4f;
+  border: none;
   background-color: #062f4f;
 }
 
