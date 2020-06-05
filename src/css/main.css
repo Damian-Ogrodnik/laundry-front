@@ -732,49 +732,6 @@ button.cancel:active {
   opacity: 0;
 }
 
-.homepage__tile.animate:nth-child(1) {
-  -webkit-animation: fade-in 2s 1;
-  animation: fade-in 2s 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.homepage__tile.animate:nth-child(3) {
-  -webkit-animation: fade-in 2s 1;
-  animation: fade-in 2s 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-}
-
-.homepage__tile.animate:nth-child(5) {
-  -webkit-animation: fade-in 2s 1;
-  animation: fade-in 2s 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-}
-
-.homepage__tile.animate:nth-child(7) {
-  -webkit-animation: fade-in 2s 1;
-  animation: fade-in 2s 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
-}
-
-.homepage__tile.animate:nth-child(9) {
-  -webkit-animation: fade-in 2s 1;
-  animation: fade-in 2s 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-}
-
 .homepage__tile__icon {
   color: #062f4f;
   height: 10rem;
@@ -787,42 +744,6 @@ button.cancel:active {
   color: #b82601;
   height: 5rem;
   width: 10rem;
-}
-
-.homepage__tile__arrow.animate:nth-child(2) {
-  -webkit-animation: fade-in 2s 1;
-  animation: fade-in 2s 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
-}
-
-.homepage__tile__arrow.animate:nth-child(4) {
-  -webkit-animation: fade-in 2s 1;
-  animation: fade-in 2s 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 0.75s;
-          animation-delay: 0.75s;
-}
-
-.homepage__tile__arrow.animate:nth-child(6) {
-  -webkit-animation: fade-in 2s 1;
-  animation: fade-in 2s 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 1.25s;
-          animation-delay: 1.25s;
-}
-
-.homepage__tile__arrow.animate:nth-child(8) {
-  -webkit-animation: fade-in 2s 1;
-  animation: fade-in 2s 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 1.75s;
-          animation-delay: 1.75s;
 }
 
 .homepage__tile__wrapper {
@@ -882,6 +803,87 @@ button.cancel:active {
   width: 10rem;
   margin: 1rem;
   margin-bottom: 5rem;
+}
+
+.animate:nth-child(1) {
+  -webkit-animation: fade-in 2s 1;
+  animation: fade-in 2s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+.animate:nth-child(2) {
+  -webkit-animation: fade-in 2s 1;
+  animation: fade-in 2s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.animate:nth-child(3) {
+  -webkit-animation: fade-in 2s 1;
+  animation: fade-in 2s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+
+.animate:nth-child(4) {
+  -webkit-animation: fade-in 2s 1;
+  animation: fade-in 2s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.animate:nth-child(5) {
+  -webkit-animation: fade-in 2s 1;
+  animation: fade-in 2s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s;
+}
+
+.animate:nth-child(6) {
+  -webkit-animation: fade-in 2s 1;
+  animation: fade-in 2s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.animate:nth-child(7) {
+  -webkit-animation: fade-in 2s 1;
+  animation: fade-in 2s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1.75s;
+          animation-delay: 1.75s;
+}
+
+.animate:nth-child(8) {
+  -webkit-animation: fade-in 2s 1;
+  animation: fade-in 2s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.animate:nth-child(9) {
+  -webkit-animation: fade-in 2s 1;
+  animation: fade-in 2s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 2.25s;
+          animation-delay: 2.25s;
 }
 
 @media only screen and (max-width: 860px) {

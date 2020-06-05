@@ -62,28 +62,6 @@
     overflow: hidden;
     opacity: 0;
 
-    &.animate {
-      &:nth-child(1) {
-        @include animation("fade-in 2s 1");
-      }
-      &:nth-child(3) {
-        @include animation("fade-in 2s 1");
-        animation-delay: 0.5s;
-      }
-      &:nth-child(5) {
-        @include animation("fade-in 2s 1");
-        animation-delay: 1s;
-      }
-      &:nth-child(7) {
-        @include animation("fade-in 2s 1");
-        animation-delay: 1.5s;
-      }
-      &:nth-child(9) {
-        @include animation("fade-in 2s 1");
-        animation-delay: 2s;
-      }
-    }
-
     &__icon {
       color: $second-color;
       height: 10rem;
@@ -95,24 +73,6 @@
       color: $third-color;
       height: 5rem;
       width: 10rem;
-      &.animate {
-        &:nth-child(2) {
-          @include animation("fade-in 2s 1");
-          animation-delay: 0.25s;
-        }
-        &:nth-child(4) {
-          @include animation("fade-in 2s 1");
-          animation-delay: 0.75s;
-        }
-        &:nth-child(6) {
-          @include animation("fade-in 2s 1");
-          animation-delay: 1.25s;
-        }
-        &:nth-child(8) {
-          @include animation("fade-in 2s 1");
-          animation-delay: 1.75s;
-        }
-      }
     }
 
     &__wrapper {
@@ -147,6 +107,15 @@
       width: 10rem;
       margin: 1rem;
       margin-bottom: 5rem;
+    }
+  }
+}
+
+.animate {
+  @for $i from 1 through 9 {
+    &:nth-child(#{$i}) {
+      @include animation("fade-in 2s 1");
+      animation-delay: 0.25s * $i;
     }
   }
 }
