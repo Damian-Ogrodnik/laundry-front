@@ -13,7 +13,7 @@
     h2 {
       font-size: 2rem;
       margin-bottom: 3rem;
-      color: $thi-color;
+      color: $third-color;
     }
   }
 
@@ -34,7 +34,7 @@
 
   &__error {
     position: absolute;
-    color: $error-font-color;
+    color: $third-color;
     font-size: 0.75rem;
     bottom: -1.25rem;
   }

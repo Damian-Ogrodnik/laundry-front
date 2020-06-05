@@ -587,13 +587,9 @@ button.cancel:active {
 }
 
 .admin-search__list > div:first-child {
-  border-bottom: 1px solid #b82601;
-  margin-bottom: 0.5rem;
-}
-
-.admin-search__list > div:first-child p {
-  font-size: 1.25rem;
-  font-weight: 700;
+  border-bottom: 1px solid #b82601 p;
+  border-bottom-font-size: 1.25rem;
+  border-bottom-font-weight: 700;
 }
 
 .admin-search__list > div > p {

@@ -9,7 +9,7 @@
     padding-left: 2rem;
 
     &--icon {
-      color: $primary-color;
+      color: $tile-primary-color;
       height: 2rem;
       width: 2rem;
     }
@@ -26,7 +26,7 @@
       color: white;
 
       &.selected > li {
-        color: $thi-color;
+        color: $third-color;
       }
     }
     li {

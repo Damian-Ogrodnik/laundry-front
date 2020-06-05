@@ -22,27 +22,27 @@
     position: relative;
 
     &--taken {
-      background-color: $primary-color;
+      background-color: $tile-primary-color;
     }
 
     &--available {
       background-color: $tile-background;
 
       &.user {
-        background-color: $fir-color;
+        background-color: $second-color;
         button:hover {
-          background-color: $main-color;
-          border: 0.15rem solid $main-color;
+          background-color: $first-color;
+          border: 0.15rem solid $first-color;
         }
       }
 
       &--selected {
-        background-color: $fir-color;
+        background-color: $second-color;
 
         button {
-          background-color: $thi-color;
+          background-color: $third-color;
           &:hover {
-            background-color: $thi-color;
+            background-color: $third-color;
           }
         }
       }
@@ -61,8 +61,7 @@
   &__error {
     position: absolute;
     bottom: -2rem;
-    //margin-top: 1rem;
-    color: $error-font-color;
+    color: $third-color;
   }
 
   &__wrapper {

@@ -10,7 +10,7 @@
 
     input {
       text-align: center;
-      color: $thi-color;
+      color: $third-color;
     }
   }
   &__list {
@@ -25,9 +25,7 @@
       justify-content: space-around;
       padding: 0.25rem 0rem;
       &:first-child {
-        border-bottom: 1px solid $thi-color;
-        margin-bottom: 0.5rem;
-        p {
+        border-bottom: 1px solid $third-color p {
           font-size: 1.25rem;
           font-weight: 700;
         }

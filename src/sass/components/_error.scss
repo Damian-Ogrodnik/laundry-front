@@ -1,7 +1,7 @@
 .error {
   position: absolute;
   top: 2rem;
-  color: $error-font-color;
+  color: $third-color;
 }
 
 .main.error {
@@ -10,7 +10,7 @@
   top: 30%;
 
   &__icon {
-    color: $error-font-color;
+    color: $third-color;
     width: 7rem;
     height: 7rem;
     margin-bottom: 1rem;
