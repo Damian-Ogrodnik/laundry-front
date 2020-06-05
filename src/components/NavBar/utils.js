@@ -4,7 +4,7 @@ export const loggedNav = [
   ["My Bookings", "/user-bookings"],
 ];
 export const unloggedNav = [
-  ["Home", "/home"],
+  ["Home", "/"],
   ["Sign In", "/sign-in"],
   ["Sign Up", "/sign-up"],
 ];

@@ -17,7 +17,7 @@ export const NavBar = () => {
           ? data.adminNav
           : data.loggedNav
         ).map(([text, link]) => (
-          <NavLink key={text} activeClassName="selected" to={link}>
+          <NavLink key={text} activeClassName="selected" exact to={link}>
             <li>{text}</li>
           </NavLink>
         ))}

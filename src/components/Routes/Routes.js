@@ -17,7 +17,7 @@ export const Routes = () => {
     <Switch>
       <Route path="/admin" secured component={AdminBookings} />
       <Route path="/booking-board" component={BookingBoard} secured />
-      <Route path="/home" component={Home} />
+      <Route exact path="/" component={Home} />
       <Route path="/search" component={AdminSearch} secured />
       <Route path="/sign-in" component={SignIn} />
       <Route path="/sign-up" component={SignUp} />
