@@ -1,8 +1,6 @@
 @import "./abstracts/variables";
 @import "./abstracts/mixins";
 
-@import "./base/typography";
-
 @import "./components/admin-modals";
 @import "./components/booking";
 @import "./components/delete";
@@ -15,6 +13,7 @@
 @import "./components/withConfirm";
 
 @import "./modules/button";
+@import "./modules/input";
 
 @import "./pages/admin-bookings";
 @import "./pages/admin-search";

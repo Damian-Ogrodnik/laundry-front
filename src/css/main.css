@@ -16,30 +16,6 @@
   }
 }
 
-label {
-  font-size: 0.75rem;
-  color: black;
-  pointer-events: none;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-input {
-  border: 0;
-  border-bottom: 1px solid #555;
-  background: transparent;
-  width: 100%;
-  padding: 8px 0 5px 0;
-  font-size: 1.25rem;
-  color: black;
-}
-
-input:focus {
-  border: none;
-  outline: none;
-  border-bottom: 1px solid #e74c3c;
-}
-
 .modal {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -502,6 +478,30 @@ button.cancel:active {
           transform: translateY(4px);
   border: none;
   background-color: #062f4f;
+}
+
+label {
+  font-size: 0.75rem;
+  color: black;
+  pointer-events: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+input {
+  border: 0;
+  border-bottom: 1px solid #555;
+  background: transparent;
+  width: 100%;
+  padding: 8px 0 5px 0;
+  font-size: 1.25rem;
+  color: black;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #e74c3c;
 }
 
 .admin-bookings {
