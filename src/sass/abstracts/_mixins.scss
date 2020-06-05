@@ -5,9 +5,7 @@
 }
 
 @mixin flex-center-column {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   flex-direction: column;
 }
 
