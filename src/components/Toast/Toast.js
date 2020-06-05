@@ -2,12 +2,10 @@ import React from "react";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 
-import { activateToast } from "redux/toast/toastActions";
-import { resetToast } from "redux/toast/toastActions";
+import { activateToast, resetToast } from "redux/toast/toastActions";
 
 export const Toast = ({ text, toastType }) => {
-  const toastActive = useSelector((state) => state.toast.toastActive);
-  const type = useSelector((state) => state.toast.type);
+  const { toastActive, type } = useSelector(({ toast }) => toast);
   const dispatch = useDispatch();
 
   const notify = () => {
