@@ -3,15 +3,15 @@ import DatePicker from "react-datepicker";
 import { addDays } from "date-fns";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchDate } from "../../redux/board/boardUtils";
-import { resetBookings } from "../../redux/board/boardActions";
-import { resetCurrentBooking } from "../../redux/booking/bookingActions";
+import { fetchDate } from "redux/board/boardUtils";
+import { resetBookings } from "redux/board/boardActions";
+import { resetCurrentBooking } from "redux/booking/bookingActions";
 
 import "react-datepicker/dist/react-datepicker.css";
 
 export const Datepicker = ({ name }) => {
   const [startDate, setStartDate] = useState(new Date());
-  const bookedSlot = useSelector(state => state.booking.bookedSlot);
+  const bookedSlot = useSelector((state) => state.booking.bookedSlot);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export const Datepicker = ({ name }) => {
       <DatePicker
         maxDate={addDays(new Date(), 7)}
         minDate={new Date()}
-        onChange={date => setStartDate(date)}
+        onChange={(date) => setStartDate(date)}
         selected={startDate}
       />
     </div>

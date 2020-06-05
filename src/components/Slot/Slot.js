@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { selectSlot } from "../../redux/board/boardActions";
-import { useDateCheck } from "../../custom-hooks/index";
+import { selectSlot } from "redux/board/boardActions";
+import { useDateCheck } from "custom-hooks/index";
 
-import { withConfirm } from "../../HOC/withConfirm";
+import { withConfirm } from "HOC/withConfirm";
 
-import { deleteUsersBooking } from "../../redux/userBookings/userBookingsUtils";
+import { deleteUsersBooking } from "redux/userBookings/userBookingsUtils";
 
 const Slot = ({
   confirm,

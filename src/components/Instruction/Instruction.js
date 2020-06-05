@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { tiles } from "./utils";
 
-import { Tile } from "../Tile";
+import { Tile } from "components/Tile";
 
 export const Instruction = () => {
   const [animate, setAnimate] = useState();

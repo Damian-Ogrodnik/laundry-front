@@ -1,7 +1,7 @@
 import React from "react";
 import { MdError } from "react-icons/md";
 
-import { IconProvider } from "../IconProvider";
+import { IconProvider } from "components/IconProvider";
 
 export const Error = ({ errorMsg, name, icon }) => {
   return (

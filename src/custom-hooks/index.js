@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-import { checkAvailability } from "../services/Date";
+import { checkAvailability } from "services/Date";
 
 export const useDateCheck = (taken, lastBooking, selected = false, id) => {
   const [unavailable, setUnavailability] = useState(taken);

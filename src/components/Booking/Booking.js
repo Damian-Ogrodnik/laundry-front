@@ -1,13 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { withError } from "../../HOC/withError";
-import { Slots } from "../Slots";
+import { withError } from "HOC/withError";
+import { Slots } from "components/Slots";
 
-import { bookSelectedSlot } from "../../redux/booking/bookingUtils";
-import { bookingFailure } from "../../redux/booking/bookingActions";
+import { bookSelectedSlot } from "redux/booking/bookingUtils";
+import { bookingFailure } from "redux/booking/bookingActions";
 
-import { Toast } from "../Toast";
+import { Toast } from "components/Toast";
 
 const Booking = () => {
   const { date, selectedSlot } = useSelector((state) => state.board);

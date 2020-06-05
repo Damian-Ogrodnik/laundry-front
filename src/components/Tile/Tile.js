@@ -1,7 +1,7 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 
-import { IconProvider } from "../IconProvider";
+import { IconProvider } from "components/IconProvider";
 
 export const Tile = ({ props: [animate, icon, text, arrow] }) => {
   return (

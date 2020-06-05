@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { deleteUser } from "../../redux/user/userUtils";
+import { deleteUser } from "redux/user/userUtils";
 
-import { withConfirm } from "../../HOC/withConfirm";
+import { withConfirm } from "HOC/withConfirm";
 
 const Delete = ({ confirm, name, setOpen }) => {
   const dispatch = useDispatch();

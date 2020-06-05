@@ -2,16 +2,16 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 
-import { FormWrapper } from "../../components/FormWrapper";
+import { FormWrapper } from "components/FormWrapper";
 
-import { registerUser } from "../../redux/user/userUtils";
-import { registrationSchema } from "../../common/validation";
+import { registerUser } from "redux/user/userUtils";
+import { registrationSchema } from "common/validation";
 
 const values = {
   Nickname: "",
   Email: "",
   Password: "",
-  Repassword: ""
+  Repassword: "",
 };
 
 export const SignUp = () => {
@@ -31,7 +31,7 @@ export const SignUp = () => {
           title={"Create Account"}
           action={"SUBMIT"}
           render={() => {
-            return Object.keys(values).map(value => (
+            return Object.keys(values).map((value) => (
               <div key={value} className="form__input">
                 <label htmlFor={value}>{value}</label>
                 <Field
@@ -39,7 +39,7 @@ export const SignUp = () => {
                   type={value === "Repassword" ? "password" : value}
                 />
                 <ErrorMessage name={value}>
-                  {msg => <div className="form__error">{msg}</div>}
+                  {(msg) => <div className="form__error">{msg}</div>}
                 </ErrorMessage>
               </div>
             ));

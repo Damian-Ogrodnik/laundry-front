@@ -2,18 +2,18 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 
-import { changePasswordSchema } from "../../common/validation";
-import { changePassword } from "../../redux/user/userUtils";
+import { changePasswordSchema } from "common/validation";
+import { changePassword } from "redux/user/userUtils";
 
-import { Delete } from "../../components/Delete";
-import { FormWrapper } from "../../components/FormWrapper";
-import { Logout } from "../../components/Logout";
-import { Toast } from "../../components/Toast";
+import { Delete } from "components/Delete";
+import { FormWrapper } from "components/FormWrapper";
+import { Logout } from "components/Logout";
+import { Toast } from "components/Toast";
 
 const values = {
   Password: "",
   newPassword: "",
-  newPasswordConfirm: ""
+  newPasswordConfirm: "",
 };
 
 export const User = () => {
@@ -34,7 +34,7 @@ export const User = () => {
             title={"Change Password"}
             action={"CHANGE"}
             render={() => {
-              return Object.keys(values).map(value => (
+              return Object.keys(values).map((value) => (
                 <div key={value} className="form__input">
                   <label htmlFor={value}>
                     {value === "Password"
@@ -45,7 +45,7 @@ export const User = () => {
                   </label>
                   <Field name={value} type="Password" />
                   <ErrorMessage name={value}>
-                    {msg => <div className="form__error">{msg}</div>}
+                    {(msg) => <div className="form__error">{msg}</div>}
                   </ErrorMessage>
                 </div>
               ));

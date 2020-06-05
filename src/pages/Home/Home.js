@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Footer } from "../../components/Footer";
-import { Front } from "../../components/Front";
-import { Instruction } from "../../components/Instruction";
+import { Footer } from "components/Footer";
+import { Front } from "components/Front";
+import { Instruction } from "components/Instruction";
 
 export const Home = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 
-import { withError } from "../../HOC/withError";
-import { UserSlot } from "../UserSlot";
+import { withError } from "HOC/withError";
+import { UserSlot } from "components/UserSlot";
 
 const UserSlots = ({ bookings }) => {
   return (

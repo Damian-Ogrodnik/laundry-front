@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { withConfirm } from "../../HOC/withConfirm";
+import { withConfirm } from "HOC/withConfirm";
 
-import { deleteUsersBooking } from "../../redux/userBookings/userBookingsUtils";
+import { deleteUsersBooking } from "redux/userBookings/userBookingsUtils";
 
 const UserSlot = ({ confirm, data: { date, hours, _id }, number, setOpen }) => {
   const dispatch = useDispatch();

@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { Slot } from "../Slot";
+import { Slot } from "components/Slot";
 
-import { slots } from "../../utils/slots";
+import { slots } from "utils/slots";
 
 export const Slots = () => {
   const { selectedSlot, takenSlots } = useSelector((state) => state.board);

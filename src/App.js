@@ -5,10 +5,10 @@ import { ToastContainer } from "react-toastify";
 import "./css/main.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import store from "./redux/store";
+import store from "redux/store";
 
-import { NavBar } from "./components/NavBar";
-import { Routes } from "./components/Routes";
+import { NavBar } from "components/NavBar";
+import { Routes } from "components/Routes";
 
 export const App = () => {
   return (

@@ -2,7 +2,7 @@ import React from "react";
 
 import { footerData } from "./utils";
 
-import { IconProvider } from "../IconProvider";
+import { IconProvider } from "components/IconProvider";
 
 export const Footer = () => {
   return (

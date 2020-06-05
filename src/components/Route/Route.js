@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Route as ReactRouter, Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { clearErrors } from "../../redux/user/userActions";
+import { clearErrors } from "redux/user/userActions";
 
 export const Route = ({ component: Component, secured, path, ...rest }) => {
   const { error, isAdmin, logged } = useSelector((state) => state.user);

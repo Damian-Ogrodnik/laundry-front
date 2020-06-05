@@ -2,11 +2,11 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 
-import { FormWrapper } from "../../components/FormWrapper";
-import { Toast } from "../../components/Toast";
+import { FormWrapper } from "components/FormWrapper";
+import { Toast } from "components/Toast";
 
-import { logUser } from "../../redux/user/userUtils";
-import { loginSchema } from "../../common/validation";
+import { logUser } from "redux/user/userUtils";
+import { loginSchema } from "common/validation";
 
 const values = { Nickname: "", Password: "" };
 

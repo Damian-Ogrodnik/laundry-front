@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Logout } from "../../components/Logout";
-import { UsersList } from "../../components/adminComponents/UsersList";
-import { UserSearch } from "../../components/adminComponents/UserSearch";
+import { Logout } from "components/Logout";
+import { UsersList } from "components/adminComponents/UsersList";
+import { UserSearch } from "components/adminComponents/UserSearch";
 
 export const AdminSearch = () => {
   return (

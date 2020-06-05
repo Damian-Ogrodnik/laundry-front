@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getUsersBookings } from "../../redux/userBookings/userBookingsUtils";
+import { getUsersBookings } from "redux/userBookings/userBookingsUtils";
 
-import { Logout } from "../../components/Logout";
-import { UserSlots } from "../../components/UserSlots";
+import { Logout } from "components/Logout";
+import { UserSlots } from "components/UserSlots";
 
 export const UserBookings = () => {
   const { error, loading, userBookings } = useSelector(

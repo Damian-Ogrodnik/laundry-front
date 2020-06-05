@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { Booking } from "../../components/Booking";
-import { Datepicker } from "../../components/Datepicker";
-import { Logout } from "../../components/Logout";
+import { Booking } from "components/Booking";
+import { Datepicker } from "components/Datepicker";
+import { Logout } from "components/Logout";
 
 export const BookingBoard = () => {
   const { error, loading } = useSelector((state) => state.board);
