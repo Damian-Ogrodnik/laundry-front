@@ -5,7 +5,7 @@ const initialState = {
   error: null,
   loading: false,
   takenSlots: [],
-  selectedSlot: null
+  selectedSlot: null,
 };
 
 const boardReducer = (state = initialState, action) => {
@@ -16,33 +16,33 @@ const boardReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        date: payload.date
+        date: payload.date,
       };
     case types.GET_SLOTS_FAILURE:
       return {
         ...state,
         error: payload.error,
         loading: false,
-        takenSlots: null
+        takenSlots: null,
       };
     case types.GET_SLOTS_SUCCESS:
       return {
         ...state,
         error: null,
         loading: false,
-        takenSlots: payload.takenSlots
+        takenSlots: payload.takenSlots,
       };
     case types.SELECT_SLOT:
       return {
         ...state,
-        selectedSlot: payload.slotNumber
+        selectedSlot: payload.slotNumber,
       };
     case types.RESET_BOOKINGS:
       return {
         ...state,
         error: null,
-        takenSlots: null,
-        selectedSlot: null
+        takenSlots: [],
+        selectedSlot: null,
       };
     default:
       return state;

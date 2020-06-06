@@ -5,7 +5,7 @@ const initialState = {
   error: null,
   details: {},
   loading: false,
-  users: null,
+  users: [],
 };
 
 const adminReducer = (state = initialState, action) => {

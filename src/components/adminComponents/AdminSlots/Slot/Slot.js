@@ -2,10 +2,10 @@ import React from "react";
 import { compose } from "redux";
 import { useDispatch } from "react-redux";
 
-import { chooseSlot } from "../../../redux/admin/adminActions";
-import { useDateCheck } from "../../../custom-hooks";
-import { withBookingModal } from "../withBookingModal";
-import { withDetailsModal } from "../withDetailsModal";
+import { chooseSlot } from "redux/admin/adminActions";
+import { useDateCheck } from "custom-hooks";
+import { withBookingModal } from "../../withBookingModal";
+import { withDetailsModal } from "../../withDetailsModal";
 
 const AdminSlot = ({
   props: {
@@ -44,5 +44,5 @@ const AdminSlot = ({
 };
 
 const withModals = compose(withBookingModal, withDetailsModal);
-const adminSlotWithModals = withModals(AdminSlot);
-export { adminSlotWithModals as AdminSlot };
+const slotWithModals = withModals(AdminSlot);
+export { slotWithModals as Slot };

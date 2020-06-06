@@ -1,1 +1,0 @@
-export { AdminSlot } from "./AdminSlot";

@@ -1,31 +1,28 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { slots } from "../../../utils/slots";
+import { slots } from "utils/slots";
 
-import { AdminSlot } from "../AdminSlot";
-import { Toast } from "../../Toast";
+import { Slot } from "./Slot";
+import { Toast } from "components/Toast";
 
 export const AdminSlots = () => {
   const error = useSelector((state) => state.admin.error);
   const takenSlots = useSelector((state) => state.board.takenSlots);
 
-  const renderSlots = () => {
-    return slots.map(({ number, ...props }) => {
-      let taken, slotId;
-      if (takenSlots) {
-        taken = takenSlots.some((takenSlot) => number === takenSlot.number);
-      }
-      if (taken) {
-        takenSlots.forEach((takenSlot) => {
-          if (takenSlot.number === number) slotId = takenSlot._id;
-        });
-      }
-      return (
-        <AdminSlot key={number} props={{ number, slotId, taken, ...props }} />
+  const renderSlots = () =>
+    slots.map(({ number, ...props }) => {
+      let taken = takenSlots.filter((takenSlot) => number === takenSlot.number);
+      return taken.length ? (
+        <Slot
+          key={number}
+          props={{ number, slotId: taken[0]._id, taken, ...props }}
+        />
+      ) : (
+        <Slot key={number} props={{ number, ...props }} />
       );
     });
-  };
+
   return (
     <div className="booking__slots">
       {renderSlots()}
