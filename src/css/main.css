@@ -566,36 +566,29 @@ input:focus {
   text-align: center;
 }
 
-.admin-search__list {
+.admin-search table {
   border: 0.25rem solid #000000;
   border-radius: 10%;
   background-color: #c9c1c1;
   -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
           box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   margin-top: 1rem;
+  padding: 0rem 0.5rem;
   border-radius: 1rem;
-  padding: 1.5rem 1rem;
+  border-spacing: 0;
   width: 75%;
 }
 
-.admin-search__list > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: 0.25rem 0rem;
-}
-
-.admin-search__list > div:first-child {
-  border-bottom: 1px solid #b82601 p;
-  border-bottom-font-size: 1.25rem;
-  border-bottom-font-weight: 700;
-}
-
-.admin-search__list > div > p {
-  width: 100%;
+.admin-search table th {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #b82601;
+  text-align: start;
   font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.admin-search table td {
+  padding: 0.5rem 1rem;
 }
 
 .booking-board__wrapper {

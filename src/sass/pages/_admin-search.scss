@@ -8,28 +8,22 @@
     @include input-main;
     margin-top: 1rem;
   }
-  &__list {
+  table {
     @include tile;
     margin-top: 1rem;
+    padding: 0rem 0.5rem;
     border-radius: 1rem;
-    padding: 1.5rem 1rem;
+    border-spacing: 0;
     width: 75%;
-
-    & > div {
-      display: flex;
-      justify-content: space-around;
-      padding: 0.25rem 0rem;
-      &:first-child {
-        border-bottom: 1px solid $third-color p {
-          font-size: 1.25rem;
-          font-weight: 700;
-        }
-      }
-
-      & > p {
-        width: 100%;
-        font-size: 1.25rem;
-      }
+    th {
+      padding: 1rem 1rem;
+      border-bottom: 1px solid $third-color;
+      text-align: start;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    td {
+      padding: 0.5rem 1rem;
     }
   }
 }
