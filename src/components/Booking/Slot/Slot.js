@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { selectSlot } from "redux/board/boardActions";
-import { useDateCheck } from "custom-hooks/index";
+import { useDateCheck } from "custom-hooks";
 
 import { withConfirm } from "HOC/withConfirm";
 
@@ -10,8 +10,10 @@ import { deleteUsersBooking } from "redux/userBookings/userBookingsUtils";
 
 const Slot = ({
   confirm,
-  propSlot: { hours, id, lastBooking, number, selected, taken, user },
+  props: { hours, id, lastBooking, number },
+  selected,
   setOpen,
+  taken,
 }) => {
   let [unavailable, style] = useDateCheck(taken, lastBooking, selected);
   const date = useSelector((state) => state.board.date);
@@ -24,8 +26,8 @@ const Slot = ({
   return (
     <div className={`booking__slot booking__slot${style}`}>
       <h2>{hours}</h2>
-      {unavailable && !user && <h2>Unavailable</h2>}
-      {user && (
+      {unavailable && !id && <h2>Unavailable</h2>}
+      {id && (
         <>
           <h2 className="booking__slot__info">Your Booking</h2>
           <button onClick={() => setOpen(true)}>Cancel</button>

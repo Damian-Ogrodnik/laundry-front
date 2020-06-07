@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { withError } from "HOC/withError";
-import { Slots } from "components/Slots";
+import { Slots } from "./Slots";
 
 import { bookSelectedSlot } from "redux/booking/bookingUtils";
 import { bookingFailure } from "redux/booking/bookingActions";

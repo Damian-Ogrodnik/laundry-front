@@ -5,7 +5,7 @@ const initialState = {
   error: null,
   loading: false,
   takenSlots: [],
-  selectedSlot: null,
+  selectedSlot: {},
 };
 
 const boardReducer = (state = initialState, action) => {
@@ -42,7 +42,7 @@ const boardReducer = (state = initialState, action) => {
         ...state,
         error: null,
         takenSlots: [],
-        selectedSlot: null,
+        selectedSlot: {},
       };
     default:
       return state;
