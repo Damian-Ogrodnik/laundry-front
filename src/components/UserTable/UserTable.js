@@ -9,13 +9,15 @@ const UserTable = ({ bookings }) => {
   return (
     <table>
       <Header />
-      {bookings.length ? (
-        bookings.map((slot, index) => (
-          <Row key={index} data={slot} number={index} />
-        ))
-      ) : (
-        <Information />
-      )}
+      <tbody>
+        {bookings.length ? (
+          bookings.map((slot, index) => (
+            <Row key={index} data={slot} number={index} />
+          ))
+        ) : (
+          <Information />
+        )}
+      </tbody>
     </table>
   );
 };

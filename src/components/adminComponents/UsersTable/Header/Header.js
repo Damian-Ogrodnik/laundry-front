@@ -1,8 +1,10 @@
 import React from "react";
 
 export const Header = () => (
-  <tr>
-    <th>Username</th>
-    <th>Actions</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
 );

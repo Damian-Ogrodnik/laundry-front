@@ -9,7 +9,10 @@ export const UsersTable = ({ name }) => {
   return (
     <table className={name}>
       <Header />
-      {users.length && users.map(({ name }) => <Row key={name} name={name} />)}
+      <tbody>
+        {users.length &&
+          users.map(({ name }) => <Row key={name} name={name} />)}
+      </tbody>
     </table>
   );
 };
