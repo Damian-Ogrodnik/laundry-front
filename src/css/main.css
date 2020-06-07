@@ -504,6 +504,36 @@ input:focus {
   border-bottom: 1px solid #e74c3c;
 }
 
+table {
+  border: 0.25rem solid #000000;
+  border-radius: 10%;
+  background-color: #c9c1c1;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  margin-top: 1rem;
+  padding: 0rem 0.5rem;
+  border-radius: 1rem;
+  border-spacing: 0;
+  width: 75%;
+}
+
+table th {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #b82601;
+  text-align: start;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+table td {
+  padding: 0.5rem 1rem;
+}
+
+table td.empty {
+  text-align: center;
+  padding: 2rem 0rem;
+}
+
 .admin-bookings {
   height: 93vh;
   width: 100%;
@@ -564,31 +594,6 @@ input:focus {
   font-weight: 700;
   font-size: 1.25rem;
   text-align: center;
-}
-
-.admin-search table {
-  border: 0.25rem solid #000000;
-  border-radius: 10%;
-  background-color: #c9c1c1;
-  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  margin-top: 1rem;
-  padding: 0rem 0.5rem;
-  border-radius: 1rem;
-  border-spacing: 0;
-  width: 75%;
-}
-
-.admin-search table th {
-  padding: 1rem 1rem;
-  border-bottom: 1px solid #b82601;
-  text-align: start;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.admin-search table td {
-  padding: 0.5rem 1rem;
 }
 
 .booking-board__wrapper {
@@ -1024,60 +1029,6 @@ input:focus {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-}
-
-.user-bookings__slots {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border: 0.25rem solid #000000;
-  border-radius: 10%;
-  background-color: #c9c1c1;
-  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  border-radius: 1rem;
-  width: 80%;
-  padding: 1.5rem 1rem;
-}
-
-.user-bookings__slot {
-  padding: 0.25rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  font-size: 1.25rem;
-}
-
-.user-bookings__slot.header {
-  font-weight: 700;
-  border-bottom: 1px solid #b82601;
-  margin-bottom: 0.5rem;
-}
-
-.user-bookings__slot.slot {
-  margin-bottom: 0.25rem;
-}
-
-.user-bookings__information {
-  padding: 2rem 1rem 1rem 1rem;
-  font-size: 1.25rem;
-}
-
-.user-bookings h2 {
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  color: #b82601;
 }
 
 .user-page {

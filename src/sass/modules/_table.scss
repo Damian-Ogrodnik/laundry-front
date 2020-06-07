@@ -1,0 +1,22 @@
+table {
+  @include tile;
+  margin-top: 1rem;
+  padding: 0rem 0.5rem;
+  border-radius: 1rem;
+  border-spacing: 0;
+  width: 75%;
+  th {
+    padding: 1rem 1rem;
+    border-bottom: 1px solid $third-color;
+    text-align: start;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  td {
+    padding: 0.5rem 1rem;
+    &.empty {
+      text-align: center;
+      padding: 2rem 0rem;
+    }
+  }
+}

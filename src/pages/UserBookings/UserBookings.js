@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUsersBookings } from "redux/userBookings/userBookingsUtils";
 
 import { Logout } from "components/Logout";
-import { UserSlots } from "components/UserSlots";
+import { UserTable } from "components/UserTable";
 
 export const UserBookings = () => {
   const { error, loading, userBookings } = useSelector(
@@ -18,7 +18,7 @@ export const UserBookings = () => {
 
   return (
     <div className="user-bookings">
-      <UserSlots bookings={userBookings} error={error} loading={loading} />
+      <UserTable bookings={userBookings} error={error} loading={loading} />
       <Logout />
     </div>
   );
