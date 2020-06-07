@@ -33,8 +33,8 @@ export const User = () => {
           <FormWrapper
             title={"Change Password"}
             action={"CHANGE"}
-            render={() => {
-              return Object.keys(values).map((value) => (
+            render={() =>
+              Object.keys(values).map((value) => (
                 <div key={value} className="form__input">
                   <label htmlFor={value}>
                     {value === "Password"
@@ -48,8 +48,8 @@ export const User = () => {
                     {(msg) => <div className="form__error">{msg}</div>}
                   </ErrorMessage>
                 </div>
-              ));
-            }}
+              ))
+            }
           />
         </Form>
       </Formik>

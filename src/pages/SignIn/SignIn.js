@@ -17,17 +17,17 @@ export const SignIn = () => {
     <Formik
       initialValues={values}
       validationSchema={loginSchema}
-      onSubmit={({ Nickname, Password }) => {
-        dispatch(logUser(Nickname, Password));
-      }}
+      onSubmit={({ Nickname, Password }) =>
+        dispatch(logUser(Nickname, Password))
+      }
     >
       <Form className="signup">
         <Toast text={"Account Deleted"} toastType={"DELETE"} />
         <FormWrapper
           title={"Sign In"}
           action={"LOGIN"}
-          render={() => {
-            return Object.keys(values).map((value) => (
+          render={() =>
+            Object.keys(values).map((value) => (
               <div key={value} className="form__input">
                 <label htmlFor={value}>{value}</label>
                 <Field name={value} type={value} />
@@ -35,8 +35,8 @@ export const SignIn = () => {
                   {(msg) => <div className="form__error">{msg}</div>}
                 </ErrorMessage>
               </div>
-            ));
-          }}
+            ))
+          }
         />
       </Form>
     </Formik>

@@ -30,8 +30,8 @@ export const SignUp = () => {
         <FormWrapper
           title={"Create Account"}
           action={"SUBMIT"}
-          render={() => {
-            return Object.keys(values).map((value) => (
+          render={() =>
+            Object.keys(values).map((value) => (
               <div key={value} className="form__input">
                 <label htmlFor={value}>{value}</label>
                 <Field
@@ -42,8 +42,8 @@ export const SignUp = () => {
                   {(msg) => <div className="form__error">{msg}</div>}
                 </ErrorMessage>
               </div>
-            ));
-          }}
+            ))
+          }
         />
       </Form>
     </Formik>
