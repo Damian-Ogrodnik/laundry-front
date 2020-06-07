@@ -18,6 +18,7 @@ const values = {
 
 export const User = () => {
   const dispatch = useDispatch();
+
   return (
     <div className="user-page">
       <Toast text={"Password Changed"} toastType={"CHANGE"} />

@@ -4,10 +4,7 @@ import Modal from "react-modal";
 
 import { DateInfo } from "../DateInfo";
 
-import {
-  deleteSelectedSlot,
-  getDetails,
-} from "../../../redux/admin/adminUtils";
+import { deleteSelectedSlot, getDetails } from "redux/admin/adminUtils";
 
 export const withDetailsModal = (WrappedComponent) => ({
   props: { ...props },

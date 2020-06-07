@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Formik, Field, Form } from "formik";
 import { useDispatch } from "react-redux";
 
-import { getUsers } from "../../../redux/admin/adminUtils";
+import { getUsers } from "redux/admin/adminUtils";
 
 const values = {
   Nickname: "",

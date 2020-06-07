@@ -3,8 +3,8 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useSelector, useDispatch } from "react-redux";
 import Modal from "react-modal";
 
-import { nicknameSchema } from "../../../common/validation";
-import { bookSelectedSlot } from "../../../redux/admin/adminUtils";
+import { nicknameSchema } from "common/validation";
+import { bookSelectedSlot } from "redux/admin/adminUtils";
 import { DateInfo } from "../DateInfo";
 
 const values = {
