@@ -4,7 +4,7 @@ export const Header = () => (
   <thead>
     <tr>
       <th>Username</th>
-      <th>Actions</th>
+      <th colSpan="3">Actions</th>
     </tr>
   </thead>
 );

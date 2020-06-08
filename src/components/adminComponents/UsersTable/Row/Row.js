@@ -8,6 +8,8 @@ export const Row = ({ name }) => {
       <td>
         <Link to={`/admin/user/:${name}`}>Details</Link>
       </td>
+      <td>Block</td>
+      <td>Delete</td>
     </tr>
   );
 };
