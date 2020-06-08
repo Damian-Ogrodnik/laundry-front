@@ -13,7 +13,8 @@ export const UserSearch = ({ name }) => {
 
   useEffect(() => {
     dispatch(getUsers());
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Formik

@@ -1,18 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
 import { Header } from "./Header";
+import { Information } from "./Information";
 import { Row } from "./Row";
 
-export const UsersTable = () => {
-  const users = useSelector((store) => store.admin.users);
-  return (
-    <table>
-      <Header />
-      <tbody>
-        {users.length &&
-          users.map(({ name }) => <Row key={name} name={name} />)}
-      </tbody>
-    </table>
-  );
-};
+export const UsersTable = ({ users }) => (
+  <table>
+    <Header />
+    <tbody>
+      {users.length ? (
+        users.map(({ name }) => <Row key={name} name={name} />)
+      ) : (
+        <Information />
+      )}
+    </tbody>
+  </table>
+);

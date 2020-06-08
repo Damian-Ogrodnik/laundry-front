@@ -1,0 +1,10 @@
+.pagination {
+  @include flex-center;
+  p {
+    margin: 1rem 0.25rem;
+    font-size: 1.25rem;
+  }
+  .active {
+    color: $third-color;
+  }
+}
