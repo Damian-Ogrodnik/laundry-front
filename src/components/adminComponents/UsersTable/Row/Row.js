@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Row = ({ name }) => {
   return (
     <tr>
       <td>{name}</td>
-      <td>Delete Block</td>
+      <td>
+        <Link to={`/admin/user/:${name}`}>Details</Link>
+      </td>
     </tr>
   );
 };

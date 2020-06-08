@@ -11,14 +11,16 @@ import { SignIn } from "pages/SignIn";
 import { SignUp } from "pages/SignUp";
 import { User } from "pages/User";
 import { UserBookings } from "pages/UserBookings";
+import { AdminUser } from "pages/AdminUser";
 
 export const Routes = () => {
   return (
     <Switch>
-      <Route path="/admin" secured component={AdminBookings} />
+      <Route exact path="/admin" component={AdminBookings} secured />
+      <Route path="/admin/search" component={AdminSearch} secured />
+      <Route path="/admin/user/:id" component={AdminUser} secured />
       <Route path="/booking-board" component={BookingBoard} secured />
       <Route exact path="/" component={Home} />
-      <Route path="/search" component={AdminSearch} secured />
       <Route path="/sign-in" component={SignIn} />
       <Route path="/sign-up" component={SignUp} />
       <Route path="/user" component={User} secured />

@@ -11,5 +11,5 @@ export const unloggedNav = [
 
 export const adminNav = [
   ["Bookings", "/admin"],
-  ["Search", "/search"],
+  ["Search", "/admin/search"],
 ];
