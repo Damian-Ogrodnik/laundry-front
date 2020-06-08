@@ -6,7 +6,7 @@ export const Row = ({ name }) => {
     <tr>
       <td>{name}</td>
       <td>
-        <Link to={`/admin/user/:${name}`}>Details</Link>
+        <Link to={`/admin/user/${name}`}>Details</Link>
       </td>
       <td>Block</td>
       <td>Delete</td>
