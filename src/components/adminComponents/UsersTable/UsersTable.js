@@ -4,10 +4,10 @@ import { useSelector } from "react-redux";
 import { Header } from "./Header";
 import { Row } from "./Row";
 
-export const UsersTable = ({ name }) => {
+export const UsersTable = () => {
   const users = useSelector((store) => store.admin.users);
   return (
-    <table className={name}>
+    <table>
       <Header />
       <tbody>
         {users.length &&
