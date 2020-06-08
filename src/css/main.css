@@ -185,8 +185,7 @@
 }
 
 .booking__slot--available.user button:hover {
-  background-color: #000000;
-  border: 0.15rem solid #000000;
+  background-color: #4c4c47;
 }
 
 .booking__slot--available--selected {
@@ -543,7 +542,6 @@ table th {
   border-bottom: 1px solid #b82601;
   text-align: start;
   font-size: 1.25rem;
-  font-weight: 700;
 }
 
 table td {

@@ -31,8 +31,7 @@
       &.user {
         background-color: $second-color;
         button:hover {
-          background-color: $first-color;
-          border: 0.15rem solid $first-color;
+          background-color: $tile-primary-color;
         }
       }
 
