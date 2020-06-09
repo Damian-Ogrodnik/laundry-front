@@ -17,7 +17,7 @@ export const App = () => {
         <div className="App">
           <NavBar />
           <Routes />
-          <ToastContainer autoClose={3000} />
+          <ToastContainer autoClose={2000} />
         </div>
       </Router>
     </Provider>
