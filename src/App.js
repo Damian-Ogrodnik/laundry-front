@@ -10,16 +10,14 @@ import store from "redux/store";
 import { NavBar } from "components/NavBar";
 import { Routes } from "components/Routes";
 
-export const App = () => {
-  return (
-    <Provider store={store}>
-      <Router>
-        <div className="App">
-          <NavBar />
-          <Routes />
-          <ToastContainer autoClose={2000} />
-        </div>
-      </Router>
-    </Provider>
-  );
-};
+export const App = () => (
+  <Provider store={store}>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Routes />
+        <ToastContainer autoClose={2000} />
+      </div>
+    </Router>
+  </Provider>
+);
