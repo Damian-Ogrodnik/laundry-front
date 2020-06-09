@@ -69,7 +69,7 @@ export const getUsers = (name = "") => async (dispatch) => {
 export const getUser = (id) => async (dispatch) => {
   try {
     await dispatch(actions.startGetUser());
-    const response = await services.fetchUsers(id).catch(() => {
+    const response = await services.fetchUser(id).catch(() => {
       throw new Error("Internal Server Error");
     });
     dispatch(actions.getUserSuccess(response.data));
