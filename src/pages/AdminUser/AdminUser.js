@@ -7,7 +7,10 @@ import { getUser } from "redux/admin/adminUtils";
 export const AdminUser = () => {
   let { id } = useParams();
 
-  useEffect(() => dispatch(getUser(id), [id]));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    dispatch(getUser(id));
+  }, [id]);
 
   const dispatch = useDispatch();
   return <div>{id}</div>;
