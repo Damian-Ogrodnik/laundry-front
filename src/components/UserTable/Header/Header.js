@@ -1,14 +1,12 @@
 import React from "react";
 
-export const Header = () => {
-  return (
-    <thead>
-      <tr>
-        <th>Number</th>
-        <th>Date</th>
-        <th>Hours</th>
-        <th>Cancel</th>
-      </tr>
-    </thead>
-  );
-};
+export const Header = () => (
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Date</th>
+      <th>Hours</th>
+      <th>Cancel</th>
+    </tr>
+  </thead>
+);
