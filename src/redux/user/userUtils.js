@@ -1,14 +1,9 @@
 import * as actions from "./userActions";
 
-import {
-  signIn,
-  signUp,
-  deleteAccount,
-  passwordChange
-} from "../../services/User";
-import { enableToast } from "../../redux/toast/toastActions";
+import { signIn, signUp, deleteAccount, passwordChange } from "services/User";
+import { enableToast } from "redux/toast/toastActions";
 
-export const logUser = (name, password) => async dispatch => {
+export const logUser = (name, password) => async (dispatch) => {
   try {
     dispatch(actions.login());
     const response = await signIn(name, password);
@@ -23,11 +18,9 @@ export const logUser = (name, password) => async dispatch => {
   }
 };
 
-export const registerUser = ({
-  Nickname,
-  Password,
-  Email
-}) => async dispatch => {
+export const registerUser = ({ Nickname, Password, Email }) => async (
+  dispatch
+) => {
   try {
     dispatch(actions.login());
     const response = await signUp(Nickname, Password, Email);
@@ -42,7 +35,7 @@ export const registerUser = ({
   }
 };
 
-export const deleteUser = () => async dispatch => {
+export const deleteUser = () => async (dispatch) => {
   try {
     await deleteAccount();
     dispatch(enableToast("DELETE"));
@@ -56,7 +49,7 @@ export const deleteUser = () => async dispatch => {
   }
 };
 
-export const changePassword = (password, newPassword) => async dispatch => {
+export const changePassword = (password, newPassword) => async (dispatch) => {
   try {
     dispatch(actions.changePassword());
     await passwordChange(password, newPassword);

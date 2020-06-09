@@ -1,11 +1,11 @@
 import * as actions from "./userBookingsActions";
 
-import { fetchUserBookings, deleteSlot } from "../../services/Booking";
-import { sortByDates } from "../../services/Date";
+import { fetchUserBookings, deleteSlot } from "services/Booking";
+import { sortByDates } from "services/Date";
 import { fetchDate } from "../board/boardUtils";
 import { enableToast } from "../toast/toastActions";
 
-export const getUsersBookings = () => async dispatch => {
+export const getUsersBookings = () => async (dispatch) => {
   try {
     dispatch(actions.fetchUserBookings());
     const response = await fetchUserBookings();
@@ -24,7 +24,7 @@ export const deleteUsersBooking = (
   date,
   id,
   requestFromBoardSlot = false
-) => async dispatch => {
+) => async (dispatch) => {
   try {
     await dispatch(actions.deleteUserBooking());
     await deleteSlot(date, id);

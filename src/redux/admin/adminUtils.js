@@ -1,7 +1,7 @@
 import * as actions from "./adminActions";
 
-import * as services from "../../services/Admin";
-import { enableToast } from "../../redux/toast/toastActions";
+import * as services from "services/Admin";
+import { enableToast } from "redux/toast/toastActions";
 import { fetchDate } from "../board/boardUtils";
 
 export const bookSelectedSlot = (name, date, number, hours) => async (
