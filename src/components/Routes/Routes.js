@@ -17,8 +17,8 @@ export const Routes = () => {
   return (
     <Switch>
       <Route exact path="/admin" component={AdminBookings} secured />
-      <Route path="/admin/search" component={AdminSearch} secured />
-      <Route path="/admin/user/:id" component={AdminUser} secured />
+      <Route exact path="/admin/search" component={AdminSearch} secured />
+      <Route exact path="/admin/user/:id" component={AdminUser} secured />
       <Route path="/booking-board" component={BookingBoard} secured />
       <Route exact path="/" component={Home} />
       <Route path="/sign-in" component={SignIn} />
