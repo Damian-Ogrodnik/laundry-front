@@ -9,7 +9,7 @@ export const UsersTable = ({ users }) => (
     <Header />
     <tbody>
       {users.length ? (
-        users.map(({ name }) => <Row key={name} name={name} />)
+        users.map(({ ...props }, index) => <Row key={index} {...props} />)
       ) : (
         <Information />
       )}
