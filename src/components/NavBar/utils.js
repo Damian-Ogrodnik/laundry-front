@@ -8,7 +8,6 @@ export const unloggedNav = [
   ["Sign In", "/sign-in"],
   ["Sign Up", "/sign-up"],
 ];
-
 export const adminNav = [
   ["Bookings", "/admin"],
   ["Search", "/admin/search"],

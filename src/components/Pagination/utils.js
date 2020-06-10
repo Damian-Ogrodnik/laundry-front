@@ -1,5 +1,5 @@
 export const getPages = (array, currentPage) => {
-  let [indexDown, indexUp] =
+  const [indexDown, indexUp] =
     currentPage <= 3
       ? [0, 5]
       : currentPage > 3 && currentPage < array.length - 4

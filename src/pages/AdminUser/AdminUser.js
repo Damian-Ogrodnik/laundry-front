@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { getUser } from "redux/admin/adminUtils";
 
 export const AdminUser = () => {
+  const { name, email, date } = useSelector(({ admin }) => admin.user);
+  const dispatch = useDispatch();
   let { id } = useParams();
 
   useEffect(() => {
@@ -12,6 +14,20 @@ export const AdminUser = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  const dispatch = useDispatch();
-  return <div>{id}</div>;
+  return (
+    <div className="admin-user">
+      <h2>User Details</h2>
+      <div className="admin-user__details">
+        <p>
+          <span>Nickname:</span> {name}
+        </p>
+        <p>
+          <span>Email:</span> {email}
+        </p>
+        <p>
+          <span>Joining date:</span> {date ? date.slice(0, 10) : null}
+        </p>
+      </div>
+    </div>
+  );
 };
