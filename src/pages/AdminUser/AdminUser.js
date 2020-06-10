@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getUser } from "redux/admin/adminUtils";
+import { getUser, getUserBookings } from "redux/admin/adminUtils";
 
 export const AdminUser = () => {
   const { name, email, date } = useSelector(({ admin }) => admin.user);
@@ -11,6 +11,7 @@ export const AdminUser = () => {
 
   useEffect(() => {
     dispatch(getUser(id));
+    dispatch(getUserBookings(id));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 

@@ -14,3 +14,6 @@ export const fetchUsers = async (name) =>
 
 export const fetchUser = async (id) =>
   await axiosInstance.get("/admin/user", { params: { id } });
+
+export const fetchUserBookings = async (id) =>
+  await axiosInstance.get("/admin/user-bookings", { params: { id } });

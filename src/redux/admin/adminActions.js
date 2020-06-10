@@ -104,3 +104,23 @@ export const getUserSuccess = (user) => {
     payload: { user },
   };
 };
+
+export const startGetUserBookings = () => {
+  return {
+    type: types.GET_BOOKINGS_START,
+  };
+};
+
+export const getUserBookingsFailure = (error) => {
+  return {
+    type: types.GET_BOOKINGS_FAILURE,
+    payload: { error },
+  };
+};
+
+export const getUserBookingsSuccess = (userBookings) => {
+  return {
+    type: types.GET_BOOKINGS_SUCCESS,
+    payload: { userBookings },
+  };
+};

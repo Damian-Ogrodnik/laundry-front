@@ -77,3 +77,15 @@ export const getUser = (id) => async (dispatch) => {
     dispatch(actions.getUserFailure(error.message));
   }
 };
+
+export const getUserBookings = (id) => async (dispatch) => {
+  try {
+    await dispatch(actions.startGetUserBookings());
+    const response = await services.fetchUserBookings(id).catch(() => {
+      throw new Error("Internal Server Error");
+    });
+    dispatch(actions.getUserBookingsSuccess(response.data));
+  } catch (error) {
+    dispatch(actions.getUserBookingsFailure(error.message));
+  }
+};

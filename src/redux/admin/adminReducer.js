@@ -6,6 +6,7 @@ const initialState = {
   details: {},
   loading: false,
   user: [],
+  userBookings: [],
   users: [],
 };
 
@@ -16,13 +17,15 @@ const adminReducer = (state = initialState, action) => {
       types.DELETE_SLOT_START ||
       types.GET_DETAILS_START ||
       types.GET_USERS_START ||
-      types.GET_USER_START:
+      types.GET_USER_START ||
+      types.GET_BOOKINGS_START:
       return { ...state, loading: true, error: null };
     case types.BOOK_SLOT_FAILURE ||
       types.DELETE_SLOT_FAILURE ||
       types.GET_DETAILS_FAILURE ||
       types.GET_USERS_FAILURE ||
-      types.GET_USER_FAILURE:
+      types.GET_USER_FAILURE ||
+      types.GET_BOOKINGS_FAILURE:
       return {
         ...state,
         error: payload.error,
@@ -52,6 +55,13 @@ const adminReducer = (state = initialState, action) => {
       return {
         ...state,
         user: payload.user,
+        error: null,
+        loading: false,
+      };
+    case types.GET_BOOKINGS_SUCCESS:
+      return {
+        ...state,
+        userBookings: payload.userBookings,
         error: null,
         loading: false,
       };
