@@ -3,9 +3,11 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getUser, getUserBookings } from "redux/admin/adminUtils";
+import { UserTable } from "components/UserTable";
 
 export const AdminUser = () => {
   const { name, email, date } = useSelector(({ admin }) => admin.user);
+  const { userBookings } = useSelector(({ admin }) => admin);
   const dispatch = useDispatch();
   let { id } = useParams();
 
@@ -29,6 +31,8 @@ export const AdminUser = () => {
           <span>Joining date:</span> {date ? date.slice(0, 10) : null}
         </p>
       </div>
+      <h3>User Bookings</h3>
+      {userBookings.length && <UserTable bookings={userBookings} />}
     </div>
   );
 };

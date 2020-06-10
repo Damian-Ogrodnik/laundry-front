@@ -3,6 +3,7 @@ import * as actions from "./adminActions";
 import * as services from "services/Admin";
 import { enableToast } from "redux/toast/toastActions";
 import { fetchDate } from "../board/boardUtils";
+import { sortByDates } from "services/Date";
 
 export const bookSelectedSlot = (name, date, number, hours) => async (
   dispatch
@@ -84,7 +85,8 @@ export const getUserBookings = (id) => async (dispatch) => {
     const response = await services.fetchUserBookings(id).catch(() => {
       throw new Error("Internal Server Error");
     });
-    dispatch(actions.getUserBookingsSuccess(response.data));
+    const sortedResponse = await sortByDates(response.data);
+    dispatch(actions.getUserBookingsSuccess(sortedResponse));
   } catch (error) {
     dispatch(actions.getUserBookingsFailure(error.message));
   }
