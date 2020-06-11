@@ -25,13 +25,16 @@ export const bookSelectedSlot = (name, date, number, hours) => async (
   }
 };
 
-export const deleteSelectedSlot = (date, id) => async (dispatch) => {
+export const deleteSelectedSlot = (date, slotId, isAdmin, userId) => async (
+  dispatch
+) => {
   try {
     dispatch(actions.startDeleteSlot());
-    await services.deleteSlot(id);
+    await services.deleteSlot(slotId);
     dispatch(actions.deleteSlotSuccess());
-    dispatch(enableToast("DELETE"));
-    dispatch(fetchDate(date, true));
+    return isAdmin
+      ? dispatch(getUserBookings(userId))
+      : (dispatch(fetchDate(date, true)), dispatch(enableToast("DELETE")));
   } catch (error) {
     if (error.response) {
       dispatch(actions.deleteSlotFailure(error.response.statusText));

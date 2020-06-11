@@ -9,7 +9,7 @@ export const AdminUser = () => {
   const { name, email, date } = useSelector(({ admin }) => admin.user);
   const { userBookings } = useSelector(({ admin }) => admin);
   const dispatch = useDispatch();
-  let { id } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     dispatch(getUser(id));
