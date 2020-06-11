@@ -32,9 +32,10 @@ export const deleteSelectedSlot = (date, slotId, isAdmin, userId) => async (
     dispatch(actions.startDeleteSlot());
     await services.deleteSlot(slotId);
     dispatch(actions.deleteSlotSuccess());
+    dispatch(enableToast("DELETE"));
     return isAdmin
       ? dispatch(getUserBookings(userId))
-      : (dispatch(fetchDate(date, true)), dispatch(enableToast("DELETE")));
+      : dispatch(fetchDate(date, true));
   } catch (error) {
     if (error.response) {
       dispatch(actions.deleteSlotFailure(error.response.statusText));

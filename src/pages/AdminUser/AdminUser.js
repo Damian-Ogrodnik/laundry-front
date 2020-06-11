@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { getUser, getUserBookings } from "redux/admin/adminUtils";
 import { UserTable } from "components/UserTable";
+import { Toast } from "components/Toast";
 
 export const AdminUser = () => {
   const { name, email, date } = useSelector(({ admin }) => admin.user);
@@ -33,6 +34,7 @@ export const AdminUser = () => {
       </div>
       <h3>User Bookings</h3>
       {userBookings && <UserTable bookings={userBookings} />}
+      <Toast text={"Slot deleted"} toastType="DELETE" />
     </div>
   );
 };
