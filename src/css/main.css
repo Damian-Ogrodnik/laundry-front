@@ -615,6 +615,13 @@ table td.empty {
   text-align: center;
 }
 
+.admin-search table button {
+  padding: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  width: auto;
+}
+
 .admin-user {
   display: -webkit-box;
   display: -ms-flexbox;

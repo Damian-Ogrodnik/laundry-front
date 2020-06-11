@@ -8,4 +8,12 @@
     @include input-main;
     margin-top: 1rem;
   }
+  table {
+    button {
+      padding: 0.5rem;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      width: auto;
+    }
+  }
 }
