@@ -32,7 +32,7 @@ export const AdminUser = () => {
         </p>
       </div>
       <h3>User Bookings</h3>
-      {userBookings.length && <UserTable bookings={userBookings} />}
+      {userBookings && <UserTable bookings={userBookings} />}
     </div>
   );
 };
