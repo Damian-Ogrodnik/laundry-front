@@ -636,6 +636,7 @@ table td.empty {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 
 .admin-user h2 {
@@ -672,6 +673,18 @@ table td.empty {
 .admin-user__details p span {
   font-size: 1.25rem;
   font-weight: 700;
+}
+
+.admin-user__arrow {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+}
+
+.admin-user__arrow * {
+  color: #b82601;
+  width: 3rem;
+  height: 3rem;
 }
 
 .booking-board__wrapper {
