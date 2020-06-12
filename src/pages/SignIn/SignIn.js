@@ -6,7 +6,7 @@ import { FormWrapper } from "components/FormWrapper";
 import { Toast } from "components/Toast";
 
 import { logUser } from "redux/user/userUtils";
-import { loginSchema } from "common/validation";
+import { loginSchema } from "services/validation";
 
 const values = { Nickname: "", Password: "" };
 

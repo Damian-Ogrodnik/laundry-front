@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 
-import { changePasswordSchema } from "common/validation";
+import { changePasswordSchema } from "services/validation";
 import { changePassword } from "redux/user/userUtils";
 
 import { Delete } from "components/Delete";

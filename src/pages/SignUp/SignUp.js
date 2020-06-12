@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { FormWrapper } from "components/FormWrapper";
 
 import { registerUser } from "redux/user/userUtils";
-import { registrationSchema } from "common/validation";
+import { registrationSchema } from "services/validation";
 
 const values = {
   Nickname: "",
