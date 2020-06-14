@@ -10,6 +10,11 @@ export const Row = ({ name, id }) => (
       </Link>
     </td>
     <td>
+      <Link to={`/admin/user/password/${id}`}>
+        <button>Password</button>
+      </Link>
+    </td>
+    <td>
       <button>Block</button>
     </td>
     <td>

@@ -12,12 +12,19 @@ import { SignUp } from "pages/SignUp";
 import { User } from "pages/User";
 import { UserBookings } from "pages/UserBookings";
 import { AdminUser } from "pages/AdminUser";
+import { AdminPassword } from "pages/AdminPassword/AdminPassword";
 
 export const Routes = () => (
   <Switch>
     <Route exact path="/admin" component={AdminBookings} secured />
     <Route exact path="/admin/search" component={AdminSearch} secured />
     <Route exact path="/admin/user/:id" component={AdminUser} secured />
+    <Route
+      exact
+      path="/admin/user/password/:id"
+      component={AdminPassword}
+      secured
+    />
     <Route path="/booking-board" component={BookingBoard} secured />
     <Route exact path="/" component={Home} />
     <Route path="/sign-in" component={SignIn} />
