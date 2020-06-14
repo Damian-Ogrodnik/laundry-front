@@ -6,7 +6,7 @@ import { UsersTable } from "components/adminComponents/UsersTable";
 import { UserSearch } from "components/adminComponents/UserSearch";
 import { Pagination } from "components/Pagination";
 
-export const AdminSearch = () => {
+export const UsersSearch = () => {
   const [pages, setPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [companiesToDisplay, setCompaniesToDisplay] = useState([]);
@@ -25,8 +25,8 @@ export const AdminSearch = () => {
   }, [users, currentPage]);
 
   return (
-    <div className="admin-search">
-      <UserSearch name={"admin-search__input"} />
+    <div className="users-search">
+      <UserSearch name={"users-search__input"} />
       <UsersTable users={companiesToDisplay} />
       <Pagination
         currentPage={currentPage}

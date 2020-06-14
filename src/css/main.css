@@ -553,7 +553,7 @@ table td.empty {
   padding: 2rem 0rem;
 }
 
-.admin-bookings {
+.bookings {
   height: 93vh;
   width: 100%;
   display: -webkit-box;
@@ -568,7 +568,7 @@ table td.empty {
   position: fixed;
 }
 
-.admin-bookings__datepicker {
+.bookings__datepicker {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -582,109 +582,11 @@ table td.empty {
   top: 1rem;
 }
 
-.admin-bookings__datepicker input {
+.bookings__datepicker input {
   color: #b82601;
   font-weight: 700;
   font-size: 1.25rem;
   text-align: center;
-}
-
-.admin-search {
-  height: 93vh;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.admin-search__input {
-  margin-top: 1rem;
-}
-
-.admin-search__input input {
-  color: #b82601;
-  font-weight: 700;
-  font-size: 1.25rem;
-  text-align: center;
-}
-
-.admin-search table button {
-  padding: 0.5rem;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  width: auto;
-}
-
-.admin-user {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: relative;
-}
-
-.admin-user h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-top: 1rem;
-  color: #b82601;
-}
-
-.admin-user h3 {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  color: #b82601;
-}
-
-.admin-user__details {
-  width: 100%;
-  margin: 2rem 0rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.admin-user__details p {
-  width: 100%;
-  font-size: 1.25rem;
-  text-align: center;
-}
-
-.admin-user__details p span {
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.admin-user__arrow {
-  position: absolute;
-  top: 1rem;
-  left: 2rem;
-}
-
-.admin-user__arrow * {
-  color: #b82601;
-  width: 3rem;
-  height: 3rem;
 }
 
 .booking-board__wrapper {
@@ -1122,6 +1024,71 @@ table td.empty {
   position: relative;
 }
 
+.user-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.user-details h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: #b82601;
+}
+
+.user-details h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: #b82601;
+}
+
+.user-details__info {
+  width: 100%;
+  margin: 2rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.user-details__info p {
+  width: 100%;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.user-details__info p span {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.user-details__arrow {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+}
+
+.user-details__arrow * {
+  color: #b82601;
+  width: 3rem;
+  height: 3rem;
+}
+
 .user-page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1135,6 +1102,39 @@ table td.empty {
   height: 93vh;
   width: 100%;
   position: relative;
+}
+
+.users-search {
+  height: 93vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.users-search__input {
+  margin-top: 1rem;
+}
+
+.users-search__input input {
+  color: #b82601;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.users-search table button {
+  padding: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  width: auto;
 }
 
 * {

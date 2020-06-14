@@ -1,5 +1,5 @@
 import React from "react";
 
-export const AdminPassword = () => {
+export const Password = () => {
   return <div>Admin Password</div>;
 };

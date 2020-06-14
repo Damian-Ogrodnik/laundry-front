@@ -8,7 +8,7 @@ import { UserTable } from "components/UserTable";
 import { Toast } from "components/Toast";
 import { IconProvider } from "components/IconProvider";
 
-export const AdminUser = () => {
+export const UserDetails = () => {
   const { name, email, date } = useSelector(({ admin }) => admin.user);
   const { userBookings } = useSelector(({ admin }) => admin);
   const dispatch = useDispatch();
@@ -22,12 +22,12 @@ export const AdminUser = () => {
   }, [id]);
 
   return (
-    <div className="admin-user">
-      <div className="admin-user__arrow" onClick={() => history.goBack()}>
+    <div className="user-details">
+      <div className="user-details__arrow" onClick={() => history.goBack()}>
         <IconProvider icon={<MdArrowBack />} />
       </div>
       <h2>User Details</h2>
-      <div className="admin-user__details">
+      <div className="user-details__info">
         <p>
           <span>Nickname:</span> {name}
         </p>

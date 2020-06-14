@@ -1,1 +1,0 @@
-export { AdminBookings } from "./AdminBookings";

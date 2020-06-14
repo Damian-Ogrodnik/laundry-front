@@ -4,9 +4,9 @@ import { AdminSlots } from "components/adminComponents/AdminSlots";
 import { Datepicker } from "components/Datepicker";
 import { Logout } from "components/Logout";
 
-export const AdminBookings = () => (
-  <div className="admin-bookings">
-    <Datepicker name="admin-bookings" />
+export const Bookings = () => (
+  <div className="bookings">
+    <Datepicker name="bookings" />
     <AdminSlots />
     <Logout />
   </div>

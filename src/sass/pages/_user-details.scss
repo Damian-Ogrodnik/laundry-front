@@ -1,4 +1,4 @@
-.admin-user {
+.user-details {
   @include flex-center-column;
   position: relative;
   h2 {
@@ -13,7 +13,7 @@
     margin-top: 1rem;
     color: $third-color;
   }
-  &__details {
+  &__info {
     width: 100%;
     margin: 2rem 0rem;
     display: flex;
