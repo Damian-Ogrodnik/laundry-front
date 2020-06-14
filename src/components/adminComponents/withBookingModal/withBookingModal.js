@@ -18,7 +18,7 @@ export const withBookingModal = (WrappedComponent) => ({ ...props }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (isOpen) Modal.setAppElement("#root");
+    Modal.setAppElement("#root");
   }, [isOpen]);
 
   return (
