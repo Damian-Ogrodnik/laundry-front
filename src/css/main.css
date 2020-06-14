@@ -116,6 +116,18 @@
   width: 100%;
 }
 
+.back-arrow {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+}
+
+.back-arrow * {
+  color: #b82601;
+  width: 3rem;
+  height: 3rem;
+}
+
 .booking {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -921,6 +933,10 @@ table td.empty {
   }
 }
 
+.password {
+  position: relative;
+}
+
 .signup {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1075,18 +1091,6 @@ table td.empty {
 .user-details__info p span {
   font-size: 1.25rem;
   font-weight: 700;
-}
-
-.user-details__arrow {
-  position: absolute;
-  top: 1rem;
-  left: 2rem;
-}
-
-.user-details__arrow * {
-  color: #b82601;
-  width: 3rem;
-  height: 3rem;
 }
 
 .user-page {

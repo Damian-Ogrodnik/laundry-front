@@ -1,5 +1,10 @@
 import React from "react";
+import { BackArrow } from "components/BackArrow";
 
 export const Password = () => {
-  return <div>Admin Password</div>;
+  return (
+    <div className="password">
+      <BackArrow />
+    </div>
+  );
 };

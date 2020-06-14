@@ -1,0 +1,10 @@
+.back-arrow {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  * {
+    color: $third-color;
+    width: 3rem;
+    height: 3rem;
+  }
+}
