@@ -31,10 +31,10 @@ export const changePasswordSchema = Yup.object().shape({
   newPassword: Yup.string()
     .required("Required")
     .min(8, "Password must be at least 8 characters"),
-  newPasswordConfirm: Yup.string().when("repassword", {
+  newPasswordConfirm: Yup.string().when("newPassword", {
     is: (val) => (val && val.length > 0 ? true : false),
     then: Yup.string().oneOf(
-      [Yup.ref("repassword")],
+      [Yup.ref("newPassword")],
       "Both password need to be the same"
     ),
   }),
@@ -44,10 +44,10 @@ export const adminChangePasswordSchema = Yup.object().shape({
   newPassword: Yup.string()
     .required("Required")
     .min(8, "Password must be at least 8 characters"),
-  newPasswordConfirm: Yup.string().when("repassword", {
+  newPasswordConfirm: Yup.string().when("newPassword", {
     is: (val) => (val && val.length > 0 ? true : false),
     then: Yup.string().oneOf(
-      [Yup.ref("repassword")],
+      [Yup.ref("newPassword")],
       "Both password need to be the same"
     ),
   }),

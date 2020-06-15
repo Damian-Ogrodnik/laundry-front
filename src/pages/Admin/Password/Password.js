@@ -23,9 +23,9 @@ export const Password = () => {
       <Formik
         initialValues={values}
         validationSchema={adminChangePasswordSchema}
-        onSubmit={({ Password, newPassword }, { resetForm }) => {
+        onSubmit={({ newPassword }, { resetForm }) => {
           resetForm({});
-          dispatch(changePassword(Password, newPassword));
+          dispatch(changePassword(newPassword));
         }}
       >
         <Form className="password__form">
