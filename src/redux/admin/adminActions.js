@@ -7,6 +7,25 @@ export const chooseSlot = (choosedSlot) => {
   };
 };
 
+export const startChangePassword = () => {
+  return {
+    type: types.CHANGE_PASSWORD_START,
+  };
+};
+
+export const changePasswordFailure = (error) => {
+  return {
+    type: types.CHANGE_PASSWORD_FAILURE,
+    payload: { error },
+  };
+};
+
+export const changePasswordSuccess = () => {
+  return {
+    type: types.CHANGE_PASSWORD_SUCCESS,
+  };
+};
+
 export const startBookSlot = () => {
   return {
     type: types.BOOK_SLOT_START,

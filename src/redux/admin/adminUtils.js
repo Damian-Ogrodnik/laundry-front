@@ -25,6 +25,17 @@ export const bookSelectedSlot = (name, date, number, hours) => async (
   }
 };
 
+export const changeUserPassword = (id, newPassword) => async (dispatch) => {
+  try {
+    dispatch(actions.startChangePassword());
+    await services.changePassword(id, newPassword);
+    dispatch(actions.changePasswordSuccess());
+    dispatch(enableToast("CHANGE"));
+  } catch (error) {
+    dispatch(actions.changePasswordFailure(error.message));
+  }
+};
+
 export const deleteSelectedSlot = (date, slotId, isAdmin, userId) => async (
   dispatch
 ) => {

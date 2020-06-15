@@ -18,20 +18,24 @@ const adminReducer = (state = initialState, action) => {
       types.GET_DETAILS_START ||
       types.GET_USERS_START ||
       types.GET_USER_START ||
-      types.GET_BOOKINGS_START:
+      types.GET_BOOKINGS_START ||
+      types.CHANGE_PASSWORD_START:
       return { ...state, loading: true, error: null };
     case types.BOOK_SLOT_FAILURE ||
       types.DELETE_SLOT_FAILURE ||
       types.GET_DETAILS_FAILURE ||
       types.GET_USERS_FAILURE ||
       types.GET_USER_FAILURE ||
-      types.GET_BOOKINGS_FAILURE:
+      types.GET_BOOKINGS_FAILURE ||
+      types.CHANGE_PASSWORD_FAILURE:
       return {
         ...state,
         error: payload.error,
         loading: false,
       };
-    case types.BOOK_SLOT_SUCCESS || types.DELETE_SLOT_SUCCESS:
+    case types.BOOK_SLOT_SUCCESS ||
+      types.DELETE_SLOT_SUCCESS ||
+      types.CHANGE_PASSWORD_SUCCESS:
       return {
         ...state,
         error: null,
