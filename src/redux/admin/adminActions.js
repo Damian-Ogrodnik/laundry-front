@@ -99,3 +99,16 @@ export const getUserBookingsSuccess = (userBookings) => ({
   type: types.GET_BOOKINGS_SUCCESS,
   payload: { userBookings },
 });
+
+export const startHandleBlock = () => ({
+  type: types.HANDLE_BLOCK_START,
+});
+
+export const handleBlockSuccess = (error) => ({
+  type: types.HANDLE_BLOCK_SUCCESS,
+  payload: { error },
+});
+
+export const handleBlockFailure = (userBookings) => ({
+  type: types.HANDLE_BLOCK_FAILURE,
+});

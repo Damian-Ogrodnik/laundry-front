@@ -9,7 +9,7 @@ import { Pagination } from "components/Pagination";
 export const UsersSearch = () => {
   const [pages, setPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
-  const [companiesToDisplay, setCompaniesToDisplay] = useState([]);
+  const [usersToDisplay, setUsersToDisplay] = useState([]);
   const users = useSelector((store) => store.admin.users);
   const ROWS_ON_PAGE = 10;
 
@@ -20,14 +20,14 @@ export const UsersSearch = () => {
         currentPage * ROWS_ON_PAGE,
         currentPage * ROWS_ON_PAGE + ROWS_ON_PAGE
       );
-      setCompaniesToDisplay(companieSlice);
+      setUsersToDisplay(companieSlice);
     }
   }, [users, currentPage]);
 
   return (
     <div className="users-search">
       <UserSearch name={"users-search__input"} />
-      <UsersTable users={companiesToDisplay} />
+      <UsersTable users={usersToDisplay} />
       <Pagination
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}

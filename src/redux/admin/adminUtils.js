@@ -106,3 +106,13 @@ export const getUserBookings = (id) => async (dispatch) => {
     dispatch(actions.getUserBookingsFailure(error.message));
   }
 };
+
+export const handleBlockStatus = (id, isBlocked) => async (dispatch) => {
+  try {
+    await dispatch(actions.startHandleBlock());
+    await services.handleBlock(id, isBlocked);
+    await dispatch(actions.handleBlockSuccess());
+  } catch (error) {
+    dispatch(actions.handleBlockFailure(error.message));
+  }
+};

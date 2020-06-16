@@ -23,3 +23,8 @@ export const fetchUser = async (id) =>
 
 export const fetchUserBookings = async (id) =>
   await axiosInstance.get("/admin/user-bookings", { params: { id } });
+
+export const handleBlock = async (id, isBlocked) =>
+  await axiosInstance.post(`admin/user-${isBlocked ? "unblock" : "block"}`, {
+    id,
+  });
