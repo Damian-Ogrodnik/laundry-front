@@ -14,13 +14,11 @@ export const Row = ({ name, id, isBlocked }) => {
         <Link to={`/admin/user/${id}`}>
           <button>Details</button>
         </Link>
-      </td>
-      <td>
+
         <Link to={`/admin/user/password/${id}`}>
           <button>Password</button>
         </Link>
-      </td>
-      <td>
+
         <button
           onClick={() => {
             dispatch(handleBlockStatus(id, block));
@@ -29,8 +27,6 @@ export const Row = ({ name, id, isBlocked }) => {
         >
           {block ? "Unblock" : "Block"}
         </button>
-      </td>
-      <td>
         <button onClick={() => alert("Functionality disabled")}>Delete</button>
       </td>
     </tr>

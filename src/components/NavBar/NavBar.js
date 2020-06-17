@@ -9,7 +9,6 @@ export const NavBar = () => {
 
   return (
     <div className="navigation">
-      <div className="navigation__logo"></div>
       <ul className="navigation__links">
         {(!logged
           ? data.unloggedNav
