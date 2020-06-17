@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/laundry-front/static/css/main.188cc50f.chunk.css",
-    "main.js": "/laundry-front/static/js/main.f12c89bd.chunk.js",
-    "main.js.map": "/laundry-front/static/js/main.f12c89bd.chunk.js.map",
+    "main.js": "/laundry-front/static/js/main.7e6f64d8.chunk.js",
+    "main.js.map": "/laundry-front/static/js/main.7e6f64d8.chunk.js.map",
     "runtime-main.js": "/laundry-front/static/js/runtime-main.ce877f03.js",
     "runtime-main.js.map": "/laundry-front/static/js/runtime-main.ce877f03.js.map",
     "static/css/2.f477f4b5.chunk.css": "/laundry-front/static/css/2.f477f4b5.chunk.css",
     "static/js/2.623da6ad.chunk.js": "/laundry-front/static/js/2.623da6ad.chunk.js",
     "static/js/2.623da6ad.chunk.js.map": "/laundry-front/static/js/2.623da6ad.chunk.js.map",
     "index.html": "/laundry-front/index.html",
-    "precache-manifest.93567959e7d4ac6df1fcc4068fab2f99.js": "/laundry-front/precache-manifest.93567959e7d4ac6df1fcc4068fab2f99.js",
+    "precache-manifest.ab535c0fb6e7b3e4309352447ba8ce87.js": "/laundry-front/precache-manifest.ab535c0fb6e7b3e4309352447ba8ce87.js",
     "service-worker.js": "/laundry-front/service-worker.js",
     "static/css/2.f477f4b5.chunk.css.map": "/laundry-front/static/css/2.f477f4b5.chunk.css.map",
     "static/css/main.188cc50f.chunk.css.map": "/laundry-front/static/css/main.188cc50f.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.f477f4b5.chunk.css",
     "static/js/2.623da6ad.chunk.js",
     "static/css/main.188cc50f.chunk.css",
-    "static/js/main.f12c89bd.chunk.js"
+    "static/js/main.7e6f64d8.chunk.js"
   ]
 }
