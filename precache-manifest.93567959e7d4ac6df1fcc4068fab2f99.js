@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "27d43a9a5558ff25a93a0d1b9da5d630",
+    "revision": "244c95b409f8f2c8ca7e96f7b20abbf6",
     "url": "/laundry-front/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/laundry-front/static/css/2.f477f4b5.chunk.css"
   },
   {
-    "revision": "6d633e40c3b85b1b21af",
+    "revision": "b051abc11fe3a00291fc",
     "url": "/laundry-front/static/css/main.188cc50f.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/laundry-front/static/js/2.623da6ad.chunk.js.LICENSE"
   },
   {
-    "revision": "6d633e40c3b85b1b21af",
-    "url": "/laundry-front/static/js/main.e2c5b4a9.chunk.js"
+    "revision": "b051abc11fe3a00291fc",
+    "url": "/laundry-front/static/js/main.f12c89bd.chunk.js"
   },
   {
     "revision": "43f9eae75ae9a5739609",
