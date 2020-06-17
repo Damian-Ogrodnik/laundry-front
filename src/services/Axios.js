@@ -1,13 +1,14 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "http://localhost:7000",
+  baseURL: "https://laundry-dorn.herokuapp.com/",
   timeout: 1000,
-  headers: { "content-type": "application/json" }
+  headers: { "content-type": "application/json" },
 });
 
 axiosInstance.interceptors.request.use(
-  async config => {
+  async (config) => {
+    config.headers["Access-Control-Allow-Origin"] = "*";
     if (!config.headers.Authorization) {
       const token = await localStorage.token;
       if (token) {
@@ -16,5 +17,5 @@ axiosInstance.interceptors.request.use(
     }
     return config;
   },
-  error => Promise.reject(error)
+  (error) => Promise.reject(error)
 );

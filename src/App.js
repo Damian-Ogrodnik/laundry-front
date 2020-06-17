@@ -12,7 +12,7 @@ import { Routes } from "components/Routes";
 
 export const App = () => (
   <Provider store={store}>
-    <Router>
+    <Router basename={"laundry-front"}>
       <div className="App">
         <NavBar />
         <Routes />

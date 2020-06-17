@@ -31,7 +31,7 @@ export const Row = ({ name, id, isBlocked }) => {
         </button>
       </td>
       <td>
-        <button>Delete</button>
+        <button onClick={() => alert("Functionality disabled")}>Delete</button>
       </td>
     </tr>
   );
