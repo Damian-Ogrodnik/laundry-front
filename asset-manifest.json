@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/laundry/static/css/main.514f367f.chunk.css",
-    "main.js": "/laundry/static/js/main.e2c5b4a9.chunk.js",
-    "main.js.map": "/laundry/static/js/main.e2c5b4a9.chunk.js.map",
-    "runtime-main.js": "/laundry/static/js/runtime-main.7dffa8ce.js",
-    "runtime-main.js.map": "/laundry/static/js/runtime-main.7dffa8ce.js.map",
-    "static/css/2.f477f4b5.chunk.css": "/laundry/static/css/2.f477f4b5.chunk.css",
-    "static/js/2.623da6ad.chunk.js": "/laundry/static/js/2.623da6ad.chunk.js",
-    "static/js/2.623da6ad.chunk.js.map": "/laundry/static/js/2.623da6ad.chunk.js.map",
-    "index.html": "/laundry/index.html",
-    "precache-manifest.fa1a1e3fc062a53e2b4d70c6ec1b07ec.js": "/laundry/precache-manifest.fa1a1e3fc062a53e2b4d70c6ec1b07ec.js",
-    "service-worker.js": "/laundry/service-worker.js",
-    "static/css/2.f477f4b5.chunk.css.map": "/laundry/static/css/2.f477f4b5.chunk.css.map",
-    "static/css/main.514f367f.chunk.css.map": "/laundry/static/css/main.514f367f.chunk.css.map",
-    "static/js/2.623da6ad.chunk.js.LICENSE": "/laundry/static/js/2.623da6ad.chunk.js.LICENSE",
-    "static/media/main.css": "/laundry/static/media/background-front.561d1603.jpg"
+    "main.css": "/laundry-front/static/css/main.188cc50f.chunk.css",
+    "main.js": "/laundry-front/static/js/main.e2c5b4a9.chunk.js",
+    "main.js.map": "/laundry-front/static/js/main.e2c5b4a9.chunk.js.map",
+    "runtime-main.js": "/laundry-front/static/js/runtime-main.ce877f03.js",
+    "runtime-main.js.map": "/laundry-front/static/js/runtime-main.ce877f03.js.map",
+    "static/css/2.f477f4b5.chunk.css": "/laundry-front/static/css/2.f477f4b5.chunk.css",
+    "static/js/2.623da6ad.chunk.js": "/laundry-front/static/js/2.623da6ad.chunk.js",
+    "static/js/2.623da6ad.chunk.js.map": "/laundry-front/static/js/2.623da6ad.chunk.js.map",
+    "index.html": "/laundry-front/index.html",
+    "precache-manifest.62c75d397d1b22ebc416f45ae813d06f.js": "/laundry-front/precache-manifest.62c75d397d1b22ebc416f45ae813d06f.js",
+    "service-worker.js": "/laundry-front/service-worker.js",
+    "static/css/2.f477f4b5.chunk.css.map": "/laundry-front/static/css/2.f477f4b5.chunk.css.map",
+    "static/css/main.188cc50f.chunk.css.map": "/laundry-front/static/css/main.188cc50f.chunk.css.map",
+    "static/js/2.623da6ad.chunk.js.LICENSE": "/laundry-front/static/js/2.623da6ad.chunk.js.LICENSE",
+    "static/media/main.css": "/laundry-front/static/media/background-front.561d1603.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.7dffa8ce.js",
+    "static/js/runtime-main.ce877f03.js",
     "static/css/2.f477f4b5.chunk.css",
     "static/js/2.623da6ad.chunk.js",
-    "static/css/main.514f367f.chunk.css",
+    "static/css/main.188cc50f.chunk.css",
     "static/js/main.e2c5b4a9.chunk.js"
   ]
 }
