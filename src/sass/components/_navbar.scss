@@ -21,5 +21,57 @@
     li {
       list-style-type: none;
     }
+
+    &.mobile {
+      display: none;
+    }
+
+    &.active {
+      @include flex-center-column;
+      position: fixed;
+      background-color: $tile-primary-color;
+      opacity: 0.85;
+      z-index: 100;
+      width: 100%;
+      a > li {
+        font-size: 3rem;
+        margin-bottom: 4rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .mobile {
+    color: white;
+    &.burger {
+      position: absolute;
+      z-index: 101;
+      top: 1rem;
+      height: 3rem;
+      right: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      div {
+        width: 3rem;
+        height: 0.25rem;
+        border-radius: 1rem;
+        background-color: white;
+        transition: all 0.3s linear;
+        position: relative;
+        transform-origin: 1px;
+      }
+      &.active {
+        position: fixed;
+        :nth-child(1) {
+          transform: rotate(45deg);
+        }
+        :nth-child(2) {
+          background-color: transparent;
+        }
+        :nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
   }
 }
