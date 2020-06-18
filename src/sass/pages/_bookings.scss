@@ -1,12 +1,18 @@
 .bookings {
   @include page-settings;
   @include flex-center;
-  position: fixed;
+  position: relative;
 
   &__datepicker {
     @include flex-center;
     @include input-main;
     position: absolute;
     top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .bookings {
+    height: auto;
   }
 }

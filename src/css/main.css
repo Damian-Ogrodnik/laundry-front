@@ -247,16 +247,38 @@
   position: relative;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .booking__slots {
+    margin-top: 7rem;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    height: auto;
   }
   .booking__slot {
-    width: 12rem;
+    width: 20rem;
+    height: 20rem;
     place-self: center;
+  }
+  .booking__slot h2 {
+    font-size: 2.5rem;
+  }
+  .booking__slot p {
+    font-size: 2rem;
+  }
+  .booking__slot button {
+    font-size: 2rem;
+    width: 10rem;
+  }
+  .booking__slot:last-child {
+    margin-bottom: 7rem;
+  }
+  .booking__button {
+    font-size: 2rem;
+    width: 10rem;
+    margin-top: -3rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -680,7 +702,7 @@ table td:nth-child(2) button:nth-child(3) {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: fixed;
+  position: relative;
 }
 
 .bookings__datepicker {
@@ -704,6 +726,12 @@ table td:nth-child(2) button:nth-child(3) {
   text-align: center;
 }
 
+@media only screen and (max-width: 600px) {
+  .bookings {
+    height: auto;
+  }
+}
+
 .booking-board__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -722,6 +750,12 @@ table td:nth-child(2) button:nth-child(3) {
   height: 93vh;
 }
 
+@media only screen and (max-width: 600px) {
+  .booking-board__wrapper {
+    height: auto;
+  }
+}
+
 .booking-board__datepicker {
   position: absolute;
   top: 1rem;
@@ -732,6 +766,12 @@ table td:nth-child(2) button:nth-child(3) {
   font-weight: 700;
   font-size: 1.25rem;
   text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .booking-board__datepicker input {
+    font-size: 2rem;
+  }
 }
 
 .homepage h1 {
@@ -1276,5 +1316,11 @@ table td:nth-child(2) button:nth-child(3) {
 .App {
   background-color: white;
   height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    height: auto;
+  }
 }
 /*# sourceMappingURL=main.css.map */
