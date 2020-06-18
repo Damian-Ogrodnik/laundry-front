@@ -565,16 +565,20 @@ table td:nth-child(2) {
 
 table td:nth-child(2) button {
   margin: 0.5rem 1rem;
-}
-
-@media only screen and (max-width: 600px) {
-  table td:nth-child(2) button {
-    width: 5rem;
-  }
+  width: 5rem;
 }
 
 table td:nth-child(2) button:nth-child(3) {
   width: 5rem;
+}
+
+@media only screen and (max-width: 860px) {
+  table tbody td {
+    border-bottom: 1px solid #b82601;
+  }
+  table tbody :last-child td {
+    border: none;
+  }
 }
 
 .bookings {
