@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/laundry-front/static/css/main.1fd750fd.chunk.css",
+    "main.css": "/laundry-front/static/css/main.9d658fb7.chunk.css",
     "main.js": "/laundry-front/static/js/main.56d08f55.chunk.js",
     "main.js.map": "/laundry-front/static/js/main.56d08f55.chunk.js.map",
     "runtime-main.js": "/laundry-front/static/js/runtime-main.ce877f03.js",
@@ -9,10 +9,10 @@
     "static/js/2.623da6ad.chunk.js": "/laundry-front/static/js/2.623da6ad.chunk.js",
     "static/js/2.623da6ad.chunk.js.map": "/laundry-front/static/js/2.623da6ad.chunk.js.map",
     "index.html": "/laundry-front/index.html",
-    "precache-manifest.ec2a690c85556051db3f3e564d5c992d.js": "/laundry-front/precache-manifest.ec2a690c85556051db3f3e564d5c992d.js",
+    "precache-manifest.9a02aa224f4875bee1524848e9e18aad.js": "/laundry-front/precache-manifest.9a02aa224f4875bee1524848e9e18aad.js",
     "service-worker.js": "/laundry-front/service-worker.js",
     "static/css/2.f477f4b5.chunk.css.map": "/laundry-front/static/css/2.f477f4b5.chunk.css.map",
-    "static/css/main.1fd750fd.chunk.css.map": "/laundry-front/static/css/main.1fd750fd.chunk.css.map",
+    "static/css/main.9d658fb7.chunk.css.map": "/laundry-front/static/css/main.9d658fb7.chunk.css.map",
     "static/js/2.623da6ad.chunk.js.LICENSE": "/laundry-front/static/js/2.623da6ad.chunk.js.LICENSE",
     "static/media/main.css": "/laundry-front/static/media/background-front.561d1603.jpg"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.ce877f03.js",
     "static/css/2.f477f4b5.chunk.css",
     "static/js/2.623da6ad.chunk.js",
-    "static/css/main.1fd750fd.chunk.css",
+    "static/css/main.9d658fb7.chunk.css",
     "static/js/main.56d08f55.chunk.js"
   ]
 }
