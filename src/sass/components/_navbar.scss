@@ -1,6 +1,7 @@
 .navigation {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   background-color: black;
   height: 7vh;
 
@@ -29,6 +30,8 @@
     &.active {
       @include flex-center-column;
       position: fixed;
+      top: 0;
+      right: 0;
       background-color: $tile-primary-color;
       opacity: 0.85;
       z-index: 100;
