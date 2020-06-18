@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/laundry-front/precache-manifest.1005caaa71796859f413dacb5ddcae40.js"
+  "/laundry-front/precache-manifest.ec2a690c85556051db3f3e564d5c992d.js"
 );
 
 self.addEventListener('message', (event) => {
